@@ -157,16 +157,25 @@ columns=fullflexible
 	\logo{Toy Car as AI Bot
 	}
 }
-\author{Alok Ranjan Kesari$^{1}$, K Prasanna Kumar$^{2}$ and G V V Sharma$^{3}$ 
+\author{Raktim Gautam Goswami$^{1}$, Abhishek Bairagi$^{2}$ Alok Ranjan Kesari$^{3} $ \& G V V Sharma$^{4}$ 
 %<-this  stops a space
-\thanks{1. e-mail:  alok.kesari@yahoo.co.in.,  2. email: kk.prassu924@gmail.com, 3. 
-The 
-author is with the Department
+\thanks{The authors are with the Department
 of Electrical Engineering, Indian Institute of Technology, Hyderabad
-502285 India .  e-mail:  gadepall@iith.ac.in}% <-this % stops a space
+502285 India .  e-mail: 1. ee17btech11004@iith.ac.in, 2. ee17btech11051@iith.ac.in, 3. arkesari@iith.ac.in, 4. gadepall@iith.ac.in}% <-this % stops a space
 %%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
 %%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
 }
+
+%\author{Alok Ranjan Kesari$^{1}$, K Prasanna Kumar$^{2}$ and G V V Sharma$^{3}$ 
+%%<-this  stops a space
+%\thanks{1. e-mail:  alok.kesari@yahoo.co.in.,  2. email: kk.prassu924@gmail.com, 3. 
+%The 
+%author is with the Department
+%of Electrical Engineering, Indian Institute of Technology, Hyderabad
+%502285 India .  e-mail:  gadepall@iith.ac.in}% <-this % stops a space
+%%%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+%%%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
+%}
 %\author[1]{Alok Ranjan Kesari\thanks{1 e-mail:  alok.kesari@yahoo.co.in}}
 %\author[2]{K Prasanna Kumar\thanks{2 email: kk.prassu924@gmail.com}}
 %\author[3]{G V V Sharma \thanks{3 e-mail:  gadepall@iith.ac.in}}
@@ -300,10 +309,44 @@ Connect the L293D pins according to Table \ref{table:l293d}.
 \item
 Connect the HC05 pins according to Table \ref{table:hc05}.
 
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\columnwidth]{./figs/HC05}
+\end{center}
+\caption{HC05 Bluetooth module}
+\label{fig:hc05}
+\end{figure}
+
 	\input{./figs/hc05.tex}
+
 
 \end{enumerate}
 %
+\section{Implementation}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Dump the following code in Arduino using its IDE.
+\begin{lstlisting}
+wget https://raw.githubusercontent.com/ gadepall/EE1390/master/bot/codes/vcb.cpp
+\end{lstlisting}
+%
+\item Install Google API "Arduino Bluetooth Controller" using google play-store
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width = \columnwidth]{./figs/app}
+%\includegraphics[width = 7cm, height = 10cm]{./figs/app}
+\end{center}
+\caption{}
+\label{fig:App}
+\end{figure}
+\item Open the app and connect to HC-05.
+\item Open voice control section in the app and tap to give following commands. 
+
+\textit{Left, Right, Forward, Back \& Stop}
+
+\end{enumerate}
+
 \end{document}
 
 
