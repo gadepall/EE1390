@@ -157,7 +157,8 @@ columns=fullflexible
 	\logo{Toy Car as AI Bot
 	}
 }
-\author{Raktim Gautam Goswami$^{1}$, Abhishek Bairagi$^{2}$ Alok Ranjan Kesari$^{3} $ \& G V V Sharma$^{4}$ 
+\author{Raktim Gautam Goswami$^{1}$, Abhishek Bairagi$^{2}$, Alok Ranjan Kesari$^{3} 
+$ \& G V V Sharma$^{4}$ 
 %<-this  stops a space
 \thanks{The authors are with the Department
 of Electrical Engineering, Indian Institute of Technology, Hyderabad
@@ -166,62 +167,6 @@ of Electrical Engineering, Indian Institute of Technology, Hyderabad
 %%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
 }
 
-%\author{Alok Ranjan Kesari$^{1}$, K Prasanna Kumar$^{2}$ and G V V Sharma$^{3}$ 
-%%<-this  stops a space
-%\thanks{1. e-mail:  alok.kesari@yahoo.co.in.,  2. email: kk.prassu924@gmail.com, 3. 
-%The 
-%author is with the Department
-%of Electrical Engineering, Indian Institute of Technology, Hyderabad
-%502285 India .  e-mail:  gadepall@iith.ac.in}% <-this % stops a space
-%%%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
-%%%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
-%}
-%\author[1]{Alok Ranjan Kesari\thanks{1 e-mail:  alok.kesari@yahoo.co.in}}
-%\author[2]{K Prasanna Kumar\thanks{2 email: kk.prassu924@gmail.com}}
-%\author[3]{G V V Sharma \thanks{3 e-mail:  gadepall@iith.ac.in}}
-%\affil[3]{Department of Electrical Engineering, Indian Institute of Technology, 
-%Hyderabad}
-
-%\renewcommand\Authands{ and }
-% note the % following the last \IEEEmembership and also \thanks - 
-% these prevent an unwanted space from occurring between the last author name
-% and the end of the author line. i.e., if you had this:
-% 
-% \author{....lastname \thanks{...} \thanks{...} }
-%                     ^------------^------------^----Do not want these spaces!
-%
-% a space would be appended to the last name and could cause every name on that
-% line to be shifted left slightly. This is one of those "LaTeX things". For
-% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
-% "AB" then you have to do: "\textbf{A}\textbf{B}"
-% \thanks is no different in this regard, so shield the last } of each \thanks
-% that ends a line with a % and do not let a space in before the next \thanks.
-% Spaces after \IEEEmembership other than the last one are OK (and needed) as
-% you are supposed to have spaces between the names. For what it is worth,
-% this is a minor point as most people would not even notice if the said evil
-% space somehow managed to creep in.
-
-
-
-% The paper headers
-%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
-%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
-% The only time the second header will appear is for the odd numbered pages
-% after the title page when using the twoside option.
-% 
-% *** Note that you probably will NOT want to include the author's ***
-% *** name in the headers of peer review papers.                   ***
-% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
-% you desire.
-
-
-
-
-% If you want to put a publisher's ID mark on the page you can do it like
-% this:
-%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
-% Remember, if you use this you must call \IEEEpubidadjcol in the second
-% column for its text to clear the IEEEpubid mark.
 
 
 
@@ -243,29 +188,6 @@ of Electrical Engineering, Indian Institute of Technology, Hyderabad
 A Toycar is controlled using bluetooth and google voice recognition software.
 %
 \end{abstract}
-% IEEEtran.cls defaults to using nonbold math in the Abstract.
-% This preserves the distinction between vectors and scalars. However,
-% if the journal you are submitting to favors bold math in the abstract,
-% then you can use LaTeX's standard command \boldmath at the very start
-% of the abstract to achieve this. Many IEEE journals frown on math
-% in the abstract anyway.
-
-% Note that keywords are not normally used for peerreview papers.
-%\begin{IEEEkeywords}
-%Cooperative diversity, decode and forward, piecewise linear
-%\end{IEEEkeywords}
-
-
-
-% For peer review papers, you can put extra information on the cover
-% page as needed:
-% \ifCLASSOPTIONpeerreview
-% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
-% \fi
-%
-% For peerreview papers, this IEEEtran command inserts a page break and
-% creates the second title. It will be ignored for other modes.
-
 
 
 \section{Hardware Setup}
@@ -293,7 +215,7 @@ Provide 9V to the supply pin of the Arduino.
 Plug the L293D motor driver IC in Fig. \ref{fig:l293d} on the breadboard.
 
 	%
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=\columnwidth]{./figs/l293d}
 \end{center}
