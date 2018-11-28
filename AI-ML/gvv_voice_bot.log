@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.6)  28 NOV 2018 06:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.6)  28 NOV 2018 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,42 +839,42 @@ File: tlc.eps Graphic file (type eps)
 
 
 
-LaTeX Warning: Reference `fig:l293d' on page 1 undefined on input line 229.
+LaTeX Warning: Reference `fig:l293d' on page 1 undefined on input line 228.
 
 
-LaTeX Warning: Reference `table:l293d' on page 1 undefined on input line 242.
+LaTeX Warning: Reference `table:l293d' on page 1 undefined on input line 241.
 
 
-LaTeX Warning: Reference `table:hc05' on page 1 undefined on input line 246.
+LaTeX Warning: Reference `table:hc05' on page 1 undefined on input line 245.
 
 [1
 
 
 ]
-Overfull \hbox (182.02382pt too wide) in paragraph at lines 306--308
+Overfull \hbox (182.02382pt too wide) in paragraph at lines 305--307
 [][][]$\OT1/txr/m/n/12 https : / / github . com / raktimgg / ML-[]algorithm-[]f
 or-[]speech-[]recognition / blob / master / code . py$[][][] 
  []
 
 
-Overfull \hbox (152.86781pt too wide) in paragraph at lines 310--318
+Overfull \hbox (152.86781pt too wide) in paragraph at lines 309--317
 [][]$\OT1/txr/m/n/12 https : / / github . com / abhishekbairagi / Making-[]Data
 set-[]for-[]ML / blob / master / 250^^Lles . py$[][][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 324.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 323.
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 324.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 323.
  (./gvv_voice_bot.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 324.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 324.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 323.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 323.
 Package rerunfilecheck Info: File `gvv_voice_bot.out' has not changed.
 (rerunfilecheck)             Checksum: DD46CA00ACC0090CBD28DC28CCA34E24;417.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 324.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 323.
  ) 
 Here is how much of TeX's memory you used:
  11704 strings out of 492645
