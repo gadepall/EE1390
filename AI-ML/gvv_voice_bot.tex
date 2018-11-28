@@ -19,7 +19,7 @@
 %\usepackage{txfonts}
 %\restoresymbol{TXF}{iint}
 %\usepackage{wasysym}
-\usepackage{hyperref}
+\usepackage[breaklinks]{hyperref}
 \usepackage{amsthm}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
@@ -204,16 +204,19 @@ directory for reference
 \begin{lstlisting}
 svn checkout https://github.com/gadepall/EE1390/trunk/AI-ML/audio_dataset
 \end{lstlisting}
-\item Suitably edit the following scirpt
+\item Use the following script to generate a dataset for 'back' command. Explain 
+through a block diagram.
 \begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1390/trunk/AI-ML/codes/
+https://raw.githubusercontent.com/gadepall/EE1390/master/AI-ML/codes/250files.py
 \end{lstlisting}
 %
+\solution
+to generate the dataset needed for training. The following diagram explains how this 
+is done for the back command.
+\\
+back (80 files)$\overset{250files.py}{\rightarrow}25000 files$.
 	%
-%
-
-\item Stick a 9V battery to the breadboard and connect the positive and negative 
-terminals to extreme ends of the breadboard.
+\item Suitably modify the above script to generate similar datasets for 'left', 'right', 'stop' and 'forward'. 
 %
 \item 
 Stick a 9V battery to the breadboard and connect the positive and negative terminals to extreme ends of the breadboard.

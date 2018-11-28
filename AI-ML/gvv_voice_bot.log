@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.6)  27 NOV 2018 17:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.6)  28 NOV 2018 06:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -365,6 +365,7 @@ Now handling font encoding PD1 ...
 /hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `breaklinks' set `true' on input line 4383.
 Package hyperref Info: Hyper figures OFF on input line 4509.
 Package hyperref Info: Link nesting OFF on input line 4514.
 Package hyperref Info: Hyper index ON on input line 4517.
@@ -405,6 +406,12 @@ File: hdvips.def 2018/02/06 v6.86b Hyperref driver for dvips
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd
 fmark.def
 File: pdfmark.def 2018/02/06 v6.86b Hyperref definitions for pdfmark specials
+
+
+Package hyperref Warning: You have enabled option `breaklinks'.
+(hyperref)                But driver `hdvips.def' does not suppport this.
+(hyperref)                Expect trouble with the link areas of broken links.
+
 \pdf@docset=\toks21
 \pdf@box=\box30
 \pdf@toks=\toks22
@@ -832,56 +839,50 @@ File: tlc.eps Graphic file (type eps)
 
 
 
-LaTeX Warning: Reference `fig:l293d' on page 1 undefined on input line 215.
+LaTeX Warning: Reference `fig:l293d' on page 1 undefined on input line 229.
 
 
-LaTeX Warning: Reference `table:l293d' on page 1 undefined on input line 228.
+LaTeX Warning: Reference `table:l293d' on page 1 undefined on input line 242.
 
 
-LaTeX Warning: Reference `table:hc05' on page 1 undefined on input line 232.
+LaTeX Warning: Reference `table:hc05' on page 1 undefined on input line 246.
 
 [1
 
 
 ]
-Overfull \hbox (182.02382pt too wide) in paragraph at lines 295--297
-[][][][][] 
+Overfull \hbox (182.02382pt too wide) in paragraph at lines 306--308
+[][][]$\OT1/txr/m/n/12 https : / / github . com / raktimgg / ML-[]algorithm-[]f
+or-[]speech-[]recognition / blob / master / code . py$[][][] 
  []
 
 
-Overfull \hbox (152.86781pt too wide) in paragraph at lines 299--307
-[][][][] 
+Overfull \hbox (152.86781pt too wide) in paragraph at lines 310--318
+[][]$\OT1/txr/m/n/12 https : / / github . com / abhishekbairagi / Making-[]Data
+set-[]for-[]ML / blob / master / 250^^Lles . py$[][][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 313.
-[2
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 313.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 324.
+[2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 324.
  (./gvv_voice_bot.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 313.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 313.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 324.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 324.
+Package rerunfilecheck Info: File `gvv_voice_bot.out' has not changed.
+(rerunfilecheck)             Checksum: DD46CA00ACC0090CBD28DC28CCA34E24;417.
 
-
-Package rerunfilecheck Warning: File `gvv_voice_bot.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `gvv_voice_bot.out':
-(rerunfilecheck)             Before: EB93C3E634F007D7EF35A870465D5135;98
-(rerunfilecheck)             After:  52AB9185FEBC33CE1BA1635289F9B961;424.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 313.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 324.
  ) 
 Here is how much of TeX's memory you used:
- 11693 strings out of 492645
- 178886 string characters out of 6118921
- 488398 words of memory out of 5000000
- 15408 multiletter control sequences out of 15000+600000
+ 11704 strings out of 492645
+ 179032 string characters out of 6118921
+ 501392 words of memory out of 5000000
+ 15419 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 36i,7n,40p,582b,1292s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,7n,40p,613b,1291s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_voice_bot.dvi (2 pages, 15216 bytes).
+Output written on gvv_voice_bot.dvi (2 pages, 18968 bytes).
