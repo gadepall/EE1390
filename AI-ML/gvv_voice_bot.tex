@@ -272,13 +272,20 @@ are the machine parameters. Then the machine makes a decision based on
 \end{equation}
 \item The problem is to estimate $\mbf{W}$ and $\mbf{b}$.  This is done by considering 
 \begin{equation}
+\label{eq:cost}
 \min_{\mbf{W},\mbf{b}}J = \frac{1}{2}\norm{\mbf{y}-\hat{\mbf{y}}}^2
 \end{equation}
 \end{enumerate}
 \subsection{Solution: Gradient Descent}
 \begin{enumerate}[label=\thesubsection.\arabic*
 ,ref=\thesection.\theenumi]
-\item 
+\item $\mbf{W}$ and $\mbf{b}$ can be estimated from \eqref{eq:cost} using
+\begin{align}
+\mbf{W}(n+1) &= \mbf{W}(n) - \frac{\alpha}{2}\frac{\partial}{\partial\mbf{W}}J
+\\
+\mbf{b}(n+1) &= \mbf{b}(n) - \frac{\alpha}{2}\frac{\partial}{\partial\mbf{b}}J
+\end{align}
+Show that
 \end{enumerate}
 \subsection{Theory}
 We have used linear regression in our model. Here, all the features are tried to be approximated using an n-dimensional straight line (n being the number of features). The equation used for this is 
