@@ -273,7 +273,7 @@ are the machine parameters. Then the machine makes a decision based on
 \item The problem is to estimate $\mbf{W}$ and $\mbf{b}$.  This is done by considering 
 \begin{equation}
 \label{eq:cost}
-\min_{\mbf{W},\mbf{b}}J = \frac{1}{2}\norm{\mbf{y}-\hat{\mbf{y}}}^2
+\min_{\mbf{W},\mbf{b}} J\brak{\mbf{W},\mbf{b}}  = \frac{1}{2}\norm{\mbf{y}-\hat{\mbf{y}}}^2
 \end{equation}
 \end{enumerate}
 \subsection{Solution: Gradient Descent}
@@ -281,32 +281,65 @@ are the machine parameters. Then the machine makes a decision based on
 ,ref=\thesection.\theenumi]
 \item $\mbf{W}$ and $\mbf{b}$ can be estimated from \eqref{eq:cost} using
 \begin{align}
-\mbf{W}(n+1) &= \mbf{W}(n) - \frac{\alpha}{2}\frac{\partial}{\partial\mbf{W}}J
+\label{eq:grad_def}
+\mbf{W}(n+1) &= \mbf{W}(n) - \frac{\alpha}{2}\frac{\partial J\brak{\mbf{W},\mbf{b}} }{\partial\mbf{W}}
 \\
-\mbf{b}(n+1) &= \mbf{b}(n) - \frac{\alpha}{2}\frac{\partial}{\partial\mbf{b}}J
+\mbf{b}(n+1) &= \mbf{b}(n) - \frac{\alpha}{2}\frac{\partial J\brak{\mbf{W},\mbf{b}}}{\partial\mbf{b}}
 \end{align}
-Show that
+Show that \eqref{eq:grad_def} can be expressed as
+\begin{align}
+\mbf{W}(n+1) &= \mbf{W}(n) - \alpha\lsbrak{\mbf{x}^{T}(n)\mbf{x}(n)\mbf{W}(n)}
+\nonumber \\
+& \quad +\rsbrak{\mbf{x}^{T}(n)\mbf{b}(n)-\mbf{x}^T(n)\mbf{y}(n)}
+\\
+\mbf{b}(n+1) &= \mbf{b}(n) - \alpha\sbrak{\mbf{x}\mbf{W}-\mbf{b}-\mbf{y}}
+\end{align}
+\solution From  \eqref{eq:cost} and \eqref{eq:model}, 
+%\begin{multline}
+%\frac{\partial J\brak{\mbf{W},\mbf{b}} }{\partial\mbf{W}} 
+%\\
+%= \frac{\partial  
+%}{\partial\mbf{W}}\sbrak{\brak{\mbf{x}\mbf{W}+\mbf{b}-\mbf{y}}^T\brak{\mbf{x}\mbf{W}+\mbf{b}-\mbf{y}}}
+%\end{multline}
+\begin{align}
+J\brak{\mbf{W},\mbf{b}}  &= \frac{1}{2}\norm{\mbf{y}-\hat{\mbf{y}}}^2
+\\
+&=\brak{\mbf{x}\mbf{W}+\mbf{b}-\mbf{y}}^T\brak{\mbf{x}\mbf{W}+\mbf{b}-\mbf{y}}
+\\
+&=\brak{\mbf{W}^T\mbf{x}^T+\mbf{b}^T-\mbf{y}^T}\brak{\mbf{x}\mbf{W}+\mbf{b}-\mbf{y}}
+\\
+&=\mbf{W}^T\mbf{x}^T\mbf{x}\mbf{W}+\mbf{W}^T\mbf{x}^T\mbf{b}-\mbf{W}^T\mbf{x}^T\mbf{y}
+\\
+&\,+\mbf{b}^T\mbf{x}\mbf{W}+\mbf{b}^T\mbf{b}-\mbf{b}^T\mbf{y} - \mbf{y}^T\mbf{x}\mbf{W}
+\\
+& \, -  \mbf{y}^T\mbf{b} +  \mbf{y}^T \mbf{y}
+\label{eq:expand_cost}
+\end{align}
+Using
+\begin{align}
+\frac{\partial}{\partial\mbf{W}}\mbf{W}^T\mbf{x}^T\mbf{x}\mbf{W}
+&= 
+\end{align} 
 \end{enumerate}
-\subsection{Theory}
-We have used linear regression in our model. Here, all the features are tried to be approximated using an n-dimensional straight line (n being the number of features). The equation used for this is 
-\begin{equation}
-\sum_{i} Wi*xi + b
-\end{equation}
-In matrix form it is $$ out = W.X + B $$ The output(out) is then put as input to the sigmoid function and the output of it is a number scaled between 0 and 1. This is the actual output(Y') we are interested in .  The sigmoid function is defined as $$sigmoid(x) = 1/(1+exp(-x))$$ The cost function is then calculated using mean squared error as $$ J = 0.5*(Y - Y')^2$$ Gradient descent algorithm is used to get minimum error using the derivative of the error(J) with respect to weight (W).This process is carried on for a number of times to get the best accuracy.
-\paragraph{How is the descent algorithm obtained from the cost function?\newline}
-We initialized the parameters W1 and b . Now we want Mean Square Error function to 
-be minimum.The way we do this is by taking the derivative (the tangential line to a 
-function) of our cost function with respect to each parameter. Derivative at that 
-point and it will give us a direction to move towards. And then we update the value 
-of all the parameters according to the derivative obtained.And then we iterate the 
-process(number of itterations are decided by us ) .We make steps down the cost 
-function in the direction with the steepest descent. The size of each step is 
-determined by the parameter $\alpha$, which is called the learning rate.The gradient 
-descent algorithm is repeated until convergence: 
-$Mj :=Mj-(learningrate)*(delta Loss)*input$
-%$Mj :​= Mj​ - (learningrate)*(delta Loss)*input$  %%%%%%% to be updated
 
-
+%\subsection{Theory} 
+%We have used linear regression in our model. Here, all the features are tried to be 
+%approximated using an n-dimensional straight line (n being the number of features). The equation used for this is 
+%\begin{equation} \sum_{i} Wi*xi + b \end{equation} In matrix form it is $$ out = W.X + B $$ The output(out) is then put as 
+%input to the sigmoid function and the output of it is a number scaled between 0 and 1. This is the actual output(Y') we are 
+%interested in .  The sigmoid function is defined as $$sigmoid(x) = 1/(1+exp(-x))$$ The cost function is then calculated using 
+%mean squared error as $$ J = 0.5*(Y - Y')^2$$ Gradient descent algorithm is used to get minimum error using the derivative of 
+%the error(J) with respect to weight (W).This process is carried on for a number of times to get the best accuracy. 
+%\paragraph{How is the descent algorithm obtained from the cost function?\newline} We initialized the parameters W1 and b . Now 
+%we want Mean Square Error function to be minimum.The way we do this is by taking the derivative (the tangential line to a 
+%function) of our cost function with respect to each parameter. Derivative at that point and it will give us a direction to 
+%move towards. And then we update the value of all the parameters according to the derivative obtained.And then we iterate the 
+%process(number of itterations are decided by us ) .We make steps down the cost function in the direction with the steepest 
+%descent. The size of each step is determined by the parameter $\alpha$, which is called the learning rate.The gradient descent 
+%algorithm is repeated until convergence: $Mj :=Mj-(learningrate)*(delta Loss)*input$ %$Mj :​= Mj​ - (learningrate)*(delta 
+%Loss)*input$ %%%%%%% to be updated
+%
+%
 \subsection{Python code}
 
 \url{https://github.com/raktimgg/ML-algorithm-for-speech-recognition/blob/master/code.py}\newline
