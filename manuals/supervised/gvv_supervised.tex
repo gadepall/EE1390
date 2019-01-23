@@ -250,10 +250,18 @@ Supervised Learning
 	
 This manual introduces various methods in supervised learning.
 \end{abstract}
-\section{The Straight Line}
+\section{Least Squares Method}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
-\item The equation of the line between two points $\vec{A}$ and $\vec{B}$ is given by
+
+\item The Steinhart–Hart equation is a model of the resistance of a 
+thermistor at different temperatures. The equation is given by
+\begin{equation}
+\label{eq:ls_steiner}
+{ {1 \over T}=w_1+w_2\ln(R)+w_3[\ln(R)]^{3}} 
+\end{equation}
+
+The equation of the line between two points $\vec{A}$ and $\vec{B}$ is given by
 \begin{equation}
 \vec{x} = \vec{A} + \lambda \brak{\vec{A}-\vec{B}}
 \end{equation}
@@ -462,12 +470,12 @@ Substituting from \eqref{eq:orth_alpha} and
 \end{equation}
 intersects the coordinate axes at $\vec{P}$ and $\vec{Q}$.  $\vec{O}$ is the origin and rectangle $OPRQ$ is 
 completed as shown in Fig. \eqref{fig:locus},
-\begin{figure}
-\centering
-\includegraphics[width=\columnwidth]{./figs/locus.eps}
-\caption{}
-\label{fig:locus}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=\columnwidth]{./figs/locus.eps}
+%\caption{}
+%\label{fig:locus}
+%\end{figure}
 \item Show that
 \begin{align}
 \vec{P}&= \myvec{1 & 0\\ 0 & 0}\vec{R}
@@ -570,12 +578,12 @@ Show that \eqref{eq:tangent_one} can be expressed as
 \item Classify the various conic sections based on $\eqref{eq:quadratic_vec}$.
 \\
 \solution 
-\begin{table}[!hb]
-\centering
-\input{./figs/conics.tex}
-\caption{}
-\label{table:conics}
-\end{table}
+%\begin{table}[!hb]
+%\centering
+%\input{./figs/conics.tex}
+%\caption{}
+%\label{table:conics}
+%\end{table}
 
 \end{enumerate}
 \section{Circle}
