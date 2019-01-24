@@ -225,7 +225,7 @@ columns=fullflexible
 
 \title{ 
 	\logo{
-Supervised Learning
+Least Squares Method
 	}
 }
 
@@ -248,13 +248,63 @@ Supervised Learning
 
 \begin{abstract}
 	
-This manual introduces various methods in supervised learning.
+This manual introduces the least squares method.
 \end{abstract}
-\section{Least Squares Method}
 %
-\subsection{Application}
-\begin{enumerate}[label=\thesubsection.\arabic*
-,ref=\thesubsection.\theenumi]
+\section{Algebra}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Find the equation of the plane $P$
+containing the vectors 
+%
+\begin{align}
+\vec{a}_1 = \myvec{1 \\ 1 \\ 1}
+,
+\vec{a}_2 = \myvec{0 \\ 1 \\ 2}
+\end{align}
+%
+\item Show that the vector 
+\begin{align}
+\vec{b} = \myvec{6 \\ 0 \\ 0}
+\end{align}
+lies outside $P$.
+\item Find the point $\vec{b}_0 \in P$ closest to $\vec{b}$.
+\end{enumerate}
+\section{Calculus}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Find
+\begin{align}
+\norm{\vec{y}-A\vec{w}}^2
+\end{align}
+\solution
+\begin{align}
+\norm{\vec{y}-A\vec{w}}^2 &= \brak{\vec{y}-A\vec{w}}^T\brak{\vec{y}-A\vec{w}}
+\\
+&= \norm{\vec{y}}^2 - \vec{w}^TA^T\vec{y} 
+\\
+& \quad - \vec{y}^TA\vec{w}+\vec{w}^TA^TA\vec{w}
+\end{align}
+%
+\item Assuming $2\times 2$ matrices and $2 \times 1$ vectors, show that
+\begin{align}
+\frac{\partial}{\partial\vec{w}}\vec{w}^TA^T\vec{y} = \frac{\partial}{\partial\vec{w}}\vec{y}^TA\vec{w} = 
+\vec{y}^TA
+\end{align}
+\item Show that
+\begin{align}
+\frac{\partial}{\partial\vec{w}}\vec{w}^TA^TA\vec{w} = 2\vec{w}^T\brak{A^TA}
+\end{align}
+\item Find
+\begin{align}
+\hat{\vec{w}} = \min_{\vec{w}}\norm{\vec{y}-A\vec{w}}^2
+\end{align}
+\item Use the above result to verify your solution in the previous section
+\end{enumerate}
+%
+\section{Application}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
 %
 \item The Steinhart–Hart equation is a model of the resistance of a 
 thermistor at different temperatures. The equation is given by
@@ -297,42 +347,6 @@ the relation
 \begin{equation}
 \hat{\vec{w}} = \brak{A^TA}^{-1}A^T\vec{y}
 \end{equation}
-\item Verify your result by finding the temperature when the resitance is $175.86\Omega$.
+\item Verify your result by finding the temperature when the resistance is $175.86\Omega$.
 \end{enumerate}
-\subsection{Calculus}
-\begin{enumerate}[label=\thesubsection.\arabic*
-,ref=\thesubsection.\theenumi]
-\item Find
-\begin{align}
-\norm{\vec{y}-A\vec{w}}^2
-\end{align}
-\solution
-\begin{align}
-\norm{\vec{y}-A\vec{w}}^2 &= \brak{\vec{y}-A\vec{w}}^T\brak{\vec{y}-A\vec{w}}
-\\
-&= \norm{\vec{y}}^2 - \vec{w}^TA^T\vec{y} - \vec{y}^TA\vec{w}+\vec{w}^TA^TA\vec{w}
-\end{align}
-%
-\item Assuming $2\times 2$ matrices and $2 \times 1$ vectors, show that
-\begin{align}
-\frac{\partial}{\partial\vec{w}}\vec{w}^TA^T\vec{y} = \frac{\partial}{\partial\vec{w}}\vec{y}^TA\vec{w} = 
-\vec{y}^TA
-\end{align}
-\item Show that
-\begin{align}
-\frac{\partial}{\partial\vec{w}}\vec{w}^TA^TA\vec{w} = 2\vec{w}^T\brak{A^TA}
-\end{align}
-\item Find
-\begin{align}
-\min_{\vec{w}}\norm{\vec{y}-A\vec{w}}^2
-\end{align}
-\end{enumerate}
-\subsection{Algebra}
-\begin{enumerate}[label=\thesubsection.\arabic*
-,ref=\thesubsection.\theenumi]
-\item Consider the vectors 
-%
-\begin{align}
-\end{align}
-%
 \end{document}
