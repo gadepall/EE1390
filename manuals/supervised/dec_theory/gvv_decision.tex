@@ -297,26 +297,16 @@ MSE(f)|X = E_Y\cbrak{\sbrak{Y - c}^2|\vec{X}= \vec{x}}
 Show that this results in 
 \begin{align}
 c = f\brak{\vec{x}}= E\sbrak{Y|X=\vec{x}}
+\label{eq:opt_mse}
 \end{align}
+$f$ is known as the {\em regression} function.
 \end{enumerate}
-\section{Nearest Neighbour}
+\section{Applications}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
-\item Find $\vec{y} = \myvec{y_1\\y_2}$,
-\begin{align}
-y_{2} = \frac{1}{k}\sum_{i\in N_k(y_1)}^{}x_{2i}
-\end{align}
-%
-where
-%
-\begin{align}
-N_k(y_1) &= \cbrak{i : \abs{x_{1i}-y_1} < \epsilon < \abs{x_{1j}-y_1}},
-\\
- \abs{N_k(y_1)} &= k
-\end{align}
-\item Plot $\vec{y}_m, 1 \leq m \leq 100$ for $k =15$.
-\item Repeat the exercise for $k = 1$.
-\item Compare with the least squares estimate.
+\item Explain how \eqref{eq:opt_mse} can be used to obtain the  Nearest 
+Neighbour approximation.
+\item Repeat the exercise for the least squares method.
 \end{enumerate}
 %
 \end{document}
