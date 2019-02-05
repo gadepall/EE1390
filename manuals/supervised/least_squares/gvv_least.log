@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  24 JAN 2019 23:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  5 FEB 2019 15:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1145,8 +1145,7 @@ Package: hhline 2014/10/28 v2.03 Table rule package (DPC)
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/graphics/ls
 cape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-No file gvv_least.aux.
+) (./gvv_least.aux)
 \openout1 = `gvv_least.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 122.
@@ -1238,12 +1237,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 122.
 LaTeX Info: Redefining \pageref on input line 122.
 LaTeX Info: Redefining \nameref on input line 122.
+ (./gvv_least.out) (./gvv_least.out)
 \@outlinefile=\write5
 \openout5 = `gvv_least.out'.
-
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 \c@theorem=\count176
 \c@problem=\count177
@@ -1253,7 +1249,7 @@ Package hyperref Warning: Rerun to get /PageLabels entry.
 \c@definition=\count181
 \c@rem=\count182
 File: iith_logo.eps Graphic file (type eps)
-<iith_logo.eps>
+ <iith_logo.eps>
 LaTeX Font Info:    Calculating math sizes for size <24> on input line 240.
 LaTeX Font Info:    Try loading font information for U+txsya on input line 240.
 
@@ -1300,6 +1296,7 @@ File: iith_logo.eps Graphic file (type eps)
  <iith_logo.eps>
 File: tlc.eps Graphic file (type eps)
  <tlc.eps>
+(./gvv_least.toc)
 \tf@toc=\write6
 \openout6 = `gvv_least.toc'.
 
@@ -1307,15 +1304,11 @@ File: tlc.eps Graphic file (type eps)
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 352.
-
-[2
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 352.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 320.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 320.
  (./gvv_least.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 352.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 352.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 320.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 320.
 
 
 Package rerunfilecheck Warning: File `gvv_least.out' has changed.
@@ -1323,19 +1316,19 @@ Package rerunfilecheck Warning: File `gvv_least.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `gvv_least.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  0A9E6F215B864F00092A0BED120B5AA9;131.
+(rerunfilecheck)             Before: 0A9E6F215B864F00092A0BED120B5AA9;131
+(rerunfilecheck)             After:  ADD97D4468C6B99F38238F7A00D02F0E;88.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 24186 strings out of 494591
- 473850 string characters out of 6176027
- 571337 words of memory out of 5000000
- 27391 multiletter control sequences out of 15000+600000
+ 24198 strings out of 494591
+ 473997 string characters out of 6176027
+ 574163 words of memory out of 5000000
+ 27395 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
  54i,16n,67p,795b,1137s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_least.dvi (2 pages, 19268 bytes).
+Output written on gvv_least.dvi (1 page, 16380 bytes).
