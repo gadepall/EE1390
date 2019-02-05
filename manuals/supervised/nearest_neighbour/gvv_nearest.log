@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  25 JAN 2019 19:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  5 FEB 2019 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1313,15 +1313,8 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 300.
 (./gvv_nearest.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 300.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 300.
-
-
-Package rerunfilecheck Warning: File `gvv_nearest.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `gvv_nearest.out':
-(rerunfilecheck)             Before: 81A7BDA4C6CDAB6B218DF37CBA22AE20;91
-(rerunfilecheck)             After:  E4B4A0F816D9AB62EB808A441F5CFD7C;94.
+Package rerunfilecheck Info: File `gvv_nearest.out' has not changed.
+(rerunfilecheck)             Checksum: E4B4A0F816D9AB62EB808A441F5CFD7C;94.
  ) 
 Here is how much of TeX's memory you used:
  23936 strings out of 494591
@@ -1332,4 +1325,4 @@ Here is how much of TeX's memory you used:
  17 hyphenation exceptions out of 8191
  54i,14n,67p,797b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_nearest.dvi (1 page, 14116 bytes).
+Output written on gvv_nearest.dvi (1 page, 14124 bytes).

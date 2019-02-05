@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.1)  1 FEB 2019 12:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  5 FEB 2019 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **gvv_decision.tex
 (./gvv_decision.tex
 LaTeX2e <2018-04-01> patch level 2
-Babel <3.18> and hyphenation patterns for 85 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IE
 EEtran.cls
@@ -1318,12 +1318,12 @@ Package rerunfilecheck Info: File `gvv_decision.out' has not changed.
 (rerunfilecheck)             Checksum: E040CF8288E40E56D5EFEBFD7B9B7615;94.
  ) 
 Here is how much of TeX's memory you used:
- 23938 strings out of 492645
- 472068 string characters out of 6118921
- 572127 words of memory out of 5000000
- 27386 multiletter control sequences out of 15000+600000
+ 23938 strings out of 494591
+ 472068 string characters out of 6176027
+ 567166 words of memory out of 5000000
+ 27135 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
- 1144 hyphenation exceptions out of 8191
+ 17 hyphenation exceptions out of 8191
  54i,11n,67p,798b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on gvv_decision.dvi (1 page, 13692 bytes).

@@ -270,38 +270,6 @@ containing the vectors
 lies outside $P$.
 \item Find the point $\vec{b}_0 \in P$ closest to $\vec{b}$.
 \end{enumerate}
-\section{Calculus}
-\begin{enumerate}[label=\thesection.\arabic*
-,ref=\thesection.\theenumi]
-\item Find
-\begin{align}
-\norm{\vec{y}-A\vec{w}}^2
-\end{align}
-\solution
-\begin{align}
-\norm{\vec{y}-A\vec{w}}^2 &= \brak{\vec{y}-A\vec{w}}^T\brak{\vec{y}-A\vec{w}}
-\\
-&= \norm{\vec{y}}^2 - \vec{w}^TA^T\vec{y} 
-\\
-& \quad - \vec{y}^TA\vec{w}+\vec{w}^TA^TA\vec{w}
-\end{align}
-%
-\item Assuming $2\times 2$ matrices and $2 \times 1$ vectors, show that
-\begin{align}
-\frac{\partial}{\partial\vec{w}}\vec{w}^TA^T\vec{y} = \frac{\partial}{\partial\vec{w}}\vec{y}^TA\vec{w} = 
-\vec{y}^TA
-\end{align}
-\item Show that
-\begin{align}
-\frac{\partial}{\partial\vec{w}}\vec{w}^TA^TA\vec{w} = 2\vec{w}^T\brak{A^TA}
-\end{align}
-\item Find
-\begin{align}
-\hat{\vec{w}} = \min_{\vec{w}}\norm{\vec{y}-A\vec{w}}^2
-\end{align}
-\item Use the above result to verify your solution in the previous section
-\end{enumerate}
-%
 \section{Application}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
