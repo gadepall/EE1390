@@ -250,6 +250,54 @@ Linear Regression
 	
 This manual provides an introduction to linear lethods in regression.
 \end{abstract}
+%
+\section{Steinhart–Hart Equation}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+%
+\item The Steinhart–Hart equation is a model of the resistance of a 
+thermistor at different temperatures. The equation is given by
+\begin{equation}
+\label{eq:ls_steiner}
+\frac{1}{ \tau}=w_1+w_2\ln(R)+w_3[\ln(R)]^{3}
+\end{equation}
+%
+Let
+\begin{align}
+\vec{x}_1 &= \myvec{1 \\ \ln(R_1)\\\sbrak{\ln(R_1)}^{3}}
+\\
+{y}_1 &=  \frac{1}{\tau_1}
+\\
+\vec{w} &= \myvec{w_1\\ w_2\\w_3 }
+\end{align}
+%
+Show that
+\begin{equation}
+{y}_1 =  \vec{x}_1^T\vec{w}
+\end{equation}
+\item Suppose for $n > 3$
+\begin{align}
+\vec{y} = \myvec{y_1 \\ y_2\\ \vdots \\ y_n},
+\vec{X}^T  = \myvec{\vec{x}_1& \vec{x}_2 & \vdots &\vec{x}_n },
+\end{align}
+%
+show that 
+\begin{equation}
+\vec{y} = \vec{X}\vec{w}
+\end{equation}
+%
+\item For $\tau = 10^{\degree} C - 100^{\degree} C$, use the PT-100 resistance table in
+\begin{lstlisting}
+https://github.com/gadepall/EE1390/blob/master/refs/5pt100sensoren_e.pdf?raw=true
+\end{lstlisting}
+to estimate $\vec{w}$ 
+using 
+the relation
+\begin{equation}
+\hat{\vec{w}} = \brak{\vec{X}^T\vec{X}}^{-1}\vec{X}^T\vec{y}
+\end{equation}
+\item Verify your result by finding the temperature when the resistance is $175.86\Omega$.
+\end{enumerate}
 
 \section{Least Squares}
 \begin{enumerate}[label=\thesection.\arabic*

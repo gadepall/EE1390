@@ -1,3 +1,4 @@
-\contentsline {section}{\numberline {1}Least Squares}{1}{section.1}
-\contentsline {section}{\numberline {2}Ridge Regression}{1}{section.2}
-\contentsline {section}{\numberline {3}The Lasso}{1}{section.3}
+\contentsline {section}{\numberline {1}Steinhart\IeC {\textendash }Hart Equation}{1}{section.1}
+\contentsline {section}{\numberline {2}Least Squares}{1}{section.2}
+\contentsline {section}{\numberline {3}Ridge Regression}{2}{section.3}
+\contentsline {section}{\numberline {4}The Lasso}{2}{section.4}
