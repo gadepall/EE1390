@@ -251,21 +251,32 @@ Statistical Decision Theory
 This manual provides an introduction to statistical decision theory.
 \end{abstract}
 %
-\section{Introduction}
+\section{Mean Square Error}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
-\item Let 
+\item Let $\brak{\vec{X},Y}$ be an input/output dataset, whose relation is unknown.  If 
 \begin{align}
-Y = f \brak{\vec{X}}
+\hat{Y} = f \brak{\vec{X}}
 \end{align}
-The {\em mean square error} (MSE) is defined as
+be the estimate of $Y$, the {\em loss} in the estimate is defined as
 \begin{align}
-MSE(f) = E\sbrak{Y - f\brak{\vec{X}}}^2
+L\brak{Y,\hat{Y}} = L\brak{f}
+\end{align}
+
+\item Let
+\begin{align}
+L\brak{f} = \brak{Y - \hat{Y}}^2
 \end{align}
 %
+Then
+\begin{align}
+E\sbrak{L\brak{f}} 
+\end{align}
+%
+is defined as the {\em mean square error} (MSE).
 Show that
 \begin{align}
-MSE(f) = E_\vec{X}\cbrak{E_Y\sbrak{Y - f\brak{\vec{x}}}^2|\vec{X}= \vec{x}}
+E\sbrak{L(f)} = E_\vec{X}\cbrak{E_Y\sbrak{Y - f\brak{\vec{x}}}^2|\vec{X}= \vec{x}}
 \label{eq:mse_cond}
 \end{align}
 %
@@ -276,22 +287,22 @@ c= f\brak{\vec{x}}
 %
 Using \eqref{eq:mse_cond}
 \begin{multline}
-\min MSE(f) = \min MSE(f)|X 
+\min E\sbrak{L(f}) = \min L(f)|\vec{X} 
 \\
 = \min_{c}E_Y\cbrak{\sbrak{Y - c}^2|\vec{X}= \vec{x}}
 \end{multline}
 %
 Show that 
 \begin{multline}
-MSE(f)|X = E_Y\cbrak{\sbrak{Y - c}^2|\vec{X}= \vec{x}} 
+L(f)|\vec{X} = E_Y\cbrak{\sbrak{Y - c}^2|\vec{X}= \vec{x}} 
 \\
 = -2cE_Y\cbrak{Y|\vec{X}= \vec{x}}
 +E_Y\cbrak{Y^2 
 |\vec{X}= \vec{x}}+ c^2
 \end{multline}
-\item $MSE(f)$ is minimum when 
+\item $L(f)$ is minimum when 
 \begin{align}
-\frac{d}{dc}MSE(f)|X= 0.
+\frac{d}{dc}L(f)|\vec{X}= 0.
 \end{align}
 %
 Show that this results in 
@@ -301,12 +312,54 @@ c = f\brak{\vec{x}}= E\sbrak{Y|X=\vec{x}}
 \end{align}
 $f$ is known as the {\em regression} function.
 \end{enumerate}
-\section{Applications}
+\section{Bayes Classifier}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Let $\brak{\vec{X},\vec{G}}$ be an input/output dataset, whose relation $f$ is unknown. Also
+\begin{align}
+\vec{g}\in\vec{G} = \cbrak{\vec{g}_k}_{k=1}^{K}
+%\\
+%\hat{\vec{G}} &= f\brak{\vec{X}}
+\end{align}
+Let 
+\begin{align}
+C\brak{\vec{g}_k,\vec{g}_l} =
+\begin{cases}
+1 & k= l
+\\
+0 & k\ne l
+\end{cases}
+\end{align}
+%
+where $\vec{g}_i$ are different classes of output data. Thus $C$ is a {\em correctness} metric.
+\item Show that 
+\begin{align}
+\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} 
+= \max_{\vec{g}\in\vec{G}}p\brak{\vec{g}|\vec{X}=\vec{x}} 
+\end{align}
+\solution In the above, 
+\begin{multline}
+\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} 
+\\
+= \max_{\vec{g}\in\vec{G}}E_\vec{X}\sbrak{E_{\vec{G}}\cbrak{C\brak{\vec{G},f\brak{\vec{x}}}}} 
+\end{multline}
+
+\begin{align}
+&=\max_{\vec{g}\in\vec{G}}\sum_{k=1}^{K}L\cbrak{\vec{g}_k,\vec{g}}p\brak{\vec{g}_k|\vec{X}=\vec{x}} 
+\end{align}
+where
+\begin{align}
+\sum_{k=1}^{K}p\brak{\vec{g}_k|\vec{X}=\vec{x}} = 1
+\end{align}
+\item Repeat the exercise for the least squares method.
+\end{enumerate}
+%
+\section{Exercises}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
 \item Explain how \eqref{eq:opt_mse} can be used to obtain the  Nearest 
 Neighbour approximation.
 \item Repeat the exercise for the least squares method.
 \end{enumerate}
-%
+
 \end{document}
