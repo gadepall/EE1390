@@ -312,47 +312,6 @@ c = f\brak{\vec{x}}= E\sbrak{Y|X=\vec{x}}
 \end{align}
 $f$ is known as the {\em regression} function.
 \end{enumerate}
-\section{Bayes Classifier}
-\begin{enumerate}[label=\thesection.\arabic*
-,ref=\thesection.\theenumi]
-\item Let $\brak{\vec{X},\vec{G}}$ be an input/output dataset, whose relation $f$ is unknown. Also
-\begin{align}
-\vec{g}\in\vec{G} = \cbrak{\vec{g}_k}_{k=1}^{K}
-%\\
-%\hat{\vec{G}} &= f\brak{\vec{X}}
-\end{align}
-Let 
-\begin{align}
-C\brak{\vec{g}_k,\vec{g}_l} =
-\begin{cases}
-1 & k= l
-\\
-0 & k\ne l
-\end{cases}
-\end{align}
-%
-where $\vec{g}_i$ are different classes of output data. Thus $C$ is a {\em correctness} metric.
-\item Show that 
-\begin{align}
-\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} 
-= \max_{\vec{g}\in\vec{G}}p\brak{\vec{g}|\vec{X}=\vec{x}} 
-\end{align}
-\solution In the above, 
-\begin{multline}
-\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} 
-\\
-= \max_{\vec{g}\in\vec{G}}E_\vec{X}\sbrak{E_{\vec{G}}\cbrak{C\brak{\vec{G},f\brak{\vec{x}}}}} 
-\end{multline}
-
-\begin{align}
-&=\max_{\vec{g}\in\vec{G}}\sum_{k=1}^{K}L\cbrak{\vec{g}_k,\vec{g}}p\brak{\vec{g}_k|\vec{X}=\vec{x}} 
-\end{align}
-where
-\begin{align}
-\sum_{k=1}^{K}p\brak{\vec{g}_k|\vec{X}=\vec{x}} = 1
-\end{align}
-\item Repeat the exercise for the least squares method.
-\end{enumerate}
 %
 \section{Exercises}
 \begin{enumerate}[label=\thesection.\arabic*

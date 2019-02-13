@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  5 FEB 2019 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  13 FEB 2019 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1251,35 +1251,35 @@ LaTeX Info: Redefining \nameref on input line 122.
 File: iith_logo.eps Graphic file (type eps)
 
 <iith_logo.eps>
-LaTeX Font Info:    Calculating math sizes for size <24> on input line 240.
-LaTeX Font Info:    Try loading font information for U+txsya on input line 240.
+LaTeX Font Info:    Calculating math sizes for size <24> on input line 243.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 243.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 sya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 240.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 243.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 syb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 240.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 243.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ur
 sfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 240.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 243.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 mia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 240.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 243.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
@@ -1288,7 +1288,7 @@ File: utxsyc.fd 2000/12/15 v3.1
 )
 File: tlc.eps Graphic file (type eps)
  <tlc.eps>
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 240.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 243.
 File: iith_logo.eps Graphic file (type eps)
  <iith_logo.eps>
 File: tlc.eps Graphic file (type eps)
@@ -1301,30 +1301,60 @@ File: tlc.eps Graphic file (type eps)
 \tf@toc=\write6
 \openout6 = `gvv_linear_class.toc'.
 
+ (./codes/1.1.py) (./codes/1.2.py
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 15.
 
-Underfull \hbox (badness 2635) in paragraph at lines 285--286
-[]\OT1/txr/m/n/12 Using the Gram-Schmidt or-thog-o-nal-iza-tion
- []
+(/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/oms
+txr.fd
+File: omstxr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 15.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[1
+ [1
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
+(./codes/1.3.py
+LaTeX Font Info:    Try loading font information for OML+txr on input line 14.
+
+(/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/oml
+txr.fd
+File: omltxr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
+(Font)              Font shape `OML/txmi/m/it' tried instead on input line 14.
+)
+File: ./figs/ch1_prob3_fig.eps Graphic file (type eps)
+ <./figs/ch1_prob3_fig.eps> (./codes/1.4.py [2])
+File: ./figs/ch1_prob4_fig.eps Graphic file (type eps)
+
+<./figs/ch1_prob4_fig.eps> (./codes/2.1.py)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Underfull \hbox (badness 2635) in paragraph at lines 534--535
+[]\OT1/txr/m/n/12 Using the Gram-Schmidt or-thog-o-nal-iza-tion
+ []
+
+[4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 578.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 578.
  (./gvv_linear_class.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 329.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 578.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 578.
 Package rerunfilecheck Info: File `gvv_linear_class.out' has not changed.
-(rerunfilecheck)             Checksum: 25B09BE5A042BCE1782AB30E1BDC329D;143.
+(rerunfilecheck)             Checksum: 32BE7E5EBD94F20297F02BFD0BF12D41;426.
  ) 
 Here is how much of TeX's memory you used:
- 23937 strings out of 494591
- 472114 string characters out of 6176027
- 567170 words of memory out of 5000000
- 27134 multiletter control sequences out of 15000+600000
+ 24271 strings out of 494591
+ 475334 string characters out of 6176027
+ 722170 words of memory out of 5000000
+ 27442 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 54i,10n,67p,802b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,13n,67p,802b,1881s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_linear_class.dvi (1 page, 16012 bytes).
+Output written on gvv_linear_class.dvi (4 pages, 65088 bytes).

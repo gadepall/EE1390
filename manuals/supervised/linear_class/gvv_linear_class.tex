@@ -168,6 +168,7 @@ columns=fullflexible
 \providecommand{\mtx}[1]{\mathbf{#1}}
 \providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+\providecommand{\gauss}[2]{\mathcal{N}\ensuremath{\left(#1,#2\right)}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
@@ -223,6 +224,8 @@ columns=fullflexible
 
 \vspace{3cm}
 
+
+
 \title{ 
 	\logo{
 Linear Classification
@@ -250,6 +253,252 @@ Linear Classification
 	
 This manual provides an introduction to linear lethods in regression.
 \end{abstract}
+
+\section{The Gaussian Distribution}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+
+\item
+\label{ch1_prob1}
+Generate a Gaussian random number with 0 mean and unit variance.
+
+%
+\solution Open a text editor and type the following program.
+
+%%
+\lstinputlisting{./codes/1.1.py}
+%%
+Save the file as gaussian\_no.py and run the program.
+%
+\item
+The mean of a random variable $X$ is defined as
+%
+\begin{equation}
+E\sbrak{X} = \frac{1}{N}\sum_{i=1}^{N}X_i
+\end{equation}
+%
+and its variance as
+%
+\begin{equation}
+\text{var}\sbrak{X} = E\sbrak{X- E\sbrak{X}}^2 
+\end{equation}
+%
+Verify that the program in \ref{ch1_prob1} actually generates a Gaussian random variable with 0 mean and unit variance.
+
+\solution  Use the header in the previous program, type the following code and execute.
+\lstinputlisting{./codes/1.2.py}
+%
+%
+\item
+Using the previous program, verify you results for different values of the mean and variance.
+
+\end{enumerate}
+
+\section{CDF and PDF}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+
+\item
+A Gaussian random variable $X$ with mean 0 and unit variance can be expressed as $X \sim \mathcal{N}\brak{0,1}$. Its cumulative distribution function (CDF) is defined as
+\begin{equation}
+F_X(x) = \pr{X < x}, 
+\end{equation}
+Plot $F_X(x)$.
+
+\solution  The following code yields Fig. \ref{ch1_prob3_fig}.
+\lstinputlisting{./codes/1.3.py}
+%
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./figs/ch1_prob3_fig}
+\caption{CDF of $X$}
+\label{ch1_prob3_fig}
+\end{figure}
+%
+\item
+List the properties of $F_X(x)$ based on Fig. \ref{ch1_prob3_fig}.
+
+%
+\item
+Let
+%
+\begin{equation}
+p_{X}(x_i) = \frac{F_{X}(x_i)-F_{X}(x_{i-1})}{h}, i = 1, 2, \dots
+{h}
+\end{equation}
+%
+for $x_i = x_{i-1}+h, x_1 = -4$. Plot $p_X(x_i)$.  On the same graph, plot
+%
+\begin{equation}
+p_{X}(x) = \frac{1}{\sqrt{2\pi}}e^{-x^2/2}, - 4 < x < 4
+\end{equation}
+%
+
+%
+\solution The following code yields the graph in Fig. \ref{ch1_prob4_fig}
+\lstinputlisting{./codes/1.4.py}
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./figs/ch1_prob4_fig}
+\caption{The PDF of $X$}
+\label{ch1_prob4_fig}
+\end{figure}
+%
+Thus, the PDF is the derivative of the CDF.  For $X\sim \mathcal{N}\brak{0,1}$, the PDF is
+%
+\begin{equation}
+p_{X}(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}, \quad -\infty < x < \infty
+\end{equation}
+\item
+%
+For $X\sim \mathcal{N}\brak{\mu,\sigma^2}$,
+\begin{equation}
+p_{X}(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{\brak{x-\mu}^2}{2\sigma^2}}, \quad -\infty < x < \infty
+\end{equation}
+Plot $p_{X}(x)$ for different values of $\mu$ and $\sigma$ in the same graph.  Comment.
+
+\end{enumerate}
+
+\section{Detection \& Estimation}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+
+\item
+Let $X \in \cbrak{1,-1}$.  Generate $X$ such that the numbers 1 and -1 appear with equal probability.  This is a random variable formulation of the coin tossing experiment.
+
+\solution  The following script generates the numbers 1 and -1 with 
+equal probability.
+\lstinputlisting{./codes/2.1.py}
+%
+\item
+Verify that the script in the previous problem generates equiprobable symbols.
+
+\item
+Suppose $X \in \cbrak{1,-1}$ and 
+%
+\begin{equation}
+Y = AX + N
+\end{equation}
+%
+where $N \sim \gauss{0}{1}$ and $A = 4$.  Obtain a scatterplot of  $\brak{X,Y}$.
+
+%\solution The following code yields Fig. \ref{ch2_bpsk_sim}
+%\lstinputlisting{./codes/2.3.py}
+%%
+%\begin{figure}
+%\centering
+%\includegraphics[width=\columnwidth]{./figs/ch2_bpsk_sim}
+%\caption{Plot of $Y$}
+%\label{ch2_bpsk_sim}
+%\end{figure}
+%
+\item
+Given $Y$ in the previous problem, how would you decide whether $X$ is 1
+or -1.
+
+%
+\item
+Suppose $X=1$ and $\hat{X}$ is what you detected.  Find $\pr{\hat{X}=-1/X=1}$.
+
+%
+\item
+Plot  $\pr{\hat{X}=-1/X=1}$ with respect to $A$.
+
+%
+\item
+For $X \sim \mathcal{N}\brak{0,1}$, the $Q$-function is defined as
+\begin{equation}
+Q(x) = \pr{X > x}, \quad x > 0
+\end{equation}
+Express $\pr{\hat{X}=-1/X=1}$ in terms of the $Q$-function. Plot this expression with respect to $A$ and compare with the result obtained through simulation.
+
+%
+\item
+The signal to noise ratio of the above system is defined as 
+\begin{equation}
+SNR = \frac{A^2}{\mean{N^2}}
+\end{equation}
+Plot the thoeretical and simulated values of $\pr{\hat{X}=-1/X=1}$ for the SNR ranging from 0 to 10 dB.
+
+%
+\item
+Now consider a threshold $\lambda > 0$ and find the average probability of error. Plot this with respect to $\lambda$.
+
+%
+\item
+From the graph in the previous problem, find the optimum threshold so that the probability of error is minimum.
+\end{enumerate}
+
+%
+\section{The MAP criterion}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+
+%
+\item A Gaussian random variable $Y\sim\gauss{\mu}{\sigma^2}$ has the pdf
+%
+\begin{equation}
+p_{Y}(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\brak{x-\mu}^2/2\sigma^2} - \infty < x < \infty
+\end{equation}
+%
+\item Plot
+\begin{equation}
+p_{Y}(Y|X=1) \text{ and } p_{Y}(Y|X=-1)
+\end{equation}
+in the same graph with respect to $A$.
+
+
+\item
+Graphically obtain the decision resulting from
+\begin{equation}
+p_{Y}(Y|X=1) \dec{1}{-1} p_{Y}(Y|X=-1)
+\end{equation}
+Comment.
+\end{enumerate}
+
+
+\section{Bayes Classifier}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Let $\brak{\vec{X},\vec{G}}$ be an input/output dataset, whose relation $f$ is unknown. Also
+\begin{align}
+\vec{g}\in\vec{G} = \cbrak{\vec{g}_k}_{k=1}^{K}
+%\\
+%\hat{\vec{G}} &= f\brak{\vec{X}}
+\end{align}
+Let 
+\begin{align}
+\label{eq:bayes_correct}
+C\brak{\vec{g}_k,\vec{g}_l} =
+\begin{cases}
+1 & k= l
+\\
+0 & k\ne l
+\end{cases}
+\end{align}
+%
+where $\vec{g}_i$ are different classes of output data. Thus $C$ is a {\em correctness} metric.
+\item Show that 
+\begin{align}
+\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} 
+= \max_{\vec{g}\in\vec{G}}p\brak{\vec{g}|\vec{X}=\vec{x}} 
+\end{align}
+\solution In the above, 
+\begin{multline}
+\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} 
+\\
+= \max_{\vec{g}\in\vec{G}}E_\vec{X}\sbrak{E_{\vec{G}}\cbrak{C\brak{\vec{G},f\brak{\vec{x}}}}} 
+\end{multline}
+
+\begin{align}
+&=\max_{\vec{g}\in\vec{G}}\sum_{k=1}^{K}C\cbrak{\vec{g}_k,\vec{g}}p\brak{\vec{g}_k|\vec{X}=\vec{x}} 
+\end{align}
+From \eqref{eq:bayes_correct}, the above expression simplifies to
+\begin{align}
+\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} =\max_{\vec{g}\in\vec{G}}p\brak{\vec{g}|\vec{X}=\vec{x}} 
+\end{align}
+
+\end{enumerate}
 
 \section{Least Discriminant Analysis}
 \begin{enumerate}[label=\thesection.\arabic*

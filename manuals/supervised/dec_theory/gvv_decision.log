@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.1)  12 FEB 2019 18:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  13 FEB 2019 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **gvv_decision.tex
 (./gvv_decision.tex
 LaTeX2e <2018-04-01> patch level 2
-Babel <3.18> and hyphenation patterns for 85 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IE
 EEtran.cls
@@ -1304,33 +1304,28 @@ File: tlc.eps Graphic file (type eps)
 
 
 ]
-Underfull \hbox (badness 1975) in paragraph at lines 354--355
+Underfull \hbox (badness 1975) in paragraph at lines 363--364
 []\OT1/txr/m/n/12 Repeat the ex-er-cise for the least squares
  []
 
-
-Underfull \hbox (badness 1975) in paragraph at lines 362--363
-[]\OT1/txr/m/n/12 Repeat the ex-er-cise for the least squares
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 365.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 366.
 [2
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 365.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 366.
  (./gvv_decision.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 365.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 365.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 366.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 366.
 Package rerunfilecheck Info: File `gvv_decision.out' has not changed.
 (rerunfilecheck)             Checksum: AC33DFF58F5DB91D83342D6686BAE107;147.
  ) 
 Here is how much of TeX's memory you used:
- 23939 strings out of 492645
- 472079 string characters out of 6118921
- 574127 words of memory out of 5000000
- 27387 multiletter control sequences out of 15000+600000
+ 23940 strings out of 494591
+ 472097 string characters out of 6176027
+ 569166 words of memory out of 5000000
+ 27137 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
- 1144 hyphenation exceptions out of 8191
+ 17 hyphenation exceptions out of 8191
  54i,13n,67p,798b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_decision.dvi (2 pages, 18940 bytes).
+Output written on gvv_decision.dvi (2 pages, 19064 bytes).
