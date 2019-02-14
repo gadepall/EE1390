@@ -1,8 +1,6 @@
 \BOOKMARK [1][-]{section.1}{The Gaussian Distribution}{}% 1
 \BOOKMARK [1][-]{section.2}{CDF and PDF}{}% 2
 \BOOKMARK [1][-]{section.3}{Detection \046 Estimation}{}% 3
-\BOOKMARK [1][-]{section.4}{The MAP criterion}{}% 4
-\BOOKMARK [1][-]{section.5}{Bayes Classifier}{}% 5
-\BOOKMARK [1][-]{section.6}{Least Discriminant Analysis}{}% 6
-\BOOKMARK [1][-]{section.7}{Ridge Regression}{}% 7
-\BOOKMARK [1][-]{section.8}{The Lasso}{}% 8
+\BOOKMARK [1][-]{section.4}{Bayes Classifier}{}% 4
+\BOOKMARK [1][-]{section.5}{Linear Discriminant Analysis}{}% 5
+\BOOKMARK [1][-]{section.6}{Quadratic Discriminant Analysis}{}% 6

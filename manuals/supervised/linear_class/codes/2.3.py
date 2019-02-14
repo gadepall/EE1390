@@ -10,13 +10,6 @@ def coin(x):
 
 simlen = int(1e5)
 N = np.random.normal(0,1,simlen)
-X = coin(simlen)
+S = coin(simlen)
 A = 4
-Y = A*X+N
-
-plt.plot(Y,'o')
-plt.xlabel('$Sample}$')
-plt.ylabel('$Y$')
-plt.grid()
-plt.show()
-
+X = A*S+N

@@ -336,7 +336,9 @@ p_{X}(x) = \frac{1}{\sqrt{2\pi}}e^{-x^2/2}, - 4 < x < 4
 
 %
 \solution The following code yields the graph in Fig. \ref{ch1_prob4_fig}
-\lstinputlisting{./codes/1.4.py}
+\begin{lstlisting}
+https://github.com/gadepall/EE1390/raw/master/manuals/supervised/linear_class/codes/1.4.py
+\end{lstlisting}
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{./figs/ch1_prob4_fig}
@@ -363,27 +365,32 @@ Plot $p_{X}(x)$ for different values of $\mu$ and $\sigma$ in the same graph.  C
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
 
-\item
-Let $X \in \cbrak{1,-1}$.  Generate $X$ such that the numbers 1 and -1 appear with equal probability.  This is a random variable formulation of the coin tossing experiment.
-
-\solution  The following script generates the numbers 1 and -1 with 
-equal probability.
-\lstinputlisting{./codes/2.1.py}
+%\item
+%Let $Y \in \cbrak{1,-1}$.  Generate $S$ such that the numbers 1 and -1 appear with equal probability.  This is 
+%a random variable formulation of the coin tossing experiment.
 %
-\item
-Verify that the script in the previous problem generates equiprobable symbols.
+%\solution  The following script generates the numbers 1 and -1 with 
+%equal probability.
+%\lstinputlisting{./codes/2.1.py}
+%%
+%\item
+%Verify that the script in the previous problem generates equiprobable symbols.
 
-\item
-Suppose $X \in \cbrak{1,-1}$ and 
+%\item
+%Suppose $S \in \cbrak{1,-1}$ and 
+%%
+%\begin{equation}
+%X = AS + N
+%\end{equation}
+%%
+%where $N \sim \gauss{0}{1}$ and $A = 4$.  Obtain a scatterplot of  $\brak{X,0}$.
 %
-\begin{equation}
-Y = AX + N
-\end{equation}
+%\solution 
+\item Use the following code 
+%%Fig. \ref{ch2_bpsk_sim}
+\lstinputlisting{./codes/2.3.py}
 %
-where $N \sim \gauss{0}{1}$ and $A = 4$.  Obtain a scatterplot of  $\brak{X,Y}$.
-
-%\solution The following code yields Fig. \ref{ch2_bpsk_sim}
-%\lstinputlisting{./codes/2.3.py}
+to generate $X$. Obtain a scatterplot of $X$.
 %%
 %\begin{figure}
 %\centering
@@ -393,69 +400,41 @@ where $N \sim \gauss{0}{1}$ and $A = 4$.  Obtain a scatterplot of  $\brak{X,Y}$.
 %\end{figure}
 %
 \item
-Given $Y$ in the previous problem, how would you decide whether $X$ is 1
-or -1.
-
+Suppose you wanted to classify  $X$ into two groups.  How would you do so by looking at the scatterplot?
+%$Y$ is 1 or -1.
 %
-\item
-Suppose $X=1$ and $\hat{X}$ is what you detected.  Find $\pr{\hat{X}=-1/X=1}$.
-
+%\item
+%Suppose $S=1$ and $Y$ is what you detected.  Find $\pr{\hat{Y}=-1/S=1}$.
 %
-\item
-Plot  $\pr{\hat{X}=-1/X=1}$ with respect to $A$.
-
+%%
+%\item
+%Plot  $\pr{Y=-1|S=1}$ with respect to $A$.
 %
-\item
-For $X \sim \mathcal{N}\brak{0,1}$, the $Q$-function is defined as
-\begin{equation}
-Q(x) = \pr{X > x}, \quad x > 0
-\end{equation}
-Express $\pr{\hat{X}=-1/X=1}$ in terms of the $Q$-function. Plot this expression with respect to $A$ and compare with the result obtained through simulation.
-
+%%
+%\item
+%For $X \sim \mathcal{N}\brak{0,1}$, the $Q$-function is defined as
+%\begin{equation}
+%Q(x) = \pr{X > x}, \quad x > 0
+%\end{equation}
+%Express $\pr{Y=-1|S=1}$ in terms of the $Q$-function. Plot this expression with respect to $A$ 
+%from 0 to 10 dB and compare with the result obtained through simulation.
 %
-\item
-The signal to noise ratio of the above system is defined as 
-\begin{equation}
-SNR = \frac{A^2}{\mean{N^2}}
-\end{equation}
-Plot the thoeretical and simulated values of $\pr{\hat{X}=-1/X=1}$ for the SNR ranging from 0 to 10 dB.
-
 %
-\item
-Now consider a threshold $\lambda > 0$ and find the average probability of error. Plot this with respect to $\lambda$.
-
+%\item
+%Now consider a threshold $\lambda > 0$ and find the average probability of error. Plot this with respect to $\lambda$.
 %
-\item
-From the graph in the previous problem, find the optimum threshold so that the probability of error is minimum.
+%%
+%\item
+%From the graph in the previous problem, find the optimum threshold so that the probability of error is minimum.
+%\item
+%The signal to noise ratio of the above system is defined as 
+%\begin{equation}
+%SNR = \frac{A^2}{\mean{N^2}}
+%\end{equation}
+
 \end{enumerate}
 
 %
-\section{The MAP criterion}
-\begin{enumerate}[label=\thesection.\arabic*
-,ref=\thesection.\theenumi]
-
-%
-\item A Gaussian random variable $Y\sim\gauss{\mu}{\sigma^2}$ has the pdf
-%
-\begin{equation}
-p_{Y}(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\brak{x-\mu}^2/2\sigma^2} - \infty < x < \infty
-\end{equation}
-%
-\item Plot
-\begin{equation}
-p_{Y}(Y|X=1) \text{ and } p_{Y}(Y|X=-1)
-\end{equation}
-in the same graph with respect to $A$.
-
-
-\item
-Graphically obtain the decision resulting from
-\begin{equation}
-p_{Y}(Y|X=1) \dec{1}{-1} p_{Y}(Y|X=-1)
-\end{equation}
-Comment.
-\end{enumerate}
-
 
 \section{Bayes Classifier}
 \begin{enumerate}[label=\thesection.\arabic*
@@ -499,81 +478,50 @@ From \eqref{eq:bayes_correct}, the above expression simplifies to
 \end{align}
 
 \end{enumerate}
+\section{Linear Discriminant Analysis}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
 
-\section{Least Discriminant Analysis}
+%
+%\item A Gaussian random variable $X\sim\gauss{\mu}{\sigma^2}$ has the pdf
+%
+%\begin{equation}
+%p_{X}(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\brak{x-\mu}^2/2\sigma^2} - \infty < x < \infty
+%\end{equation}
+%
+\item If
+\begin{align}
+\brak{X=x|G=1} &\sim \gauss{-A}{1}
+\\
+\brak{X=x|G=1} &\sim \gauss{A}{1}
+\end{align}
+plot $p_{X}(X=x|G=0)$ and   $p_{X}(X=x|G=1)$ for $A = 4$.
+\item Find
+\begin{equation}
+p_{X}(X=x|G=0) \dec{0}{1} p_{X}(X=x|G=1)
+\end{equation}
+
+\item Show that 
+\begin{align}
+p_{X}(G=0|X=x) &\dec{0}{1} p_{X}(G=1|X=x) 
+\\
+\implies p_{X}(X=x|G=0) &\dec{0}{1} p_{X}(X=x|G=1)
+\end{align}
+if
+\begin{equation}
+p(G=0)=p(G=1)
+\end{equation}
+
+\end{enumerate}
+
+
+\section{Quadratic Discriminant Analysis}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
 \item Find
-\begin{align}
-\norm{\vec{y}-\vec{X}\vec{w}}^2
-\end{align}
-\solution
-\begin{align}
-\norm{\vec{y}-\vec{X}\vec{w}}^2 &= \brak{\vec{y}-\vec{X}\vec{w}}^T\brak{\vec{y}-\vec{X}\vec{w}}
-\\
-&= \norm{\vec{y}}^2 - \vec{w}^T\vec{X}^T\vec{y} 
-\\
-& \quad - \vec{y}^TA\vec{w}+\vec{w}^T\vec{X}^T\vec{X}\vec{w}
-\end{align}
-%
-\item Assuming $2\times 2$ matrices and $2 \times 1$ vectors, show that
-\begin{align}
-\frac{\partial}{\partial\vec{w}}\vec{w}^T\vec{X}^T\vec{y} = \frac{\partial}{\partial\vec{w}}\vec{y}^T\vec{X}\vec{w} = 
-\vec{y}^T\vec{X}
-\end{align}
-\item Show that
-\begin{align}
-\frac{\partial}{\partial\vec{w}}\vec{w}^T\vec{X}^T\vec{X}\vec{w} = 2\vec{w}^T\brak{\vec{X}^T\vec{X}}
-\end{align}
-\item Show that 
-\begin{align}
-\hat{\vec{w}} &= \min_{\vec{w}}\norm{\vec{y}-\vec{X}\vec{w}}^2
-\\
- &= \brak{\vec{X}^T\vec{X}}^{-1}\vec{X}^T \vec{y}
-\end{align}
-\item  Using the Gram-Schmidt orthogonalization procedure, show that 
-\begin{align}
-\vec{X} = \vec{Q}\vec{R}
-\end{align}
-%
-where $\vec{Q}^T\vec{Q} = \vec{I}$ and $\vec{R}$ is upper triangular.
-\item Show that  
-\begin{align}
-\hat{\vec{w}} =\vec{R} \vec{Q}^T \vec{y}
-\end{align}
-%
-\item Find $ \hat{\vec{y}}$
 
 \end{enumerate}
 %
-
-%
-\section{Ridge Regression}
-\begin{enumerate}[label=\thesection.\arabic*
-,ref=\thesection.\theenumi]
-\item The ridge problem is defined as
-\begin{align}
-\hat{\vec{w}} = \min_{\vec{w}}\norm{\vec{y}-\vec{X}\vec{w}}
-\\
-\text{s.t } \norm{\vec{w}}^2 \le t
-\end{align}
-Using the Lagrangian, show that
-\begin{align}
-\hat{\vec{w}} = \brak{\vec{X}^T\vec{X}+\lambda \vec{I}}^{-1}\vec{X}^T\vec{y}
-\end{align}
-\end{enumerate}
-\section{The Lasso}
-\begin{enumerate}[label=\thesection.\arabic*
-,ref=\thesection.\theenumi]
-\item The Lasso is defined as
-\begin{align}
-\hat{\vec{w}} = \min_{\vec{w}}\norm{\vec{y}-\vec{X}\vec{w}}
-\\
-\text{s.t } \sum_{i}^{}\abs{w_i} \le t
-\end{align}
-Obtain the corresponding Lagrangian.
-\item Show that this is a quadratic programming problem and find a suitable algorithm.
-\end{enumerate}
 
 \end{document}
 %
