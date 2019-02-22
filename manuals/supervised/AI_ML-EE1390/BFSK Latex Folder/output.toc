@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{BFSK }{2}{0}{1}
+\beamer@sectionintoc {2}{Scatter plot}{2}{0}{2}
+\beamer@sectionintoc {3}{Decision}{2}{0}{3}
+\beamer@sectionintoc {4}{Mathematical Derivation}{2}{0}{4}

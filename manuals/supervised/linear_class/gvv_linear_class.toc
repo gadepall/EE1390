@@ -2,5 +2,5 @@
 \contentsline {section}{\numberline {2}CDF and PDF}{1}{section.2}
 \contentsline {section}{\numberline {3}Detection \& Estimation}{2}{section.3}
 \contentsline {section}{\numberline {4}Bayes Classifier}{3}{section.4}
-\contentsline {section}{\numberline {5}Linear Discriminant Analysis}{3}{section.5}
-\contentsline {section}{\numberline {6}Quadratic Discriminant Analysis}{3}{section.6}
+\contentsline {section}{\numberline {5}Optimum Classifier}{3}{section.5}
+\contentsline {section}{\numberline {6}Linear Discriminant Analysis}{3}{section.6}

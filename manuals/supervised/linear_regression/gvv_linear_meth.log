@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  19 FEB 2019 09:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  20 FEB 2019 15:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1301,32 +1301,37 @@ File: tlc.eps Graphic file (type eps)
 \tf@toc=\write6
 \openout6 = `gvv_linear_meth.toc'.
 
- [1
 
-
-]
-Underfull \hbox (badness 2635) in paragraph at lines 333--334
+Underfull \hbox (badness 2635) in paragraph at lines 264--265
 []\OT1/txr/m/n/12 Using the Gram-Schmidt or-thog-o-nal-iza-tion
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 377.
-[2
+[1
+
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 377.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 308.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 308.
  (./gvv_linear_meth.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 377.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 377.
-Package rerunfilecheck Info: File `gvv_linear_meth.out' has not changed.
-(rerunfilecheck)             Checksum: 03A0A9C01B093DFAB763BB97433122D4;204.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 308.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 308.
+
+
+Package rerunfilecheck Warning: File `gvv_linear_meth.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `gvv_linear_meth.out':
+(rerunfilecheck)             Before: 03A0A9C01B093DFAB763BB97433122D4;204
+(rerunfilecheck)             After:  25B09BE5A042BCE1782AB30E1BDC329D;143.
  ) 
 Here is how much of TeX's memory you used:
- 24199 strings out of 494591
- 474098 string characters out of 6176027
- 576169 words of memory out of 5000000
- 27396 multiletter control sequences out of 15000+600000
+ 23939 strings out of 494591
+ 472125 string characters out of 6176027
+ 566169 words of memory out of 5000000
+ 27136 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 54i,16n,67p,801b,1136s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,10n,67p,801b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_linear_meth.dvi (2 pages, 22168 bytes).
+Output written on gvv_linear_meth.dvi (1 page, 14100 bytes).
