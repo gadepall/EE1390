@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  22 FEB 2019 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.1)  23 FEB 2019 08:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **gvv_linear_class.tex
 (./gvv_linear_class.tex
 LaTeX2e <2018-04-01> patch level 2
-Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 85 language(s) loaded.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IE
 EEtran.cls
@@ -1331,30 +1331,24 @@ LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
 )
 File: ./figs/ch1_prob3_fig.eps Graphic file (type eps)
  <./figs/ch1_prob3_fig.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: ./figs/ch1_prob4_fig.eps Graphic file (type eps)
-
-<./figs/ch1_prob4_fig.eps> (./codes/2.3.py [2])
-Overfull \hbox (1.2272pt too wide) detected at line 531
+ <./figs/ch1_prob4_fig.eps> [2]
+Overfull \hbox (1.2272pt too wide) detected at line 541
  []$[] \OT1/txr/m/n/12 = [] [] []$ []  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 531--534
+Underfull \hbox (badness 10000) in paragraph at lines 541--544
 \OT1/txr/m/n/12 where $\OML/cmm/b/it/12 ^^V$ \OT1/txr/m/n/12 is the mean vec-to
 r,
  []
 
-[3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 619.
- [4
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 619.
+[3] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 673.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 673.
  (./gvv_linear_class.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 619.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 619.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 673.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 673.
 
 
 Package rerunfilecheck Warning: File `gvv_linear_class.out' has changed.
@@ -1362,19 +1356,19 @@ Package rerunfilecheck Warning: File `gvv_linear_class.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `gvv_linear_class.out':
-(rerunfilecheck)             Before: B6FE51F16BB208D870D0F7DA5CB6D8EF;280
-(rerunfilecheck)             After:  B5424CBCB2DA699A2D884B1D6D2404C3;333.
+(rerunfilecheck)             Before: B5424CBCB2DA699A2D884B1D6D2404C3;333
+(rerunfilecheck)             After:  EB7464199BBB66BE7D7A41D6310B30A6;388.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 24409 strings out of 494591
- 477069 string characters out of 6176027
- 699542 words of memory out of 5000000
- 27564 multiletter control sequences out of 15000+600000
+ 24407 strings out of 492645
+ 477049 string characters out of 6118921
+ 723503 words of memory out of 5000000
+ 27816 multiletter control sequences out of 15000+600000
  82890 words of font info for 215 fonts, out of 8000000 for 9000
- 17 hyphenation exceptions out of 8191
- 54i,14n,67p,802b,1869s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 1144 hyphenation exceptions out of 8191
+ 54i,14n,67p,802b,1364s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_linear_class.dvi (4 pages, 51676 bytes).
+Output written on gvv_linear_class.dvi (4 pages, 55956 bytes).

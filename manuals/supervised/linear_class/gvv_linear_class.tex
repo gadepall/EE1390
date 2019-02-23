@@ -388,9 +388,12 @@ Plot $p_{X}(x)$ for different values of $\mu$ and $\sigma$ in the same graph.  C
 %\solution 
 \item Use the following code 
 %%Fig. \ref{ch2_bpsk_sim}
-\lstinputlisting{./codes/2.3.py}
+%\lstinputlisting{./codes/2.3.py}
+\begin{lstlisting}
+https://raw.githubusercontent.com/gadepall/EE1390/master/manuals/supervised/linear_class/codes/2.3.py
+\end{lstlisting}
 %
-to generate $X$. Obtain a scatterplot of $X$.
+to generate  a scatterplot of $X$.
 %%
 %\begin{figure}
 %\centering
@@ -402,34 +405,6 @@ to generate $X$. Obtain a scatterplot of $X$.
 \item Suppose you wanted to classify  $X$ into two groups.  How would you do so by looking at the scatterplot?
 %$Y$ is 1 or -1.
 %
-%\item
-%Suppose $S=1$ and $Y$ is what you detected.  Find $\pr{\hat{Y}=-1/S=1}$.
-%
-%%
-%\item
-%Plot  $\pr{Y=-1|S=1}$ with respect to $A$.
-%
-%%
-%\item
-%For $X \sim \mathcal{N}\brak{0,1}$, the $Q$-function is defined as
-%\begin{equation}
-%Q(x) = \pr{X > x}, \quad x > 0
-%\end{equation}
-%Express $\pr{Y=-1|S=1}$ in terms of the $Q$-function. Plot this expression with respect to $A$ 
-%from 0 to 10 dB and compare with the result obtained through simulation.
-%
-%
-%\item
-%Now consider a threshold $\lambda > 0$ and find the average probability of error. Plot this with respect to $\lambda$.
-%
-%%
-%\item
-%From the graph in the previous problem, find the optimum threshold so that the probability of error is minimum.
-%\item
-%The signal to noise ratio of the above system is defined as 
-%\begin{equation}
-%SNR = \frac{A^2}{\mean{N^2}}
-%\end{equation}
 
 \end{enumerate}
 
@@ -444,7 +419,7 @@ to generate $X$. Obtain a scatterplot of $X$.
 x = A\brak{2s-1} + n
 \end{align}
 %
-where $s \in \brak{0,1}, n \sim \gauss{0}{1}$.
+where $s \in \cbrak{0,1}, n \sim \gauss{0}{1}$.
 
 \item Show that
 \begin{align}
@@ -453,71 +428,106 @@ x|0  &\sim \gauss{-A}{1}
 x|1 &\sim \gauss{A}{1}
 \end{align}
 %plot $p_{X}(X=x|G=0)$ and   $p_{X}(X=x|G=1)$ for $A = 4$.
-
+\solution From the given information, for $s=0$,
+\begin{align}
+x|0  &= -A + n
+\\
+\implies \mean{x|0}  &= -A 
+\\
+\text{and } \mean{\brak{x+A}^2|0}  &= \mean{n^2} = 1 
+\end{align}
+%
+Similar approach can be used for  $x|1$.
 \item Find
 \begin{equation}
-p_{X}(x|0)\text{ and } p_{X}(x|1)
+p_{X|0}(x)\text{ and } p_{X|1}(x)
 \end{equation}
+\solution
+\begin{align}
+p_{X}(x|0)  &= \frac{1}{\sqrt{2\pi}}e^{-\frac{\brak{x+A}^2}{2}}, 
+\quad 
+-\infty < x < \infty
+\\
+p_{X}(x|1)  &= 
+\frac{1}{\sqrt{2\pi}}e^{-\frac{\brak{x-A}^2}{2}}, \quad 
+-\infty < x < \infty
+\end{align}
+\item Show that $e^{-x}$ is monotonically decreasing.
 \item Find
 \begin{equation}
-p_{X}(x|0) \dec{0}{1} p_{X}(x|1)
+p_{X}(x|1) \dec{1}{0} p_{X}(x|0)
 \end{equation}
 %
+\solution The given condition can be expressed as
+\begin{align}
+ \frac{1}{\sqrt{2\pi}}e^{-\frac{\brak{x-A}^2}{2}}
+&\dec{1}{0}
+\frac{1}{\sqrt{2\pi}}e^{-\frac{\brak{x+A}^2}{2}}
+\\
+\implies -\frac{\brak{x-A}^2}{2}
+&\dec{1}{0}
+-\frac{\brak{x+A}^2}{2}
+\\
+\implies x &\dec{1}{0} 0
+\end{align}
+%
+after simplification.
 \item Show that 
 \begin{align}
 p_{X}(0|x) \dec{0}{1} p_{X}(1|x)
 \\
-p_{X}(x|0) \dec{0}{1} p_{X}(x|1)
+\implies p_{X}(x|0) \dec{0}{1} p_{X}(x|1)
 \end{align}
 if
 \begin{equation}
 p(0)=p(1)
 \end{equation}
 %
+\solution Since 
+\begin{align}
+p_{X}(1|x) \dec{1}{0} p_{X}(0|x)
+\\
+\implies \frac{p_{X}(x|1) p(1)}{p(x)}\dec{1}{0} 
+\frac{p_{X}(x|0)p(0)}{p(x)},
+\end{align}
+%
+the result follows.
 \end{enumerate}
-\section{Optimum Classifier}
+\section{Probability of Error}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
+\item
+Suppose $S=1$ and $Y$ is what you detected.  Find $\pr{\hat{Y}=-1/S=1}$.
 
-\item Let $\brak{\vec{X},\vec{G}}$ be an input/output dataset, whose relation $f$ is unknown. Also
-\begin{align}
-\vec{g}\in\vec{G} = \cbrak{\vec{g}_k}_{k=1}^{K}
-%\\
-%\hat{\vec{G}} &= f\brak{\vec{X}}
-\end{align}
-Let 
-\begin{align}
-\label{eq:bayes_correct}
-C\brak{\vec{g}_k,\vec{g}_l} =
-\begin{cases}
-1 & k= l
-\\
-0 & k\ne l
-\end{cases}
-\end{align}
 %
-where $\vec{g}_i$ are different classes of output data. Thus $C$ is a {\em correctness} metric.
-\item Show that 
-\begin{align}
-\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} 
-= \max_{\vec{g}\in\vec{G}}p\brak{\vec{g}|\vec{X}=\vec{x}} 
-\end{align}
-\solution In the above, 
-\begin{multline}
-\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} 
-\\
-= \max_{\vec{g}\in\vec{G}}E_\vec{X}\sbrak{E_{\vec{G}}\cbrak{C\brak{\vec{G},f\brak{\vec{x}}}}} 
-\end{multline}
+\item
+Plot  $\pr{Y=-1|S=1}$ with respect to $A$.
+
 %
-\begin{align}
-&=\max_{\vec{g}\in\vec{G}}\sum_{k=1}^{K}C\cbrak{\vec{g}_k,\vec{g}}p\brak{\vec{g}_k|\vec{X}=\vec{x}} 
-\end{align}
-From \eqref{eq:bayes_correct}, the above expression simplifies to
-\begin{align}
-\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} =\max_{\vec{g}\in\vec{G}}p\brak{\vec{g}|\vec{X}=\vec{x}} 
-\end{align}
+\item
+For $X \sim \mathcal{N}\brak{0,1}$, the $Q$-function is defined as
+\begin{equation}
+Q(x) = \pr{X > x}, \quad x > 0
+\end{equation}
+Express $\pr{Y=-1|S=1}$ in terms of the $Q$-function. Plot this expression with respect to $A$ 
+from 0 to 10 dB and compare with the result obtained through simulation.
+
+
+\item
+Now consider a threshold $\lambda > 0$ and find the average probability of error. Plot this with respect to $\lambda$.
+
 %
+\item
+From the graph in the previous problem, find the optimum threshold so that the probability of error is minimum.
+\item
+The signal to noise ratio of the above system is defined as 
+\begin{equation}
+SNR = \frac{A^2}{\mean{N^2}}
+\end{equation}
+
 \end{enumerate}
+
+
 
 \section{Linear Discriminant Analysis}
 \begin{enumerate}[label=\thesection.\arabic*
@@ -609,6 +619,50 @@ p_{\vec{x}|\vec{s}_1}(\vec{x})
 %\end{equation}
 %
 \end{enumerate}
+\section{Optimum Classifier}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+
+\item Let $\brak{\vec{X},\vec{G}}$ be an input/output dataset, whose relation $f$ is unknown. Also
+\begin{align}
+\vec{g}\in\vec{G} = \cbrak{\vec{g}_k}_{k=1}^{K}
+%\\
+%\hat{\vec{G}} &= f\brak{\vec{X}}
+\end{align}
+Let 
+\begin{align}
+\label{eq:bayes_correct}
+C\brak{\vec{g}_k,\vec{g}_l} =
+\begin{cases}
+1 & k= l
+\\
+0 & k\ne l
+\end{cases}
+\end{align}
+%
+where $\vec{g}_i$ are different classes of output data. Thus $C$ is a {\em correctness} metric.
+\item Show that 
+\begin{align}
+\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} 
+= \max_{\vec{g}\in\vec{G}}p\brak{\vec{g}|\vec{X}=\vec{x}} 
+\end{align}
+\solution In the above, 
+\begin{multline}
+\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} 
+\\
+= \max_{\vec{g}\in\vec{G}}E_\vec{X}\sbrak{E_{\vec{G}}\cbrak{C\brak{\vec{G},f\brak{\vec{x}}}}} 
+\end{multline}
+%
+\begin{align}
+&=\max_{\vec{g}\in\vec{G}}\sum_{k=1}^{K}C\cbrak{\vec{g}_k,\vec{g}}p\brak{\vec{g}_k|\vec{X}=\vec{x}} 
+\end{align}
+From \eqref{eq:bayes_correct}, the above expression simplifies to
+\begin{align}
+\max_{\vec{g}\in\vec{G}}E\sbrak{C\brak{\vec{G},f\brak{\vec{X}}}} =\max_{\vec{g}\in\vec{G}}p\brak{\vec{g}|\vec{X}=\vec{x}} 
+\end{align}
+%
+\end{enumerate}
+
 %\section{Quadratic Discriminant Analysis}
 %\begin{enumerate}[label=\thesection.\arabic*
 %,ref=\thesection.\theenumi]
