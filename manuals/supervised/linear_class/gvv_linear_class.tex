@@ -469,6 +469,7 @@ p_{X}(x|1) \dec{1}{0} p_{X}(x|0)
 -\frac{\brak{x+A}^2}{2}
 \\
 \implies x &\dec{1}{0} 0
+\label{eq:bayes_dec}
 \end{align}
 %
 after simplification.
@@ -496,34 +497,28 @@ the result follows.
 \section{Probability of Error}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
-\item
-Suppose $S=1$ and $Y$ is what you detected.  Find $\pr{\hat{Y}=-1/S=1}$.
-
+\item Find the probability of error given that $s=0$.
+\\
+\solution
+The desired probability is given by 
+\begin{align}
+P_{e|0}&=\pr{x|0 >  0} = \pr{-A + n > 0}
+\\
+&=\pr{ n > A}
+\end{align}
 %
 \item
-Plot  $\pr{Y=-1|S=1}$ with respect to $A$.
-
-%
-\item
-For $X \sim \mathcal{N}\brak{0,1}$, the $Q$-function is defined as
+The $Q$-function is defined as
 \begin{equation}
-Q(x) = \pr{X > x}, \quad x > 0
+Q(A) = \pr{n > A}, \quad A > 0
 \end{equation}
-Express $\pr{Y=-1|S=1}$ in terms of the $Q$-function. Plot this expression with respect to $A$ 
-from 0 to 10 dB and compare with the result obtained through simulation.
-
-
-\item
-Now consider a threshold $\lambda > 0$ and find the average probability of error. Plot this with respect to $\lambda$.
-
+Plot  $Q\brak{A}$ from 0 to 10 dB.
 %
-\item
-From the graph in the previous problem, find the optimum threshold so that the probability of error is minimum.
-\item
-The signal to noise ratio of the above system is defined as 
-\begin{equation}
-SNR = \frac{A^2}{\mean{N^2}}
-\end{equation}
+%\item
+%The signal to noise ratio of the above system is defined as 
+%\begin{equation}
+%SNR = \frac{A^2}{\mean{N^2}}
+%\end{equation}
 
 \end{enumerate}
 
@@ -622,7 +617,7 @@ p_{\vec{x}|\vec{s}_1}(\vec{x})
 \section{Optimum Classifier}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
-
+%
 \item Let $\brak{\vec{X},\vec{G}}$ be an input/output dataset, whose relation $f$ is unknown. Also
 \begin{align}
 \vec{g}\in\vec{G} = \cbrak{\vec{g}_k}_{k=1}^{K}
@@ -662,7 +657,7 @@ From \eqref{eq:bayes_correct}, the above expression simplifies to
 \end{align}
 %
 \end{enumerate}
-
+%
 %\section{Quadratic Discriminant Analysis}
 %\begin{enumerate}[label=\thesection.\arabic*
 %,ref=\thesection.\theenumi]
