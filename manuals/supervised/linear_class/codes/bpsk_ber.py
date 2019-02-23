@@ -10,10 +10,10 @@ simlen = 1e6
 N = np.random.normal(0, 1, int(simlen))
 x_axis = np.linspace(0.0, 10.0, 100)	# x_axis = SNR in dB
 A = np.sqrt(np.power(10, x_axis/10))    # note that A takes values from 1 to sqrt(10)
-s = 1	
+s = 0	
 def bPsk_sim_prob(A):                   
-	X = A*(2*s-1) + N       		    # (Y|X=1) = A + N
-	x_cap = np.size(np.nonzero(X < 0))  
+	X = A*(2*s-1) + N       		    # (x|0) = -A + n
+	x_cap = np.size(np.nonzero(X > 0))  
 	return x_cap / simlen               # simlen itself is size of Y here
 	
 	
