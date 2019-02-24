@@ -1,9 +1,0 @@
-\contentsline {section}{\numberline {1}Convex Functions}{1}{section.1}
-\contentsline {section}{\numberline {2}Gradient Descent Method}{2}{section.2}
-\contentsline {section}{\numberline {3}Audio Source Files}{2}{section.3}
-\contentsline {section}{\numberline {4}Problem Formulation}{2}{section.4}
-\contentsline {section}{\numberline {5}LMS Algorithm}{3}{section.5}
-\contentsline {section}{\numberline {6}Wiener-Hopf Equation}{3}{section.6}
-\contentsline {section}{\numberline {7}Convergence of the LMS Algorithm}{3}{section.7}
-\contentsline {subsection}{\numberline {7.1}Convergence in the Mean}{3}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Convergence in Mean-square sense}{3}{subsection.7.2}

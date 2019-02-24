@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.1)  24 FEB 2019 08:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.1)  24 FEB 2019 09:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1340,18 +1340,14 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 487.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 487.
 Package rerunfilecheck Info: File `gvv_grad_boost.out' has not changed.
 (rerunfilecheck)             Checksum: 012627B5FCF38C913FA7261F3DEE53C6;264.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 24356 strings out of 492645
- 476110 string characters out of 6118921
- 776421 words of memory out of 5000000
- 27793 multiletter control sequences out of 15000+600000
+ 24357 strings out of 492645
+ 476137 string characters out of 6118921
+ 778421 words of memory out of 5000000
+ 27794 multiletter control sequences out of 15000+600000
  74604 words of font info for 188 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  54i,15n,67p,800b,1569s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_grad_boost.dvi (3 pages, 32844 bytes).
+Output written on gvv_grad_boost.dvi (3 pages, 33264 bytes).
