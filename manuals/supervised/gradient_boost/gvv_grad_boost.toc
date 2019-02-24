@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Convex Functions}{1}{section.1}
+\contentsline {section}{\numberline {2}Gradient Descent Method}{2}{section.2}
+\contentsline {section}{\numberline {3}Audio Source Files}{2}{section.3}
+\contentsline {section}{\numberline {4}Problem Formulation}{2}{section.4}
+\contentsline {section}{\numberline {5}LMS Algorithm}{3}{section.5}

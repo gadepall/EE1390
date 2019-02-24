@@ -1,0 +1,487 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{setspace}
+\usepackage{gensymb}
+\usepackage{caption}
+%\usepackage{multirow}
+%\usepackage{multicolumn}
+%\usepackage{subcaption}
+%\doublespacing
+\singlespacing
+\usepackage{csvsimple}
+\usepackage{amsmath}
+\usepackage{multicol}
+%\usepackage{enumerate}
+\usepackage{amssymb}
+%\usepackage{graphicx}
+\usepackage{newfloat}
+%\usepackage{syntax}
+\usepackage{listings}
+\usepackage{iithtlc}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{mathtools}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}	
+\usepackage{enumitem}
+\usepackage{amsmath}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{hyperref}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
+    %\usepackage[latin1]{inputenc}                                 %%
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+
+
+%\usepackage{stmaryrd}
+
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+%\lstset{
+%language=C,
+%frame=single, 
+%breaklines=true
+%}
+
+%\lstset{
+	%%basicstyle=\small\ttfamily\bfseries,
+	%%numberstyle=\small\ttfamily,
+	%language=Octave,
+	%backgroundcolor=\color{white},
+	%%frame=single,
+	%%keywordstyle=\bfseries,
+	%%breaklines=true,
+	%%showstringspaces=false,
+	%%xleftmargin=-10mm,
+	%%aboveskip=-1mm,
+	%%belowskip=0mm
+%}
+
+%\surroundwithmdframed[width=\columnwidth]{lstlisting}
+\def\inputGnumericTable{}                                 %%
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+ 
+
+\begin{document}
+%
+\tikzstyle{block} = [rectangle, draw,
+    text width=3em, text centered, minimum height=3em]
+\tikzstyle{sum} = [draw, circle, node distance=3cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}{Definition}[section]
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+
+\providecommand{\nCr}[2]{\,^{#1}C_{#2}} % nCr
+\providecommand{\nPr}[2]{\,^{#1}P_{#2}} % nPr
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\numberwithin{equation}{subsection}
+\numberwithin{equation}{section}
+%\numberwithin{problem}{subsection}
+%\numberwithin{definition}{subsection}
+\makeatletter
+\@addtoreset{figure}{section}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\thesection}
+
+
+%\numberwithin{figure}{subsection}
+
+%\numberwithin{equation}{subsection}
+%\numberwithin{equation}{section}
+%\numberwithin{equation}{problem}
+%\numberwithin{problem}{subsection}
+\numberwithin{problem}{section}
+%%\numberwithin{definition}{subsection}
+%\makeatletter
+%\@addtoreset{figure}{problem}
+%\makeatother
+\makeatletter
+\@addtoreset{table}{section}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+\let\StandardTheTable\thetable
+%%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+%\renewcommand{\thefigure}{\theproblem}
+
+%%\numberwithin{figure}{section}
+
+%%\numberwithin{figure}{subsection}
+
+
+
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+
+\vspace{3cm}
+
+\title{ 
+	\logo{
+Gradient Boost: Least Mean Square Algorithm
+	}
+}
+
+\author{B Swaroop Reddy and G V V Sharma$^{*}$% <-this % stops a space
+	\thanks{*The author is with the Department
+		of Electrical Engineering, Indian Institute of Technology, Hyderabad
+		502285 India e-mail:  gadepall@iith.ac.in. All content in this manual is released under GNU GPL.  Free and open source.}
+	
+}	
+
+\maketitle
+
+\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+\begin{abstract}
+	
+This manual provides an introduction to the LMS algorithm.
+		
+\end{abstract}
+\section{Convex Functions}
+
+%\subsection{Problem}
+A single variable function $f$ is said to be convex if
+%
+\begin{align}
+\label{ch1_convex_def}
+f\sbrak{\lambda x + \brak{1-\lambda}y} \leq \lambda f\brak{x} + \brak{1-\lambda}f\brak{y}, 
+\end{align}
+%
+for $\quad 0 < \lambda < 1$.
+\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+
+\item
+Download and execute the following python script. Is  $\ln x$ convex or  concave?
+
+%
+\begin{lstlisting}[language=sh]
+wget https://raw.githubusercontent.com/gadepall/EE2250/master/manual/codes/1.1.py
+\end{lstlisting}
+%
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/1.1.eps}
+\caption{ $\ln x$ versus $x$}.
+\label{fig.1.1}	
+\end{figure}
+%
+\item
+Modify the above python script as follows to plot the parabola $f(x) = x^2$. Is it convex or concave?
+
+\begin{lstlisting}
+wget https://raw.githubusercontent.com/gadepall/EE2250/master/manual/codes/1.2.py
+\end{lstlisting}
+%
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/1.2.eps}
+\caption{ $x^2$ versus $x$}.
+\label{fig.1.2}	
+\end{figure}
+%
+\item
+Execute the following script to obtain Fig. \ref{fig.1.3}. Comment.
+
+%
+\begin{lstlisting}
+wget https://raw.githubusercontent.com/gadepall/EE2250/master/manual/codes/1.3.py
+\end{lstlisting}
+
+%
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/1.3.eps}
+\caption{ Segments are below the curve}.
+\label{fig.1.3}	
+\end{figure}
+%
+\item
+Modify the script in the previous problem for $f(x) = x^2$.  What can you conclude?
+
+\item
+Let 
+\begin{equation}
+f(\mathbf{x}) = x_1x_2, \quad \mathbf{x} \in \mathbf{R}^2
+\end{equation}
+Sketch $f(\mathbf{x})$ and deduce whether it is convex.
+Can you theoretically explain your observation using \eqref{ch1_convex_def}?
+\end{enumerate}
+%
+\section{Gradient Descent Method}
+Consider the problem of finding the square root of a number $c$.  This can be expressed as the equation
+%
+\begin{equation}
+\label{eq:root}
+x^2 -c= 0
+\end{equation}
+%
+\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+
+\item
+Sketch the function for different values of $c$
+%
+\begin{equation}
+f(x)= x^{3}-3xc
+\end{equation}
+%
+and comment upon its convexity.
+
+\item
+Show that \eqref{eq:root} results from
+\begin{align}
+\min_{x}f(x)= x^{3}-3xc
+\end{align}
+
+\item
+Find a numerical solution for \eqref{eq:root}.
+
+\solution
+A numerical solution for \eqref{eq:root} is obtained as
+%
+\begin{align}
+x_{n+1}&=x_{n}-\mu f^{\prime}\brak{x}
+\\
+&=x_{n} -\mu \brak{3x_n^{2}-3c}
+\label{eq:gradient}
+\end{align}
+
+%\begin{align}
+%x_{n+1}&=x_{n}-{\frac {f(x_{n})}{f^{\prime}(x_{n})}}
+%\\
+%&=x_{n} -\frac{x^2_{n}-c}{2x_n} 
+%\\
+%&=\frac{1}{2}\sbrak{x_{n} +\frac{c}{x_n} }
+%\label{eq:newton}
+%\end{align}
+%
+where $x_0$ is an inital guess.
+%
+\item
+Write a program to implement \eqref{eq:gradient}.
+
+%
+\solution Download and execute
+\begin{lstlisting}
+wget 
+https://raw.githubusercontent.com/gadepall/EE2250/master/manual/codes/square_root.py
+\end{lstlisting}
+\end{enumerate}
+
+\section{Audio Source Files}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+%%
+\item Get the \textbf{audio\_source}
+\begin{lstlisting}
+svn checkout https://github.com/gadepall/EE5347/trunk/audio_source
+cd audio_source
+\end{lstlisting}
+\item Play the \textbf{signal\_noise.wav} and \textbf{noise.wav} file. Comment.
+\\
+\solution
+\textbf{signal\_noise.wav}  contains a human voice along 
+with an instrument sound in the background.  This instrument sound
+is captured in \textbf{noise.wav}.
+\end{enumerate}
+%
+\section{Problem Formulation}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+
+\item See Table \ref{table:known}.  The goal is to extract the human voice $e(n)$ from $d(n)$ by suppressing the component of $\mbf{X}(n)$.  Formulate 
+an equation for this.
+\begin{table}[!ht]
+\centering
+\small
+\input{./figs/sigs.tex}
+\caption{}
+\label{table:known}
+\end{table}
+%
+\solution The  maximum component of $\mbf{X}(n)$ in $d(n)$ can be estimated as
+%
+\begin{equation}
+\label{eq:component}
+\mbf{W}^{T}(n)\mbf{X}(n)
+\end{equation}
+%		where $e(n)$ is an estimate of the human voice ( desired signal) 
+where 
+\begin{align}
+ \mbf{W}(n)
+ =
+ %\frac{1}{\det(X)}
+  \begin{bmatrix}
+   w_1(n) \\ w_2(n)\\
+   w_3(n) \\ $..$ \\ $..$ \\ w_{n-M+1}(n)  \end{bmatrix}_{M X 1}
+\end{align}
+%
+Intuitively, the human voice $e(n)$ is obtained after removing as much of $\mbf{X}(n)$ from $d(n)$ as 
+possible. The first step in this direction is to estimate $\mbf{W}$ in \eqref{eq:component} using the metric
+\begin{equation}
+\label{eq:prob_mse}
+\min_{\mbf{W}(n)}\, \norm{d(n)-\mbf{W}^{T}(n)\mbf{X}(n)}^2
+\end{equation}
+%
+The human voice can be then obtained as
+%
+\begin{align}
+\label{eq:error}
+e(n) = d(n)-\mbf{W}^{T}(n)\mbf{X}(n)
+\end{align}
+%
+%
+\end{enumerate}
+\section{LMS Algorithm}
+%
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+
+%\begin{enumerate}
+%\item
+%Show that $e^2(n)$ is a convex function.
+%
+\item
+Show using \eqref{eq:error}  that 
+\begin{align}
+\nabla_{\mbf{W}(n)}e^2(n)&=\frac{\partial e^{2}(n)}{\partial \mbf{W}(n)}\\
+&=- 2\mbf{X}(n)d(n) + 2 \mbf{X}(n) X^{T}(n)\mbf{W}(n)
+\end{align}
+%
+\item
+Use the gradient descent method to obtain an algorithm for solving \eqref{eq:prob_mse}
+
+\solution The desired algorithm can be expressed as
+%
+\begin{align}
+\mbf{W}(n+1)&=\mbf{W}(n) - \bar{\mu}[ \nabla_{\mbf{W}(n)}e^2(n)]
+\\
+\mbf{W}(n+1)&=\mbf{W}(n)+ \mu \mbf{X}(n) e(n)
+\end{align}
+%
+where $\mu = \bar{\mu}$.
+\item
+Write a program to suppress $\mbf{X}(n)$ in $d(n)$.
+
+\solution Execute 
+\begin{lstlisting}
+wget https://raw.githubusercontent.com/gadepall/EE5347/master/lms/codes/LMS_NC_SPEECH.py
+\end{lstlisting}
+
+%\textbf{LMS\_NC\_SPEECH.py}.
+\end{enumerate}
+
+
+
+\end{document}
