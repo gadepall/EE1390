@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  25 FEB 2019 18:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  28 FEB 2019 18:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -618,35 +618,35 @@ Package caption Info: End \AtBeginDocument code.
 \c@rem=\count144
 File: iith_logo.eps Graphic file (type eps)
  <iith_logo.eps>
-LaTeX Font Info:    Calculating math sizes for size <24> on input line 248.
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 248.
+LaTeX Font Info:    Calculating math sizes for size <24> on input line 253.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 253.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ur
 sfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 248.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 253.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 mia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 248.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 253.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 sya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 248.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 253.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 syb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 248.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 253.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
@@ -655,7 +655,7 @@ File: utxsyc.fd 2000/12/15 v3.1
 )
 File: tlc.eps Graphic file (type eps)
  <tlc.eps>
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 248.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 253.
 File: iith_logo.eps Graphic file (type eps)
  <iith_logo.eps>
 File: tlc.eps Graphic file (type eps)
@@ -670,7 +670,7 @@ File: tlc.eps Graphic file (type eps)
 
 File: ./figs/2.1.eps Graphic file (type eps)
  <./figs/2.1.eps>
-Overfull \hbox (22.36713pt too wide) detected at line 383
+Overfull \hbox (22.36713pt too wide) detected at line 388
 []
  []
 
@@ -695,7 +695,7 @@ File: ./figs/2.7.eps Graphic file (type eps)
 ) [2]
 File: ./figs/2.8.eps Graphic file (type eps)
  <./figs/2.8.eps>
-Overfull \hbox (28.36713pt too wide) detected at line 541
+Overfull \hbox (28.36713pt too wide) detected at line 546
 []
  []
 
@@ -718,14 +718,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: ./figs/2.15.eps Graphic file (type eps)
 
-<./figs/2.15.eps> [5] (./gvv_svm.aux) ) 
+<./figs/2.15.eps>
+Underfull \vbox (badness 3657) has occurred while \output is active []
+
+ [5]
+[6
+
+] (./gvv_svm.aux) ) 
 Here is how much of TeX's memory you used:
- 7715 strings out of 494591
- 117532 string characters out of 6176027
+ 7719 strings out of 494591
+ 117570 string characters out of 6176027
  214153 words of memory out of 5000000
- 11222 multiletter control sequences out of 15000+600000
+ 11226 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
  36i,16n,39p,309b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_svm.dvi (5 pages, 32772 bytes).
+Output written on gvv_svm.dvi (6 pages, 34964 bytes).

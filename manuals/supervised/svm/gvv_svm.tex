@@ -139,7 +139,10 @@ columns=fullflexible
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\providecommand{\gauss}[2]{\mathcal{N}\ensuremath{\left(#1,#2\right)}}
+
 %\numberwithin{equation}{subsection}
 \numberwithin{equation}{section}
 %\numberwithin{equation}{problem}
@@ -155,6 +158,8 @@ columns=fullflexible
 
 \let\StandardTheFigure\thefigure
 \let\StandardTheTable\thetable
+\let\vec\mathbf
+
 %\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
 \renewcommand{\thefigure}{\theproblem}
 \renewcommand{\thetable}{\theproblem}
@@ -842,7 +847,41 @@ wget https://raw.githubusercontent.com/gadepall/EE2250/master/manual/codes/2.15.
 \end{figure}
 %
 \end{enumerate}
+\section{SVM}
+\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
 
+\item Consider the quadratic programming problem
+%
+\begin{align}
+\min_{\vec{w}}\frac{1}{2}\norm{\vec{w}}^2 &+ C \sum_{i=1}^{N}\xi_i
+\\
+\text{s.t } \xi_i &\ge 0 
+\\ 
+y_i\brak{\vec{x}_i^T\vec{w}}&\ge1-\xi_i
+\end{align}
+\item If $\alpha_i, \mu_i$  be the Lagrange multipliers, obtain the Lagrange primal function.
+\item  Show that stationarity condition yields
+%
+\begin{align}
+\label{eq:station_1}
+\vec{w} &= \sum_{i=1}^{N}\alpha_iy_i \vec{w}_i
+\\
+0 &= \sum_{i=1}^{N}\alpha_iy_i 
+\\
+\alpha_i &= C - \mu_i
+\label{eq:station_2}
+\end{align}
+\item Show that the KKT conditions are
+\begin{align}
+\alpha_i \sbrak{y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i}} &= 0 
+\\
+\mu_i \xi_i &= 0
+\\
+y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i} & = 0
+\end{align}
+\item Substitute \eqref{eq:station_1}-\eqref{eq:station_2} in the primal function to obtain the Lagrangian 
+(Wolfe) dual objective function $L_D$.  
+\end{enumerate}
 	
 \end{document}
 
