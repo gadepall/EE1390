@@ -375,7 +375,15 @@ $\vec{x}_2=\myvec{0.8 \\ -0.6},y_2=-1$ graphically.
 \section{SVM}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
 
-\item If $\alpha_i$  be the Lagrange multiplier, obtain the Lagrange primal function.
+\item If $\alpha_i$  be the Lagrange multiplier, obtain the Lagrange primal function for \eqref{eq:opt_w}.
+\\
+\solution The desired function is given by 
+\begin{align}
+\label{eq:opt_w_primal}
+L_p\brak{\vec{w},\alpha_i}= \frac{1}{2}\norm{\vec{w}}^2 - 
+\sum_{i=1}^{N}\alpha_i\cbrak{y_i\brak{\vec{x}_i^T\vec{w}+d -1}}
+\end{align}
+
 \item  Show that stationarity condition yields
 %
 \begin{align}
@@ -385,6 +393,25 @@ $\vec{x}_2=\myvec{0.8 \\ -0.6},y_2=-1$ graphically.
 0 &= \sum_{i=1}^{N}\alpha_iy_i 
 \label{eq:station_2}
 \end{align}
+\\
+\solution From the stationarity condition, 
+\begin{align}
+\nabla_\vec{w} L_p\brak{\vec{w},d,\alpha_i}
+=\frac{\partial L_p\brak{\vec{w},\alpha_i}}{\partial \vec{w}} &= 0
+\\
+\implies \vec{w}^T -  \sum_{i=1}^{N}\alpha_iy_i \vec{x}_i^T &= 0
+\\
+\text{or}, \quad \vec{w} =  \sum_{i=1}^{N}\alpha_iy_i \vec{x}_i&
+\end{align}
+and 
+\begin{align}
+\nabla_d L_p\brak{\vec{w},d,\alpha_i}
+=\frac{\partial L_p\brak{\vec{w},\alpha_i}}{\partial d} &= 0
+\\
+\implies \sum_{i=1}^{N}\alpha_iy_i &= 0
+\end{align}
+
+
 \item Substitute \eqref{eq:station_1}-\eqref{eq:station_2} in the primal function to obtain the Lagrangian 
 (Wolfe) dual objective function $L_D$.  
 \item Repeat the above exercises for 
