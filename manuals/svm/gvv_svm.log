@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  9 MAR 2019 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  17 MAR 2019 02:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,20 +538,7 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/graphics/ls
 cape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-) (./gvv_svm.aux
-
-LaTeX Warning: Label `eq:station_1' multiply defined.
-
-
-LaTeX Warning: Label `eq:station_2' multiply defined.
-
-
-LaTeX Warning: Label `eq:station_1' multiply defined.
-
-
-LaTeX Warning: Label `eq:station_2' multiply defined.
-
-)
+) (./gvv_svm.aux)
 \openout1 = `gvv_svm.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 96.
@@ -682,29 +669,49 @@ File: tlc.eps Graphic file (type eps)
 \openout3 = `gvv_svm.toc'.
 
 
+Underfull \hbox (badness 2197) in paragraph at lines 366--370
+[]\OT1/txr/m/n/12 Solve [] us-ing \OT1/txr/m/it/12 cvx-py/cvx-opt \OT1/txr/m/n/
+12 for $\OT1/txr/bx/n/12 x[] \OT1/txr/m/n/12 =
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
 
 ]
+(./codes/svm_cvx.py
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 6.
+
+(/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/oms
+txr.fd
+File: omstxr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 6.
+LaTeX Font Info:    Try loading font information for OML+txr on input line 6.
+
+(/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/oml
+txr.fd
+File: omltxr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
+(Font)              Font shape `OML/txmi/m/it' tried instead on input line 6.
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
 [3
 
-] (./gvv_svm.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] (./gvv_svm.aux) ) 
 Here is how much of TeX's memory you used:
- 7396 strings out of 494591
- 114624 string characters out of 6176027
- 189153 words of memory out of 5000000
- 10914 multiletter control sequences out of 15000+600000
+ 7697 strings out of 494591
+ 117377 string characters out of 6176027
+ 266153 words of memory out of 5000000
+ 11204 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 36i,15n,38p,225b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,15n,38p,225b,1351s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_svm.dvi (3 pages, 13024 bytes).
+Output written on gvv_svm.dvi (3 pages, 16636 bytes).

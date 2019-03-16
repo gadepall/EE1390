@@ -132,7 +132,7 @@ columns=fullflexible
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
 \providecommand{\abs}[1]{\left\vert#1\right\vert}
 \providecommand{\res}[1]{\Res\displaylimits_{#1}} 
-\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
 \providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
@@ -290,7 +290,7 @@ f\brak{\vec{x}}=\vec{n}^T\vec{x} +c
 
 \end{enumerate}
 
-\section{Optimization Problem}
+\section{Optimization}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
 
 \item Suppose $\brak{\vec{x_1},y_1}$ and $\brak{\vec{x_2},y_2}$ where $y_1, y_2 \in \cbrak{1,-1}$. If you want 
@@ -362,15 +362,28 @@ Also, \eqref{eq:m_opt_const1}-\eqref{eq:m_opt_const2} become
 \begin{align}
 y_i\brak{\vec{x}_i^T\vec{w}+d} \ge&1
 \end{align}
-
+%
+\item Solve \eqref{eq:opt_w} using {\em cvxpy/cvxopt} for $\vec{x}_1=\myvec{2 \\ 1},y_1=1$ and 
+$\vec{x}_2=\myvec{0.8 \\ -0.6},y_2=-1$.
+\\
+\solution  From the given information, the constraints in \eqref{eq:opt_w} become
+\begin{align}
+\myvec{2 & 1}\vec{w}+d \ge&1
+\\
+\myvec{0.8 & -0.6}\vec{w}+d \le&-1
+\end{align}
+%
+The following code results in 
+\begin{align}
+\vec{w} = \myvec{0.6 & 0.8}, d_{opt} = 1
+\end{align}
+\lstinputlisting{./codes/svm_cvx.py}
 \item Solve \eqref{eq:opt_w} 
-for $\vec{x}_1=\myvec{2 \\ 1},y_1=1$ and 
-$\vec{x}_2=\myvec{0.8 \\ -0.6},y_2=-1$ graphically.
+ graphically.
 
 %$\brak{\vec{x}_1,y_1}=\sbrak{\myvec{2 \\ 1},1}$ and 
 %$\brak{\vec{x}_2,y_2}=\sbrak{\myvec{0.8 \\ -0.6},-1}$ graphically.
 \item Repeat the above exercise using KKT conditions.
-\item Repeat the above exercise using {\em cvxpy/cvxopt}.
 \end{enumerate}
 \section{SVM}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
@@ -414,6 +427,21 @@ and
 
 \item Substitute \eqref{eq:station_1}-\eqref{eq:station_2} in the primal function to obtain the Lagrangian 
 (Wolfe) dual objective function $L_D$.  
+\\
+\solution Substituting \eqref{eq:station_1} in \eqref{eq:opt_w_primal},
+\begin{multline}
+%\label{eq:opt_w_primal}
+L_D\brak{\alpha_i}= \frac{1}{2}\norm{\sum_{i=1}^{N}\alpha_iy_i \vec{x}_i}^2 - 
+\\
+\sum_{i=1}^{N}\alpha_i\cbrak{y_i\brak{\vec{x}_i^T\sum_{i=1}^{N}\alpha_iy_i \vec{x}_i+d -1}}
+\end{multline}
+ in 
+%\begin{multline}
+%%\label{eq:opt_w_primal}
+%L_p\brak{\vec{w},\alpha_i}= \frac{1}{2}\norm{\vec{w}}^2 - 
+%\sum_{i=1}^{N}\alpha_i\cbrak{y_i\brak{\vec{x}_i^T\vec{w}+d -1}}
+%\end{align}
+
 \item Repeat the above exercises for 
 \begin{align}
 \min_{\vec{w}}\frac{1}{2}\norm{\vec{w}}^2 &+ C \sum_{i=1}^{N}\xi_i
@@ -425,13 +453,13 @@ y_i\vec{x}_i^T\vec{w}&\ge1-\xi_i
 
 
 \begin{align}
-\label{eq:station_1}
+%\label{eq:station_1}
 \vec{w} &= \sum_{i=1}^{N}\alpha_iy_i \vec{w}_i
 \\
 0 &= \sum_{i=1}^{N}\alpha_iy_i 
 \\
 \alpha_i &= C - \mu_i
-\label{eq:station_2}
+%\label{eq:station_2}
 \end{align}
 \item Show that the KKT conditions are
 \begin{align}
@@ -471,13 +499,13 @@ y_i\brak{\vec{x}_i^T\vec{w}}&\ge1-\xi_i
 \item  Show that stationarity condition yields
 %
 \begin{align}
-\label{eq:station_1}
+%\label{eq:station_1}
 \vec{w} &= \sum_{i=1}^{N}\alpha_iy_i \vec{w}_i
 \\
 0 &= \sum_{i=1}^{N}\alpha_iy_i 
 \\
 \alpha_i &= C - \mu_i
-\label{eq:station_2}
+%\label{eq:station_2}
 \end{align}
 \item Show that the KKT conditions are
 \begin{align}
