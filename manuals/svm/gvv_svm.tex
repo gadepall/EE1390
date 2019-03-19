@@ -380,7 +380,16 @@ The following code results in
 \lstinputlisting{./codes/svm_cvx.py}
 \item Solve \eqref{eq:opt_w} 
  graphically.
+\\
+\solution The following code plots Fig. \ref{fig:svm_graph}
+\lstinputlisting{./codes/svm_graph.py}
 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/svm_graph.eps}
+\caption{}
+\label{fig:svm_graph}
+\end{figure}
 %$\brak{\vec{x}_1,y_1}=\sbrak{\myvec{2 \\ 1},1}$ and 
 %$\brak{\vec{x}_2,y_2}=\sbrak{\myvec{0.8 \\ -0.6},-1}$ graphically.
 \item Repeat the above exercise using KKT conditions.
@@ -469,8 +478,6 @@ y_i\vec{x}_i^T\vec{w}&\ge1-\xi_i
 \\
 y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i} & = 0
 \end{align}
-
-
 
 %
 \item 
