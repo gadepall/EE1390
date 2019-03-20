@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.1)  19 MAR 2019 19:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.1)  19 MAR 2019 21:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -698,32 +698,26 @@ File: omltxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
 (Font)              Font shape `OML/txmi/m/it' tried instead on input line 6.
-) (./codes/svm_graph.py)
+)
 File: ./figs/svm_graph.eps Graphic file (type eps)
  <./figs/svm_graph.eps>
-Underfull \vbox (badness 3323) has occurred while \output is active []
+Underfull \vbox (badness 1590) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [3]
-[4
-
-] (./gvv_svm.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(./gvv_svm.aux) ) 
 Here is how much of TeX's memory you used:
- 7708 strings out of 492645
- 117579 string characters out of 6118921
- 381114 words of memory out of 5000000
- 11462 multiletter control sequences out of 15000+600000
+ 7710 strings out of 492645
+ 117596 string characters out of 6118921
+ 271114 words of memory out of 5000000
+ 11466 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 36i,15n,39p,225b,1564s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,15n,39p,225b,1351s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_svm.dvi (4 pages, 24908 bytes).
+Output written on gvv_svm.dvi (3 pages, 18068 bytes).

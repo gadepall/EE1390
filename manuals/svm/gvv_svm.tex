@@ -368,22 +368,32 @@ $\vec{x}_2=\myvec{0.8 \\ -0.6},y_2=-1$.
 \\
 \solution  From the given information, the constraints in \eqref{eq:opt_w} become
 \begin{align}
+\label{eq:data_constraints1}
 \myvec{2 & 1}\vec{w}+d \ge&1
 \\
 \myvec{0.8 & -0.6}\vec{w}+d \le&-1
+\label{eq:data_constraints2}
 \end{align}
 %
 The following code results in 
 \begin{align}
-\vec{w} = \myvec{0.6 & 0.8}, d_{opt} = 1
+\vec{w}_{opt} = \myvec{0.6 & 0.8}, d_{opt} = 1, 
+\norm{\vec{w}_{opt}}^2 = 1
 \end{align}
 \lstinputlisting{./codes/svm_cvx.py}
 \item Solve \eqref{eq:opt_w} 
  graphically.
 \\
-\solution The following code plots Fig. \ref{fig:svm_graph}
-\lstinputlisting{./codes/svm_graph.py}
-
+\solution The following code plots Fig. \ref{fig:svm_graph}.  The 
+constraint lines in \eqref{eq:data_constraints1}-\eqref{eq:data_constraints2} are plotted for $d = 0, 
+0.5$ 
+and 1.  The circles $\norm{\vec{w}}^2 = r^2$ are plotted for $r = 1,2$ and 
+3. The smalles circle that satisfies the constraints is obtained when $d = 
+1$
+\begin{lstlisting}
+wget https://raw.githubusercontent.com/gadepall/EE1390/master/manuals/svm/codes/svm_graph.py
+\end{lstlisting}
+%
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{./figs/svm_graph.eps}
