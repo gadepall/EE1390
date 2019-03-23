@@ -3,7 +3,6 @@
 %
 \usepackage{setspace}
 \usepackage{gensymb}
-\usepackage{bm}
 \usepackage{xcolor}
 \usepackage{caption}
 %\usepackage{subcaption}
@@ -291,11 +290,10 @@ f\brak{\vec{x}}=\vec{n}^T\vec{x} +c
 
 \end{enumerate}
 
-\section{Optimization Problem}
+\section{Optimization}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
 
-\item Suppose $\brak{\vec{x_1},y_1}$ and $\brak{\vec{x_2},y_2}$  are i/o data for a system where $y_1, y_2 \in 
-\cbrak{1,-1}$. If you want 
+\item Suppose $\brak{\vec{x_1},y_1}$ and $\brak{\vec{x_2},y_2}$ where $y_1, y_2 \in \cbrak{1,-1}$. If you want 
 to find $\vec{n},c$ from the given dataset, how will formulate the equivalent 
 optimization 
 problem?
@@ -365,168 +363,32 @@ Also, \eqref{eq:m_opt_const1}-\eqref{eq:m_opt_const2} become
 y_i\brak{\vec{x}_i^T\vec{w}+d} \ge&1
 \end{align}
 %
-\end{enumerate}
-\section{Solver}
-\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
-
 \item Solve \eqref{eq:opt_w} using {\em cvxpy/cvxopt} for $\vec{x}_1=\myvec{2 \\ 1},y_1=1$ and 
 $\vec{x}_2=\myvec{0.8 \\ -0.6},y_2=-1$.
 \\
 \solution  From the given information, the constraints in \eqref{eq:opt_w} become
 \begin{align}
-\label{eq:data_constraints1}
 \myvec{2 & 1}\vec{w}+d \ge&1
 \\
 \myvec{0.8 & -0.6}\vec{w}+d \le&-1
-\label{eq:data_constraints2}
 \end{align}
 %
 The following code results in 
 \begin{align}
-\vec{w}_{opt} = \myvec{0.6 & 0.8}, d_{opt} = 1, 
-\norm{\vec{w}_{opt}}^2 = 1
+\vec{w} = \myvec{0.6 & 0.8}, d_{opt} = 1
 \end{align}
 \lstinputlisting{./codes/svm_cvx.py}
-\item Provide a graphical representation for  \eqref{eq:opt_w} 
+\item Solve \eqref{eq:opt_w} 
+ graphically.
 \\
-\solution The following code plots Fig. \ref{fig:svm_graph}.  The 
-constraint lines in \eqref{eq:data_constraints1}-\eqref{eq:data_constraints2} are plotted for $d = 0, 
-0.5$ 
-and 1.  The circles $\norm{\vec{w}}^2 = r^2$ are plotted for $r = 1,2$ and 
-3. The smalles circle that satisfies the constraints is obtained when $d = 
-1$
+\solution
 \begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1390/master/manuals/svm/codes/svm_graph.py
+wget https://raw.githubusercontent.com/gadepall/EE1390/master/manual/svm/codes/svm_graph.py
 \end{lstlisting}
-%
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/svm_graph.eps}
-\caption{}
-\label{fig:svm_graph}
-\end{figure}
+
 %$\brak{\vec{x}_1,y_1}=\sbrak{\myvec{2 \\ 1},1}$ and 
 %$\brak{\vec{x}_2,y_2}=\sbrak{\myvec{0.8 \\ -0.6},-1}$ graphically.
-\end{enumerate}
-\section{KKT Solution}
-\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
-
-\item Show that the Lagrangian for \eqref{eq:opt_w}  can be expressed as
-\begin{multline}
-\label{eq:opt_lagrange}
-L_p\brak{\vec{w},\bm{\alpha},d}
-= \frac{1}{2}\norm{\vec{w}}^2 
-\\
--
-\bm{\alpha}^T 
-\brak{\myvec{y_1\vec{x}_1& y_2\vec{x}_2}^T\vec{w}+d\myvec{y_1 \\ y_2}-\myvec{1\\1} }
-\end{multline}
-where
-\begin{align}
-\bm{\alpha} = \myvec{\alpha_1 \\ \alpha_2}
-\end{align}
-are the Lagrange multipliers.
-\\
-\solution
-The Lagrangian is given by, 
-\begin{multline}
-L_p\brak{\vec{w},\bm{\alpha},d}= \frac{1}{2}\norm{\vec{w}}^2 
-\\
-- 
-\sum_{i=1}^{2}\alpha_i\cbrak{y_i\brak{\vec{x}_i^T\vec{w}+d} -1}
-%\\
-%= \frac{1}{2}\norm{\vec{w}}^2 
-%\\
-%-
-%\bm{\alpha}^T 
-%\brak{\myvec{y_1\vec{x}_1& y_2\vec{x}_2}^T\vec{w}+\brak{d-1}\myvec{y_1 \\ y_2} }
-\end{multline}
-which can be simplified to obtain \eqref{eq:opt_lagrange}
-%
-\item Show that the stationarity condtion  with respect to $\vec{w}$ yields
-\begin{align}
- \myvec{\vec{I} & -\myvec{y_1\vec{x}_1 & y_2\vec{x}_2} & \vec{0}}\myvec{\vec{w} 
-\\\bm{\alpha} \\ d} &= 0
-\label{eq:opt_stationw}
-\end{align}
-%
-\solution From the stationarity condition
-\begin{align}
-\nabla_{\vec{w}} L_p\brak{\vec{w},\bm{\alpha},d} &= 0 
-\\
-%\implies  \vec{w}
-%-
-%\myvec{\myvec{y_1\vec{x}_1& y_2\vec{x}_2} \bm{\alpha}
-% &= 0
-%\\
-\text{or,}\quad \vec{w}- 
-\myvec{y_1\vec{x}_1 & y_2\vec{x}_2}\bm{\alpha} &= 0
-\end{align}
-resulting in \eqref{eq:opt_stationw}.
-\item Show that the stationarity condition with respect to $\bm{\alpha}$ yields
-\begin{align}
-%%\label{eq:opt_station}
-%\nabla_{\bm{\alpha}} L_{p}\brak{\vec{w},\bm{\alpha},d} &= 0 
-%\\
-%\implies  
-%\myvec{y_1\vec{x}_1& y_2\vec{x}_2}^T\vec{w}+\brak{d-1}\myvec{y_1 \\ y_2}  &= 0
-%%\vec{x}_i^T\vec{w}+d -1&= 0 
-%\\
-%\text{or,}\quad 
-\myvec{\myvec{y_1\vec{x}_1&y_2\vec{x}_2}^T & \vec{0} & \myvec{y_1 \\ y_2}}\myvec{\vec{w}\\\bm{\alpha} \\ d} 
-&= 
-\myvec{1\\1} 
-\label{eq:opt_station_alpha}
-\end{align}
-\solution 
-\begin{align}
-%\label{eq:opt_station}
-\nabla_{\bm{\alpha}} L_{p}\brak{\vec{w},\bm{\alpha},d} &= 0 
-\\
-\implies  
-\myvec{y_1\vec{x}_1& y_2\vec{x}_2}^T\vec{w}+d\myvec{y_1 \\ y_2}-\myvec{1\\1}  &= 0
-%\vec{x}_i^T\vec{w}+d -1&= 0 
-%\\
-%\text{or,}\quad 
-%\myvec{\myvec{\vec{x}_1&\vec{x}_2}^T & \vec{0} & \myvec{1 \\ 1}}\myvec{\vec{w}\\\bm{\alpha} \\ d} 
-%&= 
-%\myvec{1\\1} 
-\end{align}
-after simplification resulting in \eqref{eq:opt_station_alpha}
-%
-\item Find the stationarity condition with respect to $d$.
-\\
-\solution
-\begin{align}
-%\label{eq:opt_station}
-\nabla_{d} L_{p}\brak{\vec{w},\bm{\alpha},d} &= 0 
-\\
-\implies  
-\myvec{y_1&y_2} \bm{\alpha}&=0
-\\
-\text{or,}\quad \myvec{\vec{0}& y_1&y_2 & 0} \myvec{\vec{w} 
-\\\bm{\alpha} \\ d}&=0
-\label{eq:opt_stationd}
-\end{align}
-%
-\item Obtain a matrix equation  for $\vec{w}$ and $d$.
-\\
-\solution 
-\eqref{eq:opt_stationw}
-\eqref{eq:opt_station_alpha} and 
-\eqref{eq:opt_stationd} can be stacked into a single matrix equation as
-{\small
-\begin{align}
-\myvec{\vec{I} & -\myvec{y_1\vec{x}_1 & y_2\vec{x}_2} & \vec{0}
-\\
-\myvec{y_1\vec{x}_1&y_2\vec{x}_2}^T & \vec{0} & \myvec{y_1 \\ y_2}
-\\
-\vec{0}& \myvec{y_1&y_2} & 0} 
-\myvec{\vec{w} 
-\\\bm{\alpha} \\ d}=\myvec{0 \\ 0 \\1\\1\\0} 
-\end{align}
-}
-\item Find the optimal values of $\vec{w}$ and $d$.
+\item Repeat the above exercise using KKT conditions.
 \end{enumerate}
 \section{SVM}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
@@ -612,6 +474,8 @@ y_i\vec{x}_i^T\vec{w}&\ge1-\xi_i
 \\
 y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i} & = 0
 \end{align}
+
+
 
 %
 \item 
