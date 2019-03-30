@@ -1,37 +1,14 @@
 import numpy as np
+import pandas as pd
 
-x = np.array([76.7,
-76.7,
-74.2,
-95,
-68.4,
-73.4,
-72.6,
-99.2,
-99.2,
-98.4,
-88.4,
-86.7,
-84.2,
-91.7,
-95.7,
-94.2,
-96.7,
-93.2,
-76.7,
-92.1,
-92.5,
-61.2,
-102,
-92,
-92.5,
-97.5,
-66.8,
-25.2,
-96,
-86.5])
+data = pd.read_excel('input.xlsx')
 
-N = 30                #Size of Data
+df1 = data.loc[:,"Total" or "Marks"]
+
+x = np.array(df1)
+
+N = x.size                #Size of Data
+
 x = x.reshape(N,1)
 y =np.zeros((N,1))
  
@@ -40,10 +17,10 @@ X = np.hstack((x,y))    #Attach label column with data
 
 k = 8           #No.of Clusters(Grades)
 
-k_points = np.linspace(0,1,8)*100       #Initialize clusters with some values
+k_points = np.linspace(0,1,8)*np.max(x)       #Initialize clusters with some values
  
 k_points = np.sort(k_points)
-iterations = 500                    #No. of iterations
+iterations = 50                    #No. of iterations
 
 for iter in range(iterations):
     
@@ -93,6 +70,6 @@ for i in range(N):              #Attach grades to the data points
     if X[i][1] == 8:
         grades.append('A')
 
-for i in range(N):              #Print grades
-    
-    print('%d -> %s' %(i+1,grades[i]))
+data['Grades'] = grades
+
+data.to_excel('grades.xlsx',index = False)

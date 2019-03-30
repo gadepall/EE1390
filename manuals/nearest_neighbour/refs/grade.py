@@ -1,3 +1,6 @@
+'''
+@Authors: Sachin Goyal EE18MTECH11015@iith.ac.in , Subhra Shankha Bhattacherjee EE19MTECH01008@iith.ac.in 
+'''
 import numpy as np
 f=open("input.txt").read().splitlines()
 s_no=[]
@@ -27,7 +30,7 @@ X = np.hstack((x,y))    #Attach label column with data
 
 k = 8           #No.of Clusters(Grades)
 
-k_points = np.linspace(0,1,8)*100       #Initialize clusters with some values
+k_points = np.linspace(0,1,8)*np.max(x)       #Initialize clusters with some values
  
 k_points = np.sort(k_points)
 iterations = 500                    #No. of iterations
@@ -79,7 +82,7 @@ for i in range(N):              #Attach grades to the data points
         grades.append('A-')
     if X[i][1] == 8:
         grades.append('A')
-
+print('SNO\tROLL_NO\tTotal\tGrade')
 for i in range(N):              #Print grades
     
     print('%d\t%s\t%.3f\t%s ' %(i+1,id_card[i][0],grade[i],grades[i]))
