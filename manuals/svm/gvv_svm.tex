@@ -528,136 +528,141 @@ after simplification resulting in \eqref{eq:opt_station_alpha}
 }
 \item Find the optimal values of $\vec{w}$ and $d$.
 \end{enumerate}
-\section{SVM}
+\section{Duality}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
 
-\item If $\alpha_i$  be the Lagrange multiplier, obtain the Lagrange primal function for \eqref{eq:opt_w}.
-\\
-\solution The desired function is given by 
-\begin{align}
-\label{eq:opt_w_primal}
-L_p\brak{\vec{w},\alpha_i}= \frac{1}{2}\norm{\vec{w}}^2 - 
-\sum_{i=1}^{N}\alpha_i\cbrak{y_i\brak{\vec{x}_i^T\vec{w}+d -1}}
-\end{align}
-
-\item  Show that stationarity condition yields
-%
-\begin{align}
-\label{eq:station_1}
-\vec{w} &= \sum_{i=1}^{N}\alpha_iy_i \vec{w}_i
-\\
-0 &= \sum_{i=1}^{N}\alpha_iy_i 
-\label{eq:station_2}
-\end{align}
-\\
-\solution From the stationarity condition, 
-\begin{align}
-\nabla_\vec{w} L_p\brak{\vec{w},d,\alpha_i}
-=\frac{\partial L_p\brak{\vec{w},\alpha_i}}{\partial \vec{w}} &= 0
-\\
-\implies \vec{w}^T -  \sum_{i=1}^{N}\alpha_iy_i \vec{x}_i^T &= 0
-\\
-\text{or}, \quad \vec{w} =  \sum_{i=1}^{N}\alpha_iy_i \vec{x}_i&
-\end{align}
-and 
-\begin{align}
-\nabla_d L_p\brak{\vec{w},d,\alpha_i}
-=\frac{\partial L_p\brak{\vec{w},\alpha_i}}{\partial d} &= 0
-\\
-\implies \sum_{i=1}^{N}\alpha_iy_i &= 0
-\end{align}
-
-
-\item Substitute \eqref{eq:station_1}-\eqref{eq:station_2} in the primal function to obtain the Lagrangian 
+\item Substitute \eqref{eq:opt_stationw}
+%\eqref{eq:opt_station_alpha} and 
+and \eqref{eq:opt_stationd}
+in the primal function to obtain the Lagrangian 
 (Wolfe) dual objective function $L_D$.  
-\\
-\solution Substituting \eqref{eq:station_1} in \eqref{eq:opt_w_primal},
-\begin{multline}
-%\label{eq:opt_w_primal}
-L_D\brak{\alpha_i}= \frac{1}{2}\norm{\sum_{i=1}^{N}\alpha_iy_i \vec{x}_i}^2 - 
-\\
-\sum_{i=1}^{N}\alpha_i\cbrak{y_i\brak{\vec{x}_i^T\sum_{i=1}^{N}\alpha_iy_i \vec{x}_i+d -1}}
-\end{multline}
- in 
+%\\
+%\solution Substituting \eqref{eq:station_1} in \eqref{eq:opt_w_primal},
 %\begin{multline}
 %%\label{eq:opt_w_primal}
+%L_D\brak{\alpha_i}= \frac{1}{2}\norm{\sum_{i=1}^{N}\alpha_iy_i \vec{x}_i}^2 - 
+%\\
+%\sum_{i=1}^{N}\alpha_i\cbrak{y_i\brak{\vec{x}_i^T\sum_{i=1}^{N}\alpha_iy_i \vec{x}_i+d -1}}
+%\end{multline}
+% in 
+%%\begin{multline}
+%%%\label{eq:opt_w_primal}
+%%L_p\brak{\vec{w},\alpha_i}= \frac{1}{2}\norm{\vec{w}}^2 - 
+%%\sum_{i=1}^{N}\alpha_i\cbrak{y_i\brak{\vec{x}_i^T\vec{w}+d -1}}
+%%\end{align}
+%
+%
+%\item If $\alpha_i$  be the Lagrange multiplier, obtain the Lagrange primal function for \eqref{eq:opt_w}.
+%\\
+%\solution The desired function is given by 
+%\begin{align}
+%\label{eq:opt_w_primal}
 %L_p\brak{\vec{w},\alpha_i}= \frac{1}{2}\norm{\vec{w}}^2 - 
 %\sum_{i=1}^{N}\alpha_i\cbrak{y_i\brak{\vec{x}_i^T\vec{w}+d -1}}
 %\end{align}
-
-\item Repeat the above exercises for 
-\begin{align}
-\min_{\vec{w}}\frac{1}{2}\norm{\vec{w}}^2 &+ C \sum_{i=1}^{N}\xi_i
-\\
-\text{s.t } \quad \xi_i &\ge 0 
-\\ 
-y_i\vec{x}_i^T\vec{w}&\ge1-\xi_i
-\end{align}
-
-
-\begin{align}
+%
+%\item  Show that stationarity condition yields
+%%
+%\begin{align}
 %\label{eq:station_1}
-\vec{w} &= \sum_{i=1}^{N}\alpha_iy_i \vec{w}_i
-\\
-0 &= \sum_{i=1}^{N}\alpha_iy_i 
-\\
-\alpha_i &= C - \mu_i
+%\vec{w} &= \sum_{i=1}^{N}\alpha_iy_i \vec{w}_i
+%\\
+%0 &= \sum_{i=1}^{N}\alpha_iy_i 
 %\label{eq:station_2}
-\end{align}
-\item Show that the KKT conditions are
-\begin{align}
-\alpha_i \sbrak{y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i}} &= 0 
-\\
-\mu_i \xi_i &= 0
-\\
-y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i} & = 0
-\end{align}
-
+%\end{align}
+%\\
+%\solution From the stationarity condition, 
+%\begin{align}
+%\nabla_\vec{w} L_p\brak{\vec{w},d,\alpha_i}
+%=\frac{\partial L_p\brak{\vec{w},\alpha_i}}{\partial \vec{w}} &= 0
+%\\
+%\implies \vec{w}^T -  \sum_{i=1}^{N}\alpha_iy_i \vec{x}_i^T &= 0
+%\\
+%\text{or}, \quad \vec{w} =  \sum_{i=1}^{N}\alpha_iy_i \vec{x}_i&
+%\end{align}
+%and 
+%\begin{align}
+%\nabla_d L_p\brak{\vec{w},d,\alpha_i}
+%=\frac{\partial L_p\brak{\vec{w},\alpha_i}}{\partial d} &= 0
+%\\
+%\implies \sum_{i=1}^{N}\alpha_iy_i &= 0
+%\end{align}
 %
-\item 
-\begin{align}
-P = \cbrak{\vec{x}:f\brak{\vec{x}}=\vec{n}^T\vec{x} +c = 0}, \quad \norm{\vec{n}} = 1
-\end{align}
-be a hyperplane where $\vec{n}$ is a unit normal vector to the plane.
-
-\item Let 
-\begin{align}
-P = \cbrak{\vec{x}:f\brak{\vec{x}}=\vec{n}^T\vec{x} +c = 0}, \quad \norm{\vec{n}} = 1
-\end{align}
 %
-be a hyperplane where $\vec{n}$ is a unit normal vector to the plane.
 %
-\item Consider the quadratic programming problem
+%\item Repeat the above exercises for 
+%\begin{align}
+%\min_{\vec{w}}\frac{1}{2}\norm{\vec{w}}^2 &+ C \sum_{i=1}^{N}\xi_i
+%\\
+%\text{s.t } \quad \xi_i &\ge 0 
+%\\ 
+%y_i\vec{x}_i^T\vec{w}&\ge1-\xi_i
+%\end{align}
 %
-\begin{align}
-\min_{\vec{w}}\frac{1}{2}\norm{\vec{w}}^2 &+ C \sum_{i=1}^{N}\xi_i
-\\
-\text{s.t } \xi_i &\ge 0 
-\\ 
-y_i\brak{\vec{x}_i^T\vec{w}}&\ge1-\xi_i
-\end{align}
-\item If $\alpha_i, \mu_i$  be the Lagrange multipliers, obtain the Lagrange primal function.
-\item  Show that stationarity condition yields
 %
-\begin{align}
-%\label{eq:station_1}
-\vec{w} &= \sum_{i=1}^{N}\alpha_iy_i \vec{w}_i
-\\
-0 &= \sum_{i=1}^{N}\alpha_iy_i 
-\\
-\alpha_i &= C - \mu_i
-%\label{eq:station_2}
-\end{align}
-\item Show that the KKT conditions are
-\begin{align}
-\alpha_i \sbrak{y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i}} &= 0 
-\\
-\mu_i \xi_i &= 0
-\\
-y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i} & = 0
-\end{align}
-\item Substitute \eqref{eq:station_1}-\eqref{eq:station_2} in the primal function to obtain the Lagrangian 
-(Wolfe) dual objective function $L_D$.  
+%\begin{align}
+%%\label{eq:station_1}
+%\vec{w} &= \sum_{i=1}^{N}\alpha_iy_i \vec{w}_i
+%\\
+%0 &= \sum_{i=1}^{N}\alpha_iy_i 
+%\\
+%\alpha_i &= C - \mu_i
+%%\label{eq:station_2}
+%\end{align}
+%\item Show that the KKT conditions are
+%\begin{align}
+%\alpha_i \sbrak{y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i}} &= 0 
+%\\
+%\mu_i \xi_i &= 0
+%\\
+%y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i} & = 0
+%\end{align}
+%
+%%
+%\item 
+%\begin{align}
+%P = \cbrak{\vec{x}:f\brak{\vec{x}}=\vec{n}^T\vec{x} +c = 0}, \quad \norm{\vec{n}} = 1
+%\end{align}
+%be a hyperplane where $\vec{n}$ is a unit normal vector to the plane.
+%
+%\item Let 
+%\begin{align}
+%P = \cbrak{\vec{x}:f\brak{\vec{x}}=\vec{n}^T\vec{x} +c = 0}, \quad \norm{\vec{n}} = 1
+%\end{align}
+%%
+%be a hyperplane where $\vec{n}$ is a unit normal vector to the plane.
+%%
+%\item Consider the quadratic programming problem
+%%
+%\begin{align}
+%\min_{\vec{w}}\frac{1}{2}\norm{\vec{w}}^2 &+ C \sum_{i=1}^{N}\xi_i
+%\\
+%\text{s.t } \xi_i &\ge 0 
+%\\ 
+%y_i\brak{\vec{x}_i^T\vec{w}}&\ge1-\xi_i
+%\end{align}
+%\item If $\alpha_i, \mu_i$  be the Lagrange multipliers, obtain the Lagrange primal function.
+%\item  Show that stationarity condition yields
+%%
+%\begin{align}
+%%\label{eq:station_1}
+%\vec{w} &= \sum_{i=1}^{N}\alpha_iy_i \vec{w}_i
+%\\
+%0 &= \sum_{i=1}^{N}\alpha_iy_i 
+%\\
+%\alpha_i &= C - \mu_i
+%%\label{eq:station_2}
+%\end{align}
+%\item Show that the KKT conditions are
+%\begin{align}
+%\alpha_i \sbrak{y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i}} &= 0 
+%\\
+%\mu_i \xi_i &= 0
+%\\
+%y_i \brak{\vec{x}_i^T\vec{w}}- \brak{1-\xi_i} & = 0
+%\end{align}
+%\item Substitute \eqref{eq:station_1}-\eqref{eq:station_2} in the primal function to obtain the Lagrangian 
+%(Wolfe) dual objective function $L_D$.  
 \end{enumerate}
 	
 

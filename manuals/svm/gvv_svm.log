@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  23 MAR 2019 20:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  31 MAR 2019 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -710,13 +710,7 @@ File: ./figs/svm_graph.eps Graphic file (type eps)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-[4
+[3
 
 ] (./gvv_svm.aux) ) 
 Here is how much of TeX's memory you used:
@@ -728,4 +722,4 @@ Here is how much of TeX's memory you used:
  17 hyphenation exceptions out of 8191
  36i,20n,39p,225b,1353s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_svm.dvi (4 pages, 24800 bytes).
+Output written on gvv_svm.dvi (3 pages, 17540 bytes).
