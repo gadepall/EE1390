@@ -504,7 +504,7 @@ after simplification resulting in \eqref{eq:opt_station_alpha}
 \implies  
 \myvec{y_1&y_2} \bm{\alpha}&=0
 \\
-\text{or,}\quad \myvec{\vec{0}& y_1&y_2 & 0} \myvec{\vec{w} 
+\text{or,}\quad \myvec{\vec{0}& \myvec{y_1&y_2} & 0} \myvec{\vec{w} 
 \\\bm{\alpha} \\ d}&=0
 \label{eq:opt_stationd}
 \end{align}
@@ -538,8 +538,37 @@ after simplification resulting in \eqref{eq:opt_station_alpha}
 and \eqref{eq:opt_stationd}
 in the primal function to obtain the Lagrangian 
 (Wolfe) dual objective function $L_D$.  
-%\\
-%\solution Substituting \eqref{eq:station_1} in \eqref{eq:opt_w_primal},
+\\
+\solution From \eqref{eq:opt_stationw}
+\begin{align}
+\vec{w} &= \myvec{y_1\vec{x}_1 & y_2\vec{x}_2}\bm{\alpha} 
+\\
+\implies \vec{w}^T\vec{w} &= \bm{\alpha}^T \myvec{y_1\vec{x}_1^T \\ y_2\vec{x}_2^T}\myvec{y_1\vec{x}_1 & 
+y_2\vec{x}_2}\bm{\alpha} 
+\\
+\text{and } \bm{\alpha}^T &
+\myvec{y_1\vec{x}_1& y_2\vec{x}_2}^T\vec{w}  = \vec{w}^T\vec{w} 
+\end{align}
+From \eqref{eq:opt_stationd},
+\begin{align}
+\myvec{y_1&y_2} \bm{\alpha}&=0
+\\
+\implies \bm{\alpha}^Td\myvec{y_1 \\ y_2} &=0
+\end{align}
+%
+Substituting from the above in \eqref{eq:opt_lagrange},
+\begin{multline}
+\label{eq:opt_lagrange_wolfe}
+L_D\brak{\bm{\alpha}}
+= 
+-\frac{1}{2}\bm{\alpha}^T \myvec{y_1\vec{x}_1^T \\ y_2\vec{x}_2^T}\myvec{y_1\vec{x}_1 & 
+y_2\vec{x}_2}\bm{\alpha} 
+\\
++\bm{\alpha}^T\myvec{1\\1} 
+\end{multline}
+%
+\item Formulate the equivalent optimization problem for \eqref{eq:opt_w} using \eqref{eq:opt_lagrange_wolfe}.
+
 %\begin{multline}
 %%\label{eq:opt_w_primal}
 %L_D\brak{\alpha_i}= \frac{1}{2}\norm{\sum_{i=1}^{N}\alpha_iy_i \vec{x}_i}^2 - 
@@ -666,8 +695,6 @@ in the primal function to obtain the Lagrangian
 %\item Substitute \eqref{eq:station_1}-\eqref{eq:station_2} in the primal function to obtain the Lagrangian 
 %(Wolfe) dual objective function $L_D$.  
 \end{enumerate}
-	
-
 	
 \end{document}
 
