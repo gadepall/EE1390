@@ -517,6 +517,7 @@ after simplification resulting in \eqref{eq:opt_station_alpha}
 \eqref{eq:opt_stationd} can be stacked into a single matrix equation as
 {\small
 \begin{align}
+\label{eq:svm_matrix}
 \myvec{\vec{I} & -\myvec{y_1\vec{x}_1 & y_2\vec{x}_2} & \vec{0}
 \\
 \myvec{y_1\vec{x}_1&y_2\vec{x}_2}^T & \vec{0} & \myvec{y_1 \\ y_2}
@@ -526,7 +527,8 @@ after simplification resulting in \eqref{eq:opt_station_alpha}
 \\\bm{\alpha} \\ d}=\myvec{0 \\ 0 \\1\\1\\0} 
 \end{align}
 }
-\item Find the optimal values of $\vec{w}$ and $d$.
+\item Find the optimal values of $\vec{w}$ and $d$ by solving \eqref{eq:svm_matrix} using python.
+
 \end{enumerate}
 \section{Duality}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
