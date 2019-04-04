@@ -589,13 +589,17 @@ L_D\brak{\bm{\alpha}}
 \end{align}
 \item Show that 
 \begin{align}
+\label{eq:wolfe_dual_opt}
 f^* = 
 \max_{\bm{\alpha}}L_D\brak{\bm{\alpha}}
 \\
 s.t. \quad \bm{\alpha} > 0
 \end{align}
-\item Formulate the equivalent optimization problem for \eqref{eq:opt_w} using \eqref{eq:opt_lagrange_wolfe}.
-
+\solution
+\begin{lstlisting}
+wget https://github.com/gadepall/EE1390/raw/master/manuals/svm/codes/wolfe_dual.py
+\end{lstlisting}
+\item Verify the above result by theoretically solving \eqref{eq:wolfe_dual_opt}.
 %\begin{multline}
 %%\label{eq:opt_w_primal}
 %L_D\brak{\alpha_i}= \frac{1}{2}\norm{\sum_{i=1}^{N}\alpha_iy_i \vec{x}_i}^2 - 
