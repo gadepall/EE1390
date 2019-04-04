@@ -567,6 +567,33 @@ y_2\vec{x}_2}\bm{\alpha}
 +\bm{\alpha}^T\myvec{1\\1} 
 \end{multline}
 %
+\item From \eqref{eq:opt_lagrange}, show that 
+%
+\begin{align}
+L_p\brak{\vec{w},\bm{\alpha},d}
+\le \frac{1}{2}\norm{\vec{w}}^2 
+\end{align}
+%
+\item Let $f^*$ be the solution of \eqref{eq:opt_w}.
+%
+Show that 
+\begin{align}
+\min_{\vec{w},d}L_p\brak{\vec{w},\bm{\alpha},d}
+\le f^*
+\end{align}
+%
+\item Show that 
+\begin{align}
+L_D\brak{\bm{\alpha}}
+=\min_{\vec{w},d}L_p\brak{\vec{w},\bm{\alpha},d}
+\end{align}
+\item Show that 
+\begin{align}
+f^* = 
+\max_{\bm{\alpha}}L_D\brak{\bm{\alpha}}
+\\
+s.t. \quad \bm{\alpha} > 0
+\end{align}
 \item Formulate the equivalent optimization problem for \eqref{eq:opt_w} using \eqref{eq:opt_lagrange_wolfe}.
 
 %\begin{multline}
