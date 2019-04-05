@@ -593,7 +593,9 @@ L_D\brak{\bm{\alpha}}
 f^* = 
 \max_{\bm{\alpha}}L_D\brak{\bm{\alpha}}
 \\
-s.t. \quad \bm{\alpha} > 0
+s.t. \quad \bm{\alpha} \succeq 0
+\\
+\nabla_{d}L_p\brak{\vec{w},\bm{\alpha},d} = 0
 \end{align}
 \solution
 \begin{lstlisting}
