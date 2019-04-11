@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  5 APR 2019 11:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  11 APR 2019 11:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,39 +688,36 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 (./codes/svm_cvx.py
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 6.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 1.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/oms
 txr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 6.
-LaTeX Font Info:    Try loading font information for OML+txr on input line 6.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for OML+txr on input line 26.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/oml
 txr.fd
 File: omltxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
-(Font)              Font shape `OML/txmi/m/it' tried instead on input line 6.
+(Font)              Font shape `OML/txmi/m/it' tried instead on input line 26.
 )
 File: ./figs/svm_graph.eps Graphic file (type eps)
- <./figs/svm_graph.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ <./figs/svm_graph.eps> [2]
+Underfull \vbox (badness 6775) has occurred while \output is active []
 
  [3]
 (./gvv_svm.aux) ) 
 Here is how much of TeX's memory you used:
  7856 strings out of 494591
- 119466 string characters out of 6176027
- 267511 words of memory out of 5000000
+ 119471 string characters out of 6176027
+ 355511 words of memory out of 5000000
  11342 multiletter control sequences out of 15000+600000
  82890 words of font info for 215 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 36i,20n,39p,225b,1353s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,20n,39p,225b,1355s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_svm.dvi (3 pages, 21204 bytes).
+Output written on gvv_svm.dvi (3 pages, 24040 bytes).

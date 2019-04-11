@@ -3,29 +3,48 @@
 import cvxpy as cp
 import numpy as np
 
-x1 = np.matrix('2;1')
-x2 = np.matrix('0.8;-0.6')
-y1 = 1
-y2 = -1
-one = np.matrix('1;1')
+# x is array of datapoints stacked column wise [x1, x2, ... , xn]
+x = np.array([
+	[ 2.0, 0.8 ] , 
+	[ 1.0, -0.6 ]
+	])
+# y is matrix with labels stacked diagonally
+y = np.diag([1,-1])
 
-A = np.matmul( np.block([[y1*x1.T],[y2*x2.T]]), np.block([[y1*x1 , y2*x2]]) )
-print("A=\n",A)
+n=2 #no of datapoints
+p=2 #no of parameters of each datapoint
+one = np.ones(n) #matrix of n ones
+
+""" 
+	LD = -0.5*alpha.T*m1*m2*alpha + alpha.T*one
+	A=m1*m2
+"""
+
+m1=(x@y).T
+#print("m1=\n",m1)
+
+m2=m1.T
+#print("m2=\n",m2)
+
+A = m1@m2
+#print("A=\n",A)
 
 alpha=cp.Variable(2)
-print(cp.quad_form(alpha,A).shape)
-w = np.block([y1*x1, y2*x2]) @alpha
-constraints=[alpha>=np.zeros(2), y1*alpha[0]+y2*alpha[1]==0]#cp.quad_form(alpha,A) - alpha == np.zeros((1,2)) ]
-prob = cp.Problem(cp.Maximize( -0.5*cp.quad_form(alpha,A) +one.T@alpha), constraints)
+
+#objective
+obj=cp.Maximize( -0.5*cp.quad_form(alpha,A) +one.T@alpha)
+
+#constraints
+constraints=[alpha>=np.zeros(2),one.T@y@alpha==0]
+prob=cp.Problem(obj, constraints)
 prob.solve()
 
-print("\nMaximum value is = \n", prob.value)
+print("\nMaximum value is = \n", obj.value)
 print("\nMaxima is at alpha = \n",alpha.value)
 
-alpha = np.matrix(alpha.value).T
-# #print(alpha.shape)
-w = np.matmul(np.block([y1*x1, y2*x2]), alpha)
-LD = np.matmul(one.T,alpha) -0.5*(np.matmul(alpha.T,np.matmul(A,alpha)))
+alpha = np.reshape(alpha.value,(n,1))
+w = m2@alpha
+LD = -0.5*(alpha.T)@m1@m2@alpha
 print("Max value of LD is = \n", LD)
 print("Max value obtained at alpha = \n", alpha	)
 print("Learnt w = \n",w)
