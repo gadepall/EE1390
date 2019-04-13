@@ -1,44 +1,32 @@
 import numpy as np
 import pandas as pd
 
-#Read data from excel
-data = pd.read_excel('marks.xlsx')
-
-
-#Get marks into numpy array
-df1 = data.loc[:,"Total" or "Marks"]
+data = pd.read_excel('marks.xlsx')      #reading input
+df1 = data.loc[:,"Total" or "Marks"]    #storing marks column
 x = np.array(df1)
 
-#Size of Data
-N = x.size                
+N = x.size                              #Size of Data
+x = x.reshape(N,1)                      #Converting to column
+y = np.zeros((N,1))                     #column of Assigned clusters 
+X = np.hstack((x,y))                    #stacking data and cluster
+k = 7                                   #No.of Clusters(Grades)
 
-#Make x a column vector
-x = x.reshape(N,1)
-y = np.zeros((N,1))
- 
-X = np.hstack((x,y))    #Attach label column with data
-
-k = 8           #No.of Clusters(Grades)
-
-k_points = np.linspace(0,1,8)*np.max(x)     #Initialize clusters with some values
-                                            #Initializing Clusters with Values spaces equally at 102.0/7.0
-# print("k_points.shape=",k_points.shape) 
-# print("k_points=",k_points) 
-
+k_points = np.linspace(0,1,k)*np.max(x) 
+#Initializing Clusters means spaced equally in (0,x_max)
 k_points = np.sort(k_points)
-iterations = 100                   #No. of iterations
 
+iterations = 150                        #Max iterations
 
 for iter in range(iterations):
-    label_changes = False
-    mean_changes = False 
+    label_changes = False               #tracks label changes
+    mean_changes = False                #tracks cluster mean changes
     
-    for i in range(N):              #Compute nearest cluster to a datapoint and 
-                                    #attach its label to the datapoint.        
+    for i in range(N):              
+    #Compute nearest cluster, attach its label to the datapoint.  
         old_label=X[i][1]
         new_label=X[i][1]
-        dist = 999999.0
-        
+        dist = 999999.0   
+
         for j in range(k):
             dist1 = (X[i][0]-k_points[j])**2
             if dist1<dist:
@@ -49,13 +37,11 @@ for iter in range(iterations):
         if (new_label!=old_label):
             label_changes=True
     
-
-    for i in range(k):       #Update cluster values by taking mean of corresponding labelled data
-        
-        s = 0
-        c = 0
-        for j in range(N):
-            
+    for i in range(k):       
+    #Update cluster mean by taking mean of corresponding marks  
+        s = 0 #sum of elements of cluster i
+        c = 0 #count of elements of cluster i
+        for j in range(N):            
             if X[j][1] == i+1:
                 c += 1
                 s += X[j][0]
@@ -63,35 +49,25 @@ for iter in range(iterations):
             if (s/c!=k_points[i]):
                 k_points[i] = s/c
                 mean_changes=True
-
-    #print("Iter=",iter,"label_changes=",label_changes,"mean_changes=",mean_changes)
     if (label_changes==False and mean_changes==False):
         print("Converged on Iteration", iter)
         break           
 
-grades = []
-
-for i in range(N):              #Attach grades to the data points
-    
+grades = []                #Attach grades to the data points 
+for i in range(N):              
     if X[i][1] == 1:
-        grades.append('F')
-    if X[i][1] == 2:
         grades.append('D')
-    if X[i][1] == 3:
+    if X[i][1] == 2:
         grades.append('C-')
-    if X[i][1] == 4:
+    if X[i][1] == 3:
         grades.append('C')
-    if X[i][1] == 5:
+    if X[i][1] == 4:
         grades.append('B-')
-    if X[i][1] == 6:
+    if X[i][1] == 5:
         grades.append('B')
-    if X[i][1] == 7:
+    if X[i][1] == 6:
         grades.append('A-')
-    if X[i][1] == 8:
+    if X[i][1] == 7:
         grades.append('A')
-
 data['Grades'] = grades
-
-data.to_excel('grades_new.xlsx',index = False)
-
-#print(grades)
+data.to_excel('grades.xlsx',index = False)  #writing to file
