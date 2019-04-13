@@ -286,12 +286,18 @@ Assign $x_i$ to the cluster $C_{k}$.
 \item Repeat the above process till $\mu_k^m = \mu_k^{m+1}$, i.e. the algorithm converges.
 \end{enumerate}
 
-\section{Nearest Neighbour}
+\section{Examples}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
 \item Demonstrate the nearest neighbour algorithm through a python script.
 \\
-\solution 
+\solution Execute the following
+\begin{lstlisting}
+svn checkout https://github.com/gadepall/EE1390/trunk/manuals/nearest_neighbour/codes
+python grades.py marks.xlsx
+\end{lstlisting}
+The \textbf{grade\_new.xlsx} file will contain the grades.
+\item Modify the python script to add an $F$ grade as well.
 \end{enumerate}
 %\section{Nearest Neighbour}
 %\begin{enumerate}[label=\thesection.\arabic*
