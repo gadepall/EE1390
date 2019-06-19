@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Objective}{1}
+\contentsline {section}{\numberline {2}Training Dataset}{1}
+\contentsline {section}{\numberline {3}About CNN}{1}
+\contentsline {subsection}{\numberline {3.1}Architecture Used}{1}
+\contentsline {subsection}{\numberline {3.2}Hyperparameters Initialisation}{1}
+\contentsline {subsection}{\numberline {3.3}Parameters Initialisation}{1}
+\contentsline {subsubsection}{\numberline {3.3.1}Lecun Normal Distribution}{1}
+\contentsline {subsection}{\numberline {3.4}Back Propagation}{1}
+\contentsline {section}{\numberline {4}Training}{2}
+\contentsline {section}{\numberline {5}Testing}{2}
+\contentsline {section}{\numberline {6}Figures}{2}
