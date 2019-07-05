@@ -118,6 +118,7 @@ columns=fullflexible
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \providecommand{\abs}[1]{\left\vert#1\right\vert}
 \providecommand{\res}[1]{\Res\displaylimits_{#1}} 
 \providecommand{\norm}[1]{\lVert#1\rVert}
@@ -140,6 +141,7 @@ columns=fullflexible
 \makeatother
 
 \let\StandardTheFigure\thefigure
+\let\vec\mathbf
 %\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
 \renewcommand{\thefigure}{\theproblem}
 
@@ -195,54 +197,81 @@ control a toycar.
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
 
-\item Record 'forward' 80 times using you phone and save as 'forwardi.wav' for $i 
-= 1,\dots, 80$.
+\item Draw the block diagram of the AI-ML system for the toycar.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.5]{./figs/block_diag.eps}
+\end{center}
+\caption{ML System}
+\label{fig:block_diag}
+\end{figure}
+\\
+\solution See Fig. \ref{fig:block_diag}
+\item Record `forward' 80 times using you phone and save as `forwardi.wav' for $i 
+= 1,\dots, 80$. The recording duration should be between 1-3 seconds.
 %
-\item Repeat by recording 'left', 'right', 'back' and 'stop'. Make sure that the 
+\item Repeat by recording `left', `right', `back' and `stop'. Make sure that the 
 audio files for each command are in separate directories. Download the following 
 directory for reference
 \begin{lstlisting}
 svn checkout https://github.com/gadepall/EE1390/trunk/AI-ML/audio_dataset
 \end{lstlisting}
-\item Use the following script to generate a dataset for 'back' command. Explain 
-through a block diagram.
+\item Use the following script to generate a dataset for `back' command. Explain 
+through a block diagram. 
 \begin{lstlisting}
 https://raw.githubusercontent.com/gadepall/EE1390/master/AI-ML/codes/250files.py
 \end{lstlisting}
 %
 \solution
-to generate the dataset needed for training. The following diagram explains how this 
+The datasets are generated through zero padding.  The diagram in Fig. \ref{fig:signal_cond} explains how this 
 is done for the back command.
-\\
-back (80 files)$\overset{250files.py}{\rightarrow}25000 files$.
+%\\
+%back (80 files)$\overset{250files.py}{\rightarrow}25000 files$.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\columnwidth]{./figs/signal_cond.eps}
+\end{center}
+\caption{Zero padding}
+\label{fig:signal_cond}
+\end{figure}
+
 	%
-\item Suitably modify the above script to generate similar datasets for 'left', 'right', 'stop' and 'forward'. 
+\item Suitably modify the above script to generate similar datasets for `left', `right', `stop' and `forward'. 
 %
-\item Store the complete dataset in a directory and run \textbf{code.py} from  within the 
-directory.  Note that this should be done on a powerful workstation. This will generate two files
-\textbf{W1.out} and \textbf{b.out}.
+\item Summarize the datasets generated through a table.
+\\
+\solution See Table \ref{fig:training_table}
+%{\footnotesize
+%\begin{table}[h]
+\begin{table*}
+\begin{center}
+\input{./figs/training_table.tex}
+\end{center}
+\caption{File calculus}
+\label{fig:training_table}
+\end{table*}
+%\end{table}
+%}
 \end{enumerate}
 %
 
-%\begin{figure}[ht!]
-%\begin{center}
-%\includegraphics[width=\columnwidth]{./figs/HC05}
-%\end{center}
-%\caption{HC05 Bluetooth module}
-%\label{fig:hc05}
-%\end{figure}
 %
 %	\input{./figs/hc05.tex}
 
 
 %
-\section{Implementation}
-\begin{enumerate}[label=\thesection.\arabic*
-,ref=\thesection.\theenumi]
-\item Execute \textbf{record.py} and issue any of the commands 'forward', 'left', 'right', 'back' 
-and 'stop'. The output will be as per Table \ref{}.
-%
-\item Install Google API "Arduino Bluetooth Controller" using google play-store
+%\section{Training Information}
+%\begin{enumerate}[label=\thesection.\arabic*
+%,ref=\thesection.\theenumi]
+%\end{enumerate}
+
+%\section{Implementation}
+%\begin{enumerate}[label=\thesection.\arabic*
+%,ref=\thesection.\theenumi]
+%\item Execute \textbf{record.py} and issue any of the commands 'forward', 'left', 'right', 'back' 
+%and 'stop'. The output will be as per Table \ref{}.
+%%
+%\item Install Google API "Arduino Bluetooth Controller" using google play-store
 %\begin{figure}[!h]
 %\begin{center}
 %\includegraphics[width = \columnwidth]{./figs/app}
@@ -251,17 +280,55 @@ and 'stop'. The output will be as per Table \ref{}.
 %\caption{}
 %\label{fig:App}
 %\end{figure}
-\item Open the app and connect to HC-05.
-\item Open voice control section in the app and tap to give following commands. 
+%\item Open the app and connect to HC-05.
+%\item Open voice control section in the app and tap to give following commands. 
+%
+%\textit{Left, Right, Forward, Back \& Stop}
+%
+%\end{enumerate}
 
-\textit{Left, Right, Forward, Back \& Stop}
-
-\end{enumerate}
-
-\section{Building the neural network}
-\subsection{Problem Statement}
-\begin{enumerate}[label=\thesubsection.\arabic*
+\section{Linear Regression: Least Squares}
+\begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
+\item Draw the block diagram for the ML algorithm
+\\
+\solution See Fig. \ref{fig:algo}
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\columnwidth]{./figs/algo.eps}
+\end{center}
+\caption{Least squares and gradient descent}
+\label{fig:algo}
+\end{figure}
+\item List the reference vectors for all the voice commands.
+\\
+\solution See Table \ref{fig:ref_vec}.
+\begin{table}[!ht]
+\begin{center}
+\input{./figs/ref_vec.tex}
+\end{center}
+\caption{Reference vectors}
+\label{fig:ref_vec}
+\end{table}
+%
+\item The sigmoid function is defined as
+\begin{align}
+\label{eq:sig}
+s(x) = \frac{1}{1+e^{-x}}
+\end{align}
+Sketch $s(x)$.
+\\
+\solution The following code plots $s(x)$ in Fig. \ref{fig:sigmoid}.
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\columnwidth]{./figs/sigmoid.eps}
+\end{center}
+\caption{Sigmoid function }
+\label{fig:sigmoid}
+\end{figure}
+\item Show that $0 < s(x) < 1$.
+\\
+\solution $s(x)$ is useful for transforming large values to a value between 0 and 1.
 \item Consider $\mbf{x}$ be $4043 \times 1$ to be human voice issuing either 'forward', 'left', 
 'right', 'back'  and 
 'stop'.  Let $\mbf{W}$ be $4043 \times 5$ and $\mbf{b}$ be $5 \times 1$. $\mbf{W}$ and $\mbf{b}$ 
@@ -270,6 +337,11 @@ are the machine parameters. Then the machine makes a decision based on
 \label{eq:model}
 \hat{\mbf{y}} = \mbf{x}^{T}\mbf{W}+ \mbf{b}
 \end{equation}
+
+\item Store the complete dataset in a directory and run \textbf{code.py} from  within the 
+directory.  Note that this should be done on a powerful workstation. This will generate two files
+\textbf{W1.out} and \textbf{b.out}.
+
 \item The problem is to estimate $\mbf{W}$ and $\mbf{b}$.  This is done by considering 
 \begin{equation}
 \label{eq:cost}
