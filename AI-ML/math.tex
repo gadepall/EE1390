@@ -1,0 +1,128 @@
+\documentclass[12pt,letterpaper]{article}
+%Some packages I commonly use.
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1 cm,bottom=1in, left=1 in, right=1 in]{geometry}
+\usepackage{mathtools}
+%A bunch of definitions that make my life easier
+\newcommand{\matlab}{{\sc Matlab} }
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\cvec}[1]{{\mathbf #1}}
+\newcommand{\rvec}[1]{\vec{\mathbf #1}}
+\newcommand{\ihat}{\hat{\textbf{\i}}}
+\newcommand{\jhat}{\hat{\textbf{\j}}}
+\newcommand{\khat}{\hat{\textbf{k}}}
+\newcommand{\minor}{{\rm minor}}
+\newcommand{\trace}{{\rm trace}}
+\newcommand{\spn}{{\rm Span}}
+\newcommand{\rem}{{\rm rem}}
+\newcommand{\ran}{{\rm range}}
+\newcommand{\range}{{\rm range}}
+\newcommand{\mdiv}{{\rm div}}
+\newcommand{\proj}{{\rm proj}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\attn}[1]{\textbf{#1}}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{note}{Note}
+\newtheorem{exercise}{Exercise}
+\newcommand{\bproof}{\bigskip {\bf Proof. }}
+\newcommand{\eproof}{\hfill\qedsymbol}
+\newcommand{\Disp}{\displaystyle}
+\newcommand{\qe}{\hfill\(\bigtriangledown\)}
+\setlength{\columnseprule}{1 pt}
+
+
+\title{Voice recognition Algorithm}
+\author{R Rohith Reddy}
+\date{26 June 2019}
+
+\begin{document}
+
+\maketitle
+
+
+
+
+$$y'= sigmoid(W.X + B)$$ 
+$$y'i=sigmoid(\sum_{i} Wi*xi + b)$$
+
+
+$$sigmoid(x)=1/(1+e^{-x})$$ 
+$$sigmoidprime(x)=\frac{\partial sigmoid(x)}{\partial x}$$
+$$=\frac{\partial }{\partial x}\frac{1}{1+e^{-x}}$$
+$$=\frac{e^{-x}}{(1+e^{-x})^2}$$
+$$=\frac{e^{-x}}{1+e^{-x}}\frac{1}{1+e^{-x}}$$
+$$=\frac{e^{-x}}{1+e^{-x}}\frac{1}{1+e^{-x}}$$
+$$=\frac{1-1+e^{-x}}{1+e^{-x}}\frac{1}{1+e^{-x}}$$
+$$=(1-\frac{1}{1+e^{-x}})\frac{1}{1+e^{-x}}$$
+$$=(1-sigmoid(x))(sigmoid(x))$$
+
+\section{Gradient Descent method}
+
+$$J(W,b)=\frac{1}{2}\norm{y-\hat y}^2$$
+
+$$Wi:=Wi-\alpha\frac{\partial J}{\partial W}$$
+$$b:=b-\alpha\frac{\partial J}{\partial b}$$
+
+
+Partial differentiation terms are evaluated as follows:\\
+$$\frac{\partial J}{\partial W}=\frac{\partial  }{\partial W}\frac{1}{2}\norm{y-\hat y}^2$$
+$$\frac{\partial J}{\partial W}=\frac{\partial  }{\partial W}\frac{1}{2}{(y-\hat y)^T(y-\hat y)}$$
+$$\frac{\partial J}{\partial W}=\frac{1}{2}\frac{\partial  }{\partial W}{(\norm{y}^2-y^T\hat y-y\hat y^T+\norm{\hat y}^2)}$$
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+where
+$$\frac{\partial \hat y}{\partial W}=\frac{\partial  }{\partial W}{sigmoid(W*x + b)}$$
+$$\frac{\partial \hat y}{\partial W}=sigmoidprime(W*x + b)x$$
+$$\frac{\partial \hat y}{\partial b}=sigmoidprime(W*x + b)$$
+}%
+}
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+Property:
+$$\frac{\partial (xa)}{\partial x}=a$$
+$$\frac{\partial (x^Tx)}{\partial x}=2x^T$$
+}%
+}
+
+$$=\frac{1}{2}(-\frac{\partial \hat y}{\partial W}y^T-\frac{\partial \hat y^T}{\partial W}y+\frac{\partial \hat y^T\hat y }{\partial W})$$
+$$=\frac{1}{2}(-2\frac{\partial \hat y}{\partial W}y^T+2\frac{\partial \hat y }{\partial W}\hat y^T)$$
+$$=\frac{\partial \hat y}{\partial W}(-y^T+\hat y^T)$$
+$$=sigmoidprime(W*x + b)x(-y+\hat y)^T$$
+$$=sigmoidprime(W*x + b)((-y+\hat y)x^T)^T$$
+$$=((-y+\hat y)x^T)^Tsigmoidprime(W*x + b)$$
+where 
+$$sigmoidprime(x)=sigmoid(x)*(1-sigmoid(x))$$Similarly for b matrix coefficients:
+ 
+$$\frac{\partial J}{\partial b}=\frac{1}{2}\frac{\partial  }{\partial b}{(\norm{y}^2-y^T\hat y-y\hat y^T+\norm{\hat y}^2)}$$
+$$=\frac{1}{2}(-\frac{\partial \hat y}{\partial b}y^T-\frac{\partial \hat y^T}{\partial b}y+\frac{\partial \hat y^T\hat y }{\partial b})$$
+$$=\frac{1}{2}(-2\frac{\partial \hat y}{\partial b}y^T+2\frac{\partial \hat y }{\partial b}\hat y^T)$$
+$$=\frac{\partial \hat y}{\partial b}(-y^T+\hat y^T)$$
+$$=sigmoidprime(W*x + b)(-y+\hat y)^T$$
+$$=(-y+\hat y)^Tsigmoidprime(W*x + b)$$
+ for these gradient descent method are:
+$$W:=W-\alpha ((-y+\hat y)x^T)^Tsigmoidprime(W*x + b)$$
+$$b:=b-\alpha (-y+\hat y)^Tsigmoidprime(W*x + b)$$
+
+$$W:=W+\alpha ((y-\hat y)x^T)^Tsigmoidprime(W*x + b)$$
+$$b:=b+\alpha (y-\hat y)^Tsigmoidprime(W*x + b)$$
+\end{document}

@@ -345,7 +345,11 @@ where $\vec{W}$ is the weight matrix and $\vec{b}$ is the bias vector. Ideally, 
 \label{eq:cost}
 \min_{\mbf{W},\mbf{b}} J\brak{\mbf{W},\mbf{b}}  = \frac{1}{2}\norm{\mbf{y}-\hat{\mbf{y}}}^2
 \end{equation}
-
+%
+where
+\begin{equation}
+\hat{\mbf{y}}= \mbf{W}\mbf{x}+\vec{b}
+\end{equation}
 %Consider $\mbf{x}$ be $4043 \times 1$ to be human voice issuing either 'forward', 'left', 
 %'right', 'back'  and 
 %'stop'.  Let $\mbf{W}$ be $4043 \times 5$ and $\mbf{b}$ be $5 \times 1$. $\mbf{W}$ and $\mbf{b}$ 
@@ -360,13 +364,60 @@ where $\vec{W}$ is the weight matrix and $\vec{b}$ is the bias vector. Ideally, 
 \section{Gradient Descent}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
-\item Let $\vec{W}$ be $2\times 2$ and $\vec{x},\vec{b}$ be $2\times 1$.  Show that 
+\item Show that 
 \begin{align}
-\label{eq:grad_def}
-\frac{\partial \norm{\mbf{W}\mbf{x}+\vec{b}}^2 }{\partial\mbf{W}} &= 2\brak{\mbf{W}\mbf{x}+\vec{b}}\vec{x}^T
-\\
-\frac{\partial \norm{\mbf{W}\mbf{x}+\vec{x}}^2 }{\partial\mbf{W}} &= 2\brak{\mbf{W}\mbf{x}+\vec{b}}\vec{x}^T
+\label{eq:sig_der}
+s^{\prime}(x)=\brak{1-s(x)}s(x)
 \end{align}
+\item Let $\vec{W}$ be $2\times 2$ and $\vec{x},\vec{y}$ be $2\times 1$.  Show that 
+\begin{align}
+\label{eq:grad_def_W}
+\frac{\partial \brak{\vec{y}^T\mbf{W}\mbf{x}}} {\partial\mbf{W}} &= \vec{y}\mbf{x}^T
+\end{align}
+\item Given that $\vec{b}$ is $2\times 1$, show that 
+\begin{align}
+\label{eq:grad_norm}
+%\frac{\partial \norm{\mbf{x}}^2} {\partial\mbf{x}} &= 2\mbf{x}
+\frac{\partial \norm{\mbf{W}\mbf{x}+\vec{b}}^2 }{\partial\mbf{W}} &= 2\brak{\mbf{W}\mbf{x}+\vec{b}}\vec{x}^T
+\end{align}
+\item Find
+\begin{align}
+\frac{\partial \norm{\mbf{y}-\hat{\vec{y}}}^2} {\partial\mbf{W}} 
+%&= -2\brak{\mbf{y}-\hat{\vec{y}}}^T\frac{\partial \hat{\vec{y}}}{\partial\mbf{W}}
+\end{align}
+\solution
+\begin{align}
+\norm{\vec{y}-\hat{\vec{y}}}^2 = \norm{y}^2 - 2\vec{y}^T\brak{\vec{W}\vec{x}+\vec{b}}+ \norm{\mbf{W}\mbf{x}+\vec{b}}^2 %\frac{\partial } {\partial\mbf{W}} 
+\end{align}
+%
+From \eqref{eq:grad_def_W} and \eqref{eq:grad_norm}
+\begin{align}
+\frac{\partial \norm{\mbf{y}-\hat{\vec{y}}}^2} {\partial\mbf{W}}  = - 2\brak{\vec{y}-\hat{\vec{y}}}\vec{x}^T
+\end{align}
+\item Show that
+\begin{align}
+\frac{\partial \vec{y}^T\vec{b}} {\partial\vec{b}}  = \vec{y}
+\end{align}
+\item Show that
+\begin{align}
+\frac{\partial \norm{\vec{b}}^2} {\partial\vec{b}}  = 2\vec{b}
+\end{align}
+\item Show that 
+\begin{align}
+\frac{\partial \norm{\mbf{W}\mbf{x}+\vec{b}}^2} {\partial\vec{b}}  = 2\brak{\mbf{W}\mbf{x}+\vec{b}}
+\end{align}
+\item Show that 
+\begin{align}
+\frac{\partial \norm{\mbf{y}-\hat{\vec{y}}}^2} {\partial\mbf{b}} = -2\brak{\vec{y}-\hat{\vec{y}}}
+%&= -2\brak{\mbf{y}-\hat{\vec{y}}}^T\frac{\partial \hat{\vec{y}}}{\partial\mbf{W}}
+\end{align}
+%\item Let $\vec{W}$ be $2\times 2$ and $\vec{x},\vec{b}$ be $2\times 1$.  Show that 
+%\begin{align}
+%\label{eq:grad_def}
+%\frac{\partial \norm{\mbf{W}\mbf{x}+\vec{b}}^2 }{\partial\mbf{W}} &= 2\brak{\mbf{W}\mbf{x}+\vec{b}}\vec{x}^T
+%\\
+%\frac{\partial \norm{\mbf{W}\mbf{x}+\vec{x}}^2 }{\partial\mbf{W}} &= 2\brak{\mbf{W}\mbf{x}+\vec{b}}\vec{x}^T
+%\end{align}
 \item $\mbf{W}$ and $\mbf{b}$ can be estimated from \eqref{eq:cost} using
 \begin{align}
 \label{eq:grad_def}
@@ -391,32 +442,32 @@ Show that \eqref{eq:grad_def} can be expressed as
 %\\
 %\mbf{b}(n+1) &= \mbf{b}(n) - \alpha\sbrak{\mbf{x}\mbf{W}-\mbf{b}-\mbf{y}}
 %\end{align}
-\solution From  \eqref{eq:cost} and \eqref{eq:model}, 
-%\begin{multline}
-%\frac{\partial J\brak{\mbf{W},\mbf{b}} }{\partial\mbf{W}} 
+%\solution From  \eqref{eq:cost} and \eqref{eq:model}, 
+%%\begin{multline}
+%%\frac{\partial J\brak{\mbf{W},\mbf{b}} }{\partial\mbf{W}} 
+%%\\
+%%= \frac{\partial  
+%%}{\partial\mbf{W}}\sbrak{\brak{\mbf{x}\mbf{W}+\mbf{b}-\mbf{y}}^T\brak{\mbf{x}\mbf{W}+\mbf{b}-\mbf{y}}}
+%%\end{multline}
+%\begin{align}
+%J\brak{\mbf{W},\mbf{b}}  &= \frac{1}{2}\norm{\mbf{y}-\hat{\mbf{y}}}^2
 %\\
-%= \frac{\partial  
-%}{\partial\mbf{W}}\sbrak{\brak{\mbf{x}\mbf{W}+\mbf{b}-\mbf{y}}^T\brak{\mbf{x}\mbf{W}+\mbf{b}-\mbf{y}}}
-%\end{multline}
-\begin{align}
-J\brak{\mbf{W},\mbf{b}}  &= \frac{1}{2}\norm{\mbf{y}-\hat{\mbf{y}}}^2
-\\
-&=\brak{\mbf{W}\mbf{x}+\mbf{b}-\mbf{y}}^T\brak{\mbf{W}\mbf{x}+\mbf{b}-\mbf{y}}
-\\
-&=\brak{\mbf{x}^T\mbf{W}^T+\mbf{b}^T-\mbf{y}^T}\brak{\mbf{W}\mbf{x}+\mbf{b}-\mbf{y}}
-\\
-&=\mbf{W}^T\mbf{x}^T\mbf{x}\mbf{W}+\mbf{W}^T\mbf{x}^T\mbf{b}-\mbf{W}^T\mbf{x}^T\mbf{y}
-\\
-&\,+\mbf{b}^T\mbf{x}\mbf{W}+\mbf{b}^T\mbf{b}-\mbf{b}^T\mbf{y} - \mbf{y}^T\mbf{x}\mbf{W}
-\\
-& \, -  \mbf{y}^T\mbf{b} +  \mbf{y}^T \mbf{y}
-\label{eq:expand_cost}
-\end{align}
-Using
-\begin{align}
-\frac{\partial}{\partial\mbf{W}}\mbf{W}^T\mbf{x}^T\mbf{x}\mbf{W}
-&= 
-\end{align} 
+%&=\brak{\mbf{W}\mbf{x}+\mbf{b}-\mbf{y}}^T\brak{\mbf{W}\mbf{x}+\mbf{b}-\mbf{y}}
+%\\
+%&=\brak{\mbf{x}^T\mbf{W}^T+\mbf{b}^T-\mbf{y}^T}\brak{\mbf{W}\mbf{x}+\mbf{b}-\mbf{y}}
+%\\
+%&=\mbf{W}^T\mbf{x}^T\mbf{x}\mbf{W}+\mbf{W}^T\mbf{x}^T\mbf{b}-\mbf{W}^T\mbf{x}^T\mbf{y}
+%\\
+%&\,+\mbf{b}^T\mbf{x}\mbf{W}+\mbf{b}^T\mbf{b}-\mbf{b}^T\mbf{y} - \mbf{y}^T\mbf{x}\mbf{W}
+%\\
+%& \, -  \mbf{y}^T\mbf{b} +  \mbf{y}^T \mbf{y}
+%\label{eq:expand_cost}
+%\end{align}
+%Using
+%\begin{align}
+%\frac{\partial}{\partial\mbf{W}}\mbf{W}^T\mbf{x}^T\mbf{x}\mbf{W}
+%&= 
+%\end{align} 
 \item Store the complete dataset in a directory and run \textbf{code.py} from  within the 
 directory.  Note that this should be done on a powerful workstation. This will generate two files
 \textbf{W1.out} and \textbf{b.out}.
