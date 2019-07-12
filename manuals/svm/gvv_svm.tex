@@ -733,6 +733,33 @@ wget https://github.com/gadepall/EE1390/raw/master/manuals/svm/codes/wolfe_dual.
 %\item Substitute \eqref{eq:station_1}-\eqref{eq:station_2} in the primal function to obtain the Lagrangian 
 %(Wolfe) dual objective function $L_D$.  
 \end{enumerate}
+\section{Convexification}
+\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+\item Given $\brak{\vec{x}_i,y_i}, i = 1 \dots n$  are i/o data for a system where $y_i \notin 
+\cbrak{1,-1}$. If you want 
+to find $\vec{w},d$ from the given dataset, how will you formulate the equivalent 
+optimization 
+problem by modifying \eqref{eq:opt_w}?
+\\
+\solution The desired expression is
+\begin{align}
+\label{eq:opt_w_svm}
+\min_{\vec{w},d}\frac{1}{2}\norm{\vec{w}}^2
+\\
+\text{s.t} \quad  y_i\brak{\vec{x}_i^T\vec{w}+d} \ge& 1 - \xi_i
+\\
+\xi_i \ge 0
+\\
+\sum_{i}^{n}\xi_i \le C
+\end{align}
+Note that $C$ is also a parameter that needs to be given for estimating the parameters $\vec{w}, d$ of the SVM engine.
+\item How will you classify the output $y$ for a given input $\vec{x}$.
+\\
+\solution 
+\begin{align}
+y = \sgn\brak{\vec{x}^T\vec{w}+d}
+\end{align}
+\end{enumerate}
 	
 \end{document}
 

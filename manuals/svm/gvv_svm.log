@@ -1,11 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  11 APR 2019 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Termux) (preloaded format=latex 2019.6.30)  12 JUL 2019 16:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **gvv_svm.tex
 (./gvv_svm.tex
-LaTeX2e <2018-04-01> patch level 2
-Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+LaTeX2e <2018-12-01>
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IE
 EEtran.cls
@@ -107,11 +106,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEquantizeheightC=\dimen122
 \@IEEEquantizeprevdepth=\dimen123
 \@IEEEquantizemultiple=\count93
-\@IEEEquantizeboxA=\box26
+\@IEEEquantizeboxA=\box27
 \@IEEEtmpitemindent=\dimen124
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count94
-\@IEEEtranrubishbin=\box27
+\@IEEEtranrubishbin=\box28
 )
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/setspace/se
 tspace.sty
@@ -198,16 +197,17 @@ ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
 )
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/enumitem/en
 umitem.sty
-Package: enumitem 2011/09/28 v3.5.2 Customized lists
+Package: enumitem 2019/02/04 v3.8 Customized lists
 \labelindent=\skip44
 \enit@outerparindent=\dimen133
 \enit@toks=\toks16
-\enit@inbox=\box28
-\enitdp@description=\count97
+\enit@inbox=\box29
+\enit@count@id=\count97
+\enitdp@description=\count98
 )
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/amsmath/ams
 math.sty
-Package: amsmath 2017/09/02 v2.17a AMS math features
+Package: amsmath 2018/12/01 v2.17b AMS math features
 \@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
@@ -232,30 +232,30 @@ LaTeX Info: Redefining \boldsymbol on input line 28.
 opn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count98
-LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count99
-\leftroot@=\count100
-LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count101
-\DOTSCASE@=\count102
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box29
-\strutbox@=\box30
+\inf@bad=\count99
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count100
+\leftroot@=\count101
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count102
+\DOTSCASE@=\count103
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box30
+\strutbox@=\box31
 \big@size=\dimen136
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count103
-\c@MaxMatrixCols=\count104
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count104
+\c@MaxMatrixCols=\count105
 \dotsspace@=\muskip10
-\c@parentequation=\count105
-\dspbrk@lvl=\count106
+\c@parentequation=\count106
+\dspbrk@lvl=\count107
 \tag@help=\toks18
-\row@=\count107
-\column@=\count108
-\maxfields@=\count109
+\row@=\count108
+\column@=\count109
+\maxfields@=\count110
 \andhelp@=\toks19
 \eqnshift@=\dimen137
 \alignsep@=\dimen138
@@ -267,8 +267,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \multlinegap=\skip46
 \multlinetaggap=\skip47
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
 )
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/mathtools/m
 athtools.sty
@@ -277,15 +277,15 @@ Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/tools/calc.
 sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count110
-\calc@Bcount=\count111
+\calc@Acount=\count111
+\calc@Bcount=\count112
 \calc@Adimen=\dimen143
 \calc@Bdimen=\dimen144
 \calc@Askip=\skip48
 \calc@Bskip=\skip49
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count112
+\calc@Ccount=\count113
 \calc@Cskip=\skip50
 )
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/mathtools/m
@@ -296,7 +296,7 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count113
+\g_MT_multlinerow_int=\count114
 \l_MT_multwidth_dim=\dimen145
 \origjot=\skip51
 \l_MT_shortvdotswithinadjustabove_dim=\dimen146
@@ -403,8 +403,8 @@ LaTeX Info: Redefining \openbox on input line 1064.
 loats.sty
 Package: stfloats 2017/03/27 v3.3 Improve float mechanism and baselineskip sett
 ings
-\@dblbotnum=\count114
-\c@dblbotnumber=\count115
+\@dblbotnum=\count115
+\c@dblbotnumber=\count116
 )
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/cite/cite.s
 ty
@@ -419,44 +419,44 @@ Package: cases 2002/05/02 ver 2.5
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/subfig/subf
 ig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count116
+\c@KVtest=\count117
 \sf@farskip=\skip55
 \sf@captopadj=\dimen152
 \sf@capskip=\skip56
 \sf@nearskip=\skip57
-\c@subfigure=\count117
-\c@subfigure@save=\count118
-\c@lofdepth=\count119
-\c@subtable=\count120
-\c@subtable@save=\count121
-\c@lotdepth=\count122
+\c@subfigure=\count118
+\c@subfigure@save=\count119
+\c@lofdepth=\count120
+\c@subtable=\count121
+\c@subtable@save=\count122
+\c@lotdepth=\count123
 \sf@top=\skip58
 \sf@bottom=\skip59
 )
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/tools/longt
 able.sty
-Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
 \LTleft=\skip60
 \LTright=\skip61
 \LTpre=\skip62
 \LTpost=\skip63
-\LTchunksize=\count123
+\LTchunksize=\count124
 \LTcapwidth=\dimen153
-\LT@head=\box31
-\LT@firsthead=\box32
-\LT@foot=\box33
-\LT@lastfoot=\box34
-\LT@cols=\count124
-\LT@rows=\count125
-\c@LT@tables=\count126
-\c@LT@chunks=\count127
+\LT@head=\box32
+\LT@firsthead=\box33
+\LT@foot=\box34
+\LT@lastfoot=\box35
+\LT@cols=\count125
+\LT@rows=\count126
+\c@LT@tables=\count127
+\c@LT@chunks=\count128
 \LT@p@ftn=\toks28
 )
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/multirow/mu
 ltirow.sty
-Package: multirow 2018/08/03 v2.3 Span multiple rows of a table
+Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
 \multirow@colwidth=\skip64
-\multirow@cntb=\count128
+\multirow@cntb=\count129
 \multirow@dima=\skip65
 \bigstrutjot=\dimen154
 )
@@ -486,52 +486,52 @@ Package graphics Info: Driver file: dvips.def on input line 99.
 ))
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/listings/li
 stings.sty
-\lst@mode=\count129
-\lst@gtempboxa=\box35
+\lst@mode=\count130
+\lst@gtempboxa=\box36
 \lst@token=\toks29
-\lst@length=\count130
+\lst@length=\count131
 \lst@currlwidth=\dimen157
-\lst@column=\count131
-\lst@pos=\count132
+\lst@column=\count132
+\lst@pos=\count133
 \lst@lostspace=\dimen158
 \lst@width=\dimen159
-\lst@newlines=\count133
-\lst@lineno=\count134
+\lst@newlines=\count134
+\lst@lineno=\count135
 \lst@maxwidth=\dimen160
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/listings/ls
 tmisc.sty
-File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
-\c@lstnumber=\count135
-\lst@skipnumbers=\count136
-\lst@framebox=\box36
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count136
+\lst@skipnumbers=\count137
+\lst@framebox=\box37
 )
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/listings/li
 stings.cfg
-File: listings.cfg 2018/09/02 1.7 listings configuration
+File: listings.cfg 2019/02/27 1.8b listings configuration
 ))
-Package: listings 2018/09/02 1.7 (Carsten Heinz)
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/base/inpute
 nc.sty
-Package: inputenc 2018/04/06 v1.3b Input encoding file
+Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks30
 \inpenc@posthook=\toks31
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/base/latin1
 .def
-File: latin1.def 2018/04/06 v1.3b Input encoding file
+File: latin1.def 2018/08/11 v1.3c Input encoding file
 ))
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/tools/array
 .sty
-Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
 \col@sep=\dimen161
-\ar@mcellbox=\box37
+\ar@mcellbox=\box38
 \extrarowheight=\dimen162
 \NC@list=\toks32
 \extratabsurround=\skip66
 \backup@length=\skip67
-\ar@cellbox=\box38
+\ar@cellbox=\box39
 )
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/tools/hhlin
 e.sty
@@ -614,14 +614,14 @@ aption.sty
 Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count137
-\c@theorem=\count138
-\c@problem=\count139
-\c@proposition=\count140
-\c@lemma=\count141
-\c@example=\count142
-\c@definition=\count143
-\c@rem=\count144
+\c@lstlisting=\count138
+\c@theorem=\count139
+\c@problem=\count140
+\c@proposition=\count141
+\c@lemma=\count142
+\c@example=\count143
+\c@definition=\count144
+\c@rem=\count145
 File: iith_logo.eps Graphic file (type eps)
  <iith_logo.eps>
 LaTeX Font Info:    Calculating math sizes for size <24> on input line 255.
@@ -674,19 +674,15 @@ File: tlc.eps Graphic file (type eps)
 \tf@toc=\write3
 \openout3 = `gvv_svm.toc'.
 
+ [1
 
+
+]
 Underfull \hbox (badness 2197) in paragraph at lines 372--376
 []\OT1/txr/m/n/12 Solve [] us-ing \OT1/txr/m/it/12 cvx-py/cvx-opt \OT1/txr/m/n/
 12 for $\OT1/txr/bx/n/12 x[] \OT1/txr/m/n/12 =
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
-
-
-]
 (./codes/svm_cvx.py
 LaTeX Font Info:    Try loading font information for OMS+txr on input line 1.
 
@@ -706,18 +702,16 @@ LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
 (Font)              Font shape `OML/txmi/m/it' tried instead on input line 26.
 )
 File: ./figs/svm_graph.eps Graphic file (type eps)
- <./figs/svm_graph.eps> [2]
-Underfull \vbox (badness 6775) has occurred while \output is active []
+ <./figs/svm_graph.eps> [2] [3] [4
 
- [3]
-(./gvv_svm.aux) ) 
+] (./gvv_svm.aux) ) 
 Here is how much of TeX's memory you used:
- 7856 strings out of 494591
- 119471 string characters out of 6176027
- 355511 words of memory out of 5000000
- 11342 multiletter control sequences out of 15000+600000
+ 7900 strings out of 492615
+ 120158 string characters out of 6118492
+ 357710 words of memory out of 5000000
+ 11667 multiletter control sequences out of 15000+600000
  82890 words of font info for 215 fonts, out of 8000000 for 9000
- 17 hyphenation exceptions out of 8191
- 36i,20n,39p,225b,1355s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 1144 hyphenation exceptions out of 8191
+ 36i,20n,39p,225b,1362s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_svm.dvi (3 pages, 24040 bytes).
+Output written on gvv_svm.dvi (4 pages, 25808 bytes).
