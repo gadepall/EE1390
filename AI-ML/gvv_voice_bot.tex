@@ -333,7 +333,7 @@ Sketch $s(x)$.
 \\
 \solution Let $\vec{x}$ be the voice command. The model used is
 \begin{align}
-\label{eq:sig}
+\label{eq:ls}
 \vec{y} = \vec{W}\vec{x}+\vec{b}
 \end{align}
 %
@@ -364,11 +364,6 @@ where
 \section{Gradient Descent}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
-\item Show that 
-\begin{align}
-\label{eq:sig_der}
-s^{\prime}(x)=\brak{1-s(x)}s(x)
-\end{align}
 \item Let $\vec{W}$ be $2\times 2$ and $\vec{x},\vec{y}$ be $2\times 1$.  Show that 
 \begin{align}
 \label{eq:grad_def_W}
@@ -435,6 +430,29 @@ Show that \eqref{eq:grad_def} can be expressed as
 \mbf{b}(n+1) &= \mbf{b}(n) + \alpha\brak{\vec{y}-\hat{\vec{y}}}
 %\alpha\sbrak{\mbf{x}\mbf{W}-\mbf{b}-\mbf{y}}
 \end{align}
+\item Show that 
+\begin{align}
+\label{eq:sig_der}
+s^{\prime}(x)=\brak{1-s(x)}s(x)
+\end{align}
+\item Suppose
+\begin{equation}
+\label{eq:cost_new}
+ J\brak{\mbf{W},\mbf{b}}  = \frac{1}{2}\norm{\mbf{y}-s\brak{\hat{\mbf{y}}}}^2
+\end{equation}
+%
+where the $s(\cdot)$ function operates elementwise.  Show that 
+\begin{align}
+\mbf{W}(n+1) &= \mbf{W}(n) + \alpha\sbrak{\brak{\vec{y}-s\brak{\hat{\vec{y}}}}\odot s^{\prime}\brak{\hat{\vec{y}}}}\vec{x}^T
+%\lsbrak{\mbf{x}^{T}(n)\mbf{x}(n)\mbf{W}(n)}
+%\nonumber \\
+%& \quad +\rsbrak{\mbf{x}^{T}(n)\mbf{b}(n)-\mbf{x}^T(n)\mbf{y}(n)}
+\\
+\mbf{b}(n+1) &= \mbf{b}(n) + \alpha\brak{\vec{y}-s\brak{\hat{\vec{y}}}}\odot s^{\prime}\brak{\hat{\vec{y}}}
+%\alpha\sbrak{\mbf{x}\mbf{W}-\mbf{b}-\mbf{y}}
+\end{align}
+%
+where $\odot$ is the Hadamard product, or elementwise multiplication of vectors.
 %\begin{align}
 %\mbf{W}(n+1) &= \mbf{W}(n) - \alpha\lsbrak{\mbf{x}^{T}(n)\mbf{x}(n)\mbf{W}(n)}
 %\nonumber \\
@@ -468,9 +486,14 @@ Show that \eqref{eq:grad_def} can be expressed as
 %\frac{\partial}{\partial\mbf{W}}\mbf{W}^T\mbf{x}^T\mbf{x}\mbf{W}
 %&= 
 %\end{align} 
-\item Store the complete dataset in a directory and run \textbf{code.py} from  within the 
+\item Store the complete dataset in a directory and execute 
+\begin{lstlisting}
+https://raw.githubusercontent.com/gadepall/EE1390/master/AI-ML/codes/code.py
+\end{lstlisting}
+from  within the 
 directory.  Note that this should be done on a powerful workstation. This will generate two files
 \textbf{W1.out} and \textbf{b.out}.
+This is the full code that is used for training. 
 \end{enumerate}
 
 %\subsection{Theory} 
@@ -491,26 +514,42 @@ directory.  Note that this should be done on a powerful workstation. This will g
 %Loss)*input$ %%%%%%% to be updated
 %
 %
-\subsection{Python code}
+%\subsection{Python code}
 
-\url{https://github.com/raktimgg/ML-algorithm-for-speech-recognition/blob/master/code.py}\newline
-This is the full code that is used for training. The accuracy we are getting is around 98 percent.
+%\url{https://github.com/raktimgg/ML-algorithm-for-speech-recognition/blob/master/code.py}\newline
 
-\subsection{Dataset}
-We have made our own dataset by recording 25 samples of each word. Each of these samples are recreated by adding empty elements in the front and back in many different cobinations to create a dataset of 6250 samples for each word. All the audio files are imported to an array in the code and converted to mfcc format before training. For creating training dataset we recorded 25 audio file of each of the following word -\newline
-1)Forward\newline
-2)Left\newline
-3)Right\newline
-4)Back\newline
-5)Stop\newline
-The code for generating 6250 samples for each word from 25 samples can be found in the github link attached.\newline
-\url{https://github.com/abhishekbairagi/Making-Dataset-for-ML/blob/master/250files.py}
+%\subsection{Dataset}
+%We have made our own dataset by recording 25 samples of each word. Each of these samples are recreated by adding empty elements in the front and back in many different cobinations to create a dataset of 6250 samples for each word. All the audio files are imported to an array in the code and converted to mfcc format before training. For creating training dataset we recorded 25 audio file of each of the following word -\newline
+%1)Forward\newline
+%2)Left\newline
+%3)Right\newline
+%4)Back\newline
+%5)Stop\newline
+%The code for generating 6250 samples for each word from 25 samples can be found in the github link attached.\newline
+%\url{https://github.com/abhishekbairagi/Making-Dataset-for-ML/blob/master/250files.py}
+%
 
 
-
-\section{Transfering the weights to Raspberry Pi (Yet to be done)}
-The weight(W1 and B) are saved in a file at the end of the code. These weights will be transferred to the raspberry pi and a simple program written, will record audio on the raspberry pi, do the calculations using the weights and predict the text output. This output will be sent,using bluetooth, to the toy car, which will move accordingly.
-
+\section{Prediction}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item For the test input $\vec{x}$, compute $s\brak{\hat{\vec{y}}}$ using the estimated $\vec{W}$ and $\vec{b}$. If
+\begin{align}
+\hat{y}_i = \max_{j}\hat{y}_j
+\end{align}
+define
+\begin{align}
+y_i = 1,
+y_j = 0, i \ne j
+\end{align}
+Match this vector the entries in Table \ref{fig:ref_vec}.
+\item Execute 
+\begin{lstlisting}
+https://raw.githubusercontent.com/gadepall/EE1390/master/AI-ML/codes/record.py
+\end{lstlisting}
+%
+to predict the output.
+\end{enumerate}
 \end{document}
 
 

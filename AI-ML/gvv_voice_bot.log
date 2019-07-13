@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Termux) (preloaded format=latex 2019.6.30)  9 JUL 2019 14:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Termux) (preloaded format=latex 2019.6.30)  13 JUL 2019 12:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -679,11 +679,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/listings/ls
 tlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
-) (./gvv_voice_bot.aux
-
-LaTeX Warning: Label `eq:sig' multiply defined.
-
-)
+) (./gvv_voice_bot.aux)
 \openout1 = `gvv_voice_bot.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 84.
@@ -893,38 +889,28 @@ File: ./figs/sigmoid.eps Graphic file (type eps)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Overfull \hbox (182.02382pt too wide) in paragraph at lines 496--498
-[][][]$\OT1/txr/m/n/12 https : / / github . com / raktimgg / ML-[]algorithm-[]f
-or-[]speech-[]recognition / blob / master / code . py$[][][] 
- []
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 553.
 
-
-Overfull \hbox (152.86781pt too wide) in paragraph at lines 500--508
-[][]$\OT1/txr/m/n/12 https : / / github . com / abhishekbairagi / Making-[]Data
-set-[]for-[]ML / blob / master / 250^^Lles . py$[][][] 
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 514.
 [3] [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 514.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 553.
  (./gvv_voice_bot.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 514.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 514.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 553.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 553.
 Package rerunfilecheck Info: File `gvv_voice_bot.out' has not changed.
-(rerunfilecheck)             Checksum: 3164383B2A18FF857DC11114011225BE;369.
+(rerunfilecheck)             Checksum: F80C07B2D8F492A35818D78E19509AF4;205.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 514.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 553.
  ) 
 Here is how much of TeX's memory you used:
- 11802 strings out of 492615
- 180603 string characters out of 6118492
- 504789 words of memory out of 5000000
- 15536 multiletter control sequences out of 15000+600000
+ 11804 strings out of 492615
+ 180611 string characters out of 6118492
+ 506789 words of memory out of 5000000
+ 15538 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 36i,18n,40p,449b,1306s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,18n,40p,450b,1306s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_voice_bot.dvi (4 pages, 33540 bytes).
+Output written on gvv_voice_bot.dvi (4 pages, 34724 bytes).
