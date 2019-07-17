@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Termux) (preloaded format=latex 2019.6.30)  12 JUL 2019 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Termux) (preloaded format=latex 2019.6.30)  15 JUL 2019 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -702,16 +702,19 @@ LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
 (Font)              Font shape `OML/txmi/m/it' tried instead on input line 26.
 )
 File: ./figs/svm_graph.eps Graphic file (type eps)
- <./figs/svm_graph.eps> [2] [3] [4
+ <./figs/svm_graph.eps> [2] [3]
+File: ./figs/svm_C_const1.eps Graphic file (type eps)
+ <./figs/svm_C_const1.eps>
+File: ./figs/svm_C_const2.eps Graphic file (type eps)
 
-] (./gvv_svm.aux) ) 
+<./figs/svm_C_const2.eps> [4] (./gvv_svm.aux) ) 
 Here is how much of TeX's memory you used:
- 7900 strings out of 492615
- 120158 string characters out of 6118492
+ 7909 strings out of 492615
+ 120358 string characters out of 6118492
  357710 words of memory out of 5000000
- 11667 multiletter control sequences out of 15000+600000
+ 11674 multiletter control sequences out of 15000+600000
  82890 words of font info for 215 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  36i,20n,39p,225b,1362s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_svm.dvi (4 pages, 25808 bytes).
+Output written on gvv_svm.dvi (4 pages, 26924 bytes).

@@ -733,10 +733,12 @@ wget https://github.com/gadepall/EE1390/raw/master/manuals/svm/codes/wolfe_dual.
 %\item Substitute \eqref{eq:station_1}-\eqref{eq:station_2} in the primal function to obtain the Lagrangian 
 %(Wolfe) dual objective function $L_D$.  
 \end{enumerate}
-\section{Convexification}
+\section{Inseparable Data}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
-\item Given $\brak{\vec{x}_i,y_i}, i = 1 \dots n$  are i/o data for a system where $y_i \notin 
-\cbrak{1,-1}$. If you want 
+\item Given $\brak{\vec{x}_i,y_i}, i = 1 \dots n$  are i/o data for a system.
+ %where $y_i \notin 
+%\cbrak{1,-1}$. 
+If you want 
 to find $\vec{w},d$ from the given dataset, how will you formulate the equivalent 
 optimization 
 problem by modifying \eqref{eq:opt_w}?
@@ -759,7 +761,50 @@ Note that $C$ is also a parameter that needs to be given for estimating the para
 \begin{align}
 y = \sgn\brak{\vec{x}^T\vec{w}+d}
 \end{align}
+%
+\item Explain  \eqref{eq:opt_w_svm} through an example.
+\\
+\solution The following code plots Figs. \eqref{fig:svm_C_const1} and \eqref{fig:svm_C_const2}.
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/svm_C_const1.eps}
+\caption{}
+\label{fig:svm_C_const1}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/svm_C_const2.eps}
+\caption{}
+\label{fig:svm_C_const2}
+\end{figure}
+%
+As can be seen, the position of the line separating the two sets is heavily dependent on $C$.
+\item 	Modify \eqref{eq:opt_w_svm} so that $C$ doesn't appear as a constraint.
+\\
+\solution 
+The desired expression is
+\begin{align}
+\label{eq:opt_C_svm}
+\min_{\vec{w},d}\frac{1}{2}\norm{\vec{w}}^2 + C \sum_{i}^{n}\xi_i
+\\
+\text{s.t} \quad  y_i\brak{\vec{x}_i^T\vec{w}+d} \ge& 1 - \xi_i
+\\
+\xi_i \ge 0
+\end{align}
+\item Explain  \eqref{eq:opt_C_svm} through an example.
+\\
+\solution The following code plots Figs. \eqref{fig:svm_C_const1} and \eqref{fig:svm_C_opt2}.\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/svm_C_opt1.eps}
+\caption{}
+\label{fig:svm_C_opt1}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/svm_C_opt2.eps}
+\caption{}
+\label{fig:svm_C_opt2}
+\end{figure}
 \end{enumerate}
-	
 \end{document}
 

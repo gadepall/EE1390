@@ -3,4 +3,4 @@
 \contentsline {section}{\numberline {3}Solver}{2}% 
 \contentsline {section}{\numberline {4}KKT Solution}{2}% 
 \contentsline {section}{\numberline {5}Duality}{3}% 
-\contentsline {section}{\numberline {6}Convexification}{3}% 
+\contentsline {section}{\numberline {6}Inseparable Data}{3}% 
