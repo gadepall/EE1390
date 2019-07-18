@@ -764,19 +764,24 @@ y = \sgn\brak{\vec{x}^T\vec{w}+d}
 %
 \item Explain  \eqref{eq:opt_w_svm} through an example.
 \\
-\solution The following code plots Figs. \eqref{fig:svm_C_const1} and \eqref{fig:svm_C_const2}.
+\solution The following code plots Fig. \eqref{fig:svm_C_const}
+\begin{lstlisting}
+wget https://github.com/gadepall/EE1390/raw/master/manuals/svm/codes/svm_err.py
+\end{lstlisting}
+% and \eqref{fig:svm_C_const2}.
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/svm_C_const1.eps}
+\includegraphics[width=\columnwidth]{./figs/svm_C_const.eps}
+%\includegraphics[width=\columnwidth]{./figs/svm_C_const1.eps}
 \caption{}
-\label{fig:svm_C_const1}
+\label{fig:svm_C_const}
 \end{figure}
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/svm_C_const2.eps}
-\caption{}
-\label{fig:svm_C_const2}
-\end{figure}
+%\begin{figure}[!ht]
+%\centering
+%\includegraphics[width=\columnwidth]{./figs/svm_C_const2.eps}
+%\caption{}
+%\label{fig:svm_C_const2}
+%\end{figure}
 %
 As can be seen, the position of the line separating the two sets is heavily dependent on $C$.
 \item 	Modify \eqref{eq:opt_w_svm} so that $C$ doesn't appear as a constraint.
@@ -793,18 +798,23 @@ The desired expression is
 \end{align}
 \item Explain  \eqref{eq:opt_C_svm} through an example.
 \\
-\solution The following code plots Figs. \eqref{fig:svm_C_const1} and \eqref{fig:svm_C_opt2}.\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/svm_C_opt1.eps}
-\caption{}
-\label{fig:svm_C_opt1}
-\end{figure}
+\solution The following code plots Fig. \eqref{fig:svm_C_opt}.  It is obvious that the data set is separable regardless of the choice of $C$. 
+\begin{lstlisting}
+wget https://github.com/gadepall/EE1390/raw/master/manuals/svm/codes/svm_regular.py\end{lstlisting}
+
+% and \eqref{fig:svm_C_opt2}.
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/svm_C_opt2.eps}
+\includegraphics[width=\columnwidth]{./figs/svm_C_opt.eps}
 \caption{}
-\label{fig:svm_C_opt2}
+\label{fig:svm_C_opt}
 \end{figure}
+%\begin{figure}[!ht]
+%\centering
+%\includegraphics[width=\columnwidth]{./figs/svm_C_opt2.eps}
+%\caption{}
+%\label{fig:svm_C_opt2}
+%\end{figure}
 \end{enumerate}
 \end{document}
 
