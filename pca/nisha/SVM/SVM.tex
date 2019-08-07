@@ -1,31 +1,21 @@
-
-  
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
+
 \makeatletter
 \makeatother
 \usepackage{setspace}
 \usepackage{gensymb}
 \usepackage{xcolor}
 \usepackage{caption}
-%\usepackage{stackengine}
-%\usepackage{subcaption}
-%\doublespacing
+
 \singlespacing
 
 
 
 \usepackage{graphicx}
 \graphicspath{ {./images}  }
-%\usepackage{amssymb}
-%\usepackage{relsize}
+
 \usepackage[cmex10]{amsmath}
 \usepackage{mathtools}
-%\usepackage{amsthm}
-%\interdisplaylinepenalty=2500
-%\savesymbol{iint}
-%\usepackage{txfonts}
-%\restoresymbol{TXF}{iint}
 \usepackage{wasysym}
 \usepackage{amsthm}
 \usepackage{mathrsfs}
@@ -38,75 +28,34 @@
 \usepackage{enumerate}	
 \usepackage{enumitem}
 \usepackage{amsmath}
-%\usepackage{xtab}
+
 \usepackage{longtable}
 \usepackage{multirow}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
+
 \usepackage{enumitem}
 \usepackage{mathtools}
-%\usepackage{iithtlc}
-%\usepackage[framemethod=tikz]{mdframed}
 \usepackage{listings}
 \usepackage{listings}
-    \usepackage[latin1]{inputenc}                                 %%
-    \usepackage{color}                                            %%
-    \usepackage{array}                                            %%
-    \usepackage{longtable}                                        %%
-    \usepackage{calc}                                             %%
-    \usepackage{multirow}                                         %%
-    \usepackage{hhline}                                           %%
-    \usepackage{ifthen}                                           %%
-  %optionally (for landscape tables embedded in another document): %%
-    \usepackage{lscape}     
+\usepackage[latin1]{inputenc}                               
+\usepackage{color}                                           
+\usepackage{array}                                         
+\usepackage{longtable}                                    
+\usepackage{calc}                                          
+\usepackage{multirow}                                        
+\usepackage{hhline}                                          
+\usepackage{ifthen}                                           
+\usepackage{lscape}     
 
-
-
-%\usepackage{stmaryrd}
-
-
-%\usepackage{wasysym}
-%\newcounter{MYtempeqncnt}
 \DeclareMathOperator*{\Res}{Res}
-%\renewcommand{\baselinestretch}{4}
-%\setcounter{secnumdepth}{4}
+
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
-%\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
-
-%\renewcommand\thesectiondis{\arabic{section}}
-%\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
-%\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
-%\renewcommand\thesubsubsubsectiondis{\thesubsubsectiondis.\arabic{subsubsubsection}}
-% correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
-%\lstset{
-%language=C,
-%frame=single, 
-%breaklines=true
-%}
-
-%\lstset{
-	%%basicstyle=\small\ttfamily\bfseries,
-	%%numberstyle=\small\ttfamily,
-	%language=Octave,
-	%backgroundcolor=\color{white},
-	%%frame=single,
-	%%keywordstyle=\bfseries,
-	%%breaklines=true,
-	%%showstringspaces=false,
-	%%xleftmargin=-10mm,
-	%%aboveskip=-1mm,
-	%%belowskip=0mm
-%}
-
-%\surroundwithmdframed[width=\columnwidth]{lstlisting}
-\def\inputGnumericTable{}                                 %%
+\def\inputGnumericTable{}                               
 
 \lstset{
-%language=python,
 frame=single, 
 breaklines=true,
 columns=fullflexible
@@ -115,7 +64,6 @@ columns=fullflexible
  
 
 \begin{document}
-%
 
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
@@ -125,14 +73,12 @@ columns=fullflexible
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}{Definition}[section]
-%\newtheorem{algorithm}{Algorithm}[section]
-%\newtheorem{cor}{Corollary}
+
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 
 \bibliographystyle{IEEEtran}
-%\bibliographystyle{ieeetr}
 
 \providecommand{\nCr}[2]{\,^{#1}C_{#2}} % nCr
 \providecommand{\nPr}[2]{\,^{#1}P_{#2}} % nPr
@@ -157,50 +103,17 @@ columns=fullflexible
 \providecommand{\mtx}[1]{\mathbf{#1}}
 \providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
-%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
-	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
-%\numberwithin{equation}{subsection}
 \numberwithin{equation}{section}
-%\numberwithin{problem}{subsection}
-%\numberwithin{definition}{subsection}
-%\makeatletter
-%\@addtoreset{figure}{section}
-%\makeatother
 
 \let\StandardTheFigure\thefigure
-%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
-%\renewcommand{\thefigure}{\thesection}
-
-
-%\numberwithin{figure}{subsection}
-
-%\numberwithin{equation}{subsection}
-%\numberwithin{equation}{section}
-%\numberwithin{equation}{problem}
-%\numberwithin{problem}{subsection}
-%\numberwithin{problem}{section}
-%%\numberwithin{definition}{subsection}
-%\makeatletter
-%\@addtoreset{figure}{problem}
-%\makeatother
-%\makeatletter
-%\@addtoreset{table}{problem}
-%\makeatother
 
 \let\StandardTheFigure\thefigure
 \let\StandardTheTable\thetable
-%%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
-%\renewcommand{\thefigure}{\theproblem}
-
-%%\numberwithin{figure}{section}
-
-%%\numberwithin{figure}{subsection}
-
-
 
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
      \def\rightbox#1{\makebox[0in][r]{#1}}
@@ -208,15 +121,7 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 
-
-
-\title{ 
-%	\logo{
-Support Vector Machine
-%	}
-}
-
-
+\title{ Support Vector Machine}
 
 \author{Nisha Akole, G V V 
 Sharma$^{*}$% <-this % stops a space
@@ -225,54 +130,20 @@ of Electrical Engineering, Indian Institute of Technology, Hyderabad
 502285 India e-mail:  gadepall@iith.ac.in.}
 }
 
-
-% make the title area
 \maketitle
 
 \tableofcontents
 
 \bigskip
-%
 \begin{abstract}
-%\boldmath
 This manual provides a brief description on how to implement Support Vector Machine, a classifier technique.
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
 
 \section{Objective}
-%\begin{equation}
-%m \rightarrow\boxed	{BPSK}\rightarrow\boxed	{\uparrow T_{sym}}\rightarrow C	
-%\end{equation}
-%
-%  Let bit stream was $m$, $xc$ will be mapped sequence and $C$ will be upsampled by $T_{sym}$
-% Where $T_{sym}$ is the samples per symbol. 
-%\begin{equation}
-%X=P \circledast C
-%\end{equation} where $P$ is the shape of the pulse. And defined as,
-%\begin{equation}
-%    P =
-%    \begin{cases}
-%      1 & 0\leq t\leq 99 \\
-%      0        & otherwise
-%    \end{cases}
-%  \end{equation}
-%\subsection{Receiver}
+
 Our objective is perform classification of datasets and decide class for new data points. 
-%\begin{equation}
-%Y_k(m)= X_k + V_k(m), \quad k = 1,\dots,N, m = 1 ,\dots,M.
-%\end{equation} 
-%where $X_k$ is the transmitted symbol in the $k$th time slot and $V_k(m) \sim \mathcal{N}\brak{0,\sigma^2} $. 
-%The decision variable for the $k$th symbol 
-%is 
-%\cite{time_offset}
-%\begin{align}
-%U_k&=Y_{k-1}\brak{\frac{M}{2}}\sbrak{Y_{k}\brak{M}-Y_{k-1}\brak{M}}
-%\begin{align}
-%U_k=\frac{1}{N}\sum^{N}_{i=1}Y_{k-i}\brak{\frac{M}{2}}\sbrak{Y_{k-i+1}\brak{M}-Y_{k-i}%\brak{M}}
-%\end{align}
-%\end{align}
-%
 \section{Load Dataset}
 Download the dataset file from following link in the folder where you want to write code for SVM.
 \begin{lstlisting}
@@ -307,7 +178,6 @@ Kernel SVM is used specially to classify non-linear data by using different kern
 link for 2 non-linear kernel code
 \end{lstlisting}
 
-%\pagebreak
 \section{Evaluating the Algorithm}
 Confusion matrix, accuracy, precision and recall are metrices used for checking the algorithm correctness. Scikit-learn is a free machine learning library for python, mostly used for various algorithms like support vector machine, principal component analysis, random forest etc. Sklearn contains classification\_report and confusion\_matrix for classification tasks.
 
@@ -340,6 +210,30 @@ Confusion matrix, accuracy, precision and recall are metrices used for checking 
 \item The SVM hyper-parameters are cost and gamma. It is hard to visualize their effect.
 \end{itemize}
 
+\section{Figures}
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=3in]{figs/LinSVM_2D.png}
+\end{center}
+\caption{}
+\label{fig: 2D Plot}
+\end{figure}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=3in]{figs/LinSVM_3D.png}
+\end{center}
+\caption{}
+\label{fig: 3D Plot}
+\end{figure}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=3.8in]{figs/NLinSVM_2D.png}
+\end{center}
+\caption{}
+\label{fig: 3D Plot}
+\end{figure}
 
 \end{document}
 
@@ -355,5 +249,3 @@ API
 Training
 Blog
 About
-
-

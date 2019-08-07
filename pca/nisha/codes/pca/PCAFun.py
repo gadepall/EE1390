@@ -36,7 +36,7 @@ X_data = scaler.fit_transform(X_data)
 
 #For 2 Principal Components
 pca = PCA(n_components=2)
-X_comp = PCA().fit_transform(X_data)
+X_comp = pca.fit_transform(X_data)
 
 ##-----2D Plot-----#
 fig = plt.figure()
@@ -45,7 +45,10 @@ plt.scatter(X_comp[:, 0], X_comp[:, 1],marker='o')
 plt.xlabel('Principal Component 1')
 plt.ylabel('Principal Component 2') 
 plt.title('PCA 2D Plot')
-
+#plt.show()
+plt.savefig('../figs/PCA_2D.png')
+plt.savefig('../figs/PCA_2D.eps')
+plt.close()
 #For 3 Principal Components
 pca = PCA(n_components=3)
 X_comp = pca.fit_transform(X_data) 
@@ -58,6 +61,10 @@ ax.set_xlabel('Prin. Comp 1')
 ax.set_ylabel('Prin. Comp 2')
 ax.set_zlabel('Prin. Comp 3')
 ax.set_title('PCA 3D Plot')
+
+plt.savefig('../figs/PCA_3D.png')
+plt.savefig('../figs/PCA_3D.eps')
+plt.close()
 
 #-----Print Time Required-----#
 print("--- %s seconds ---" % (time.time() - start_time))
