@@ -1,31 +1,21 @@
-
-  
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
+
 \makeatletter
 \makeatother
 \usepackage{setspace}
 \usepackage{gensymb}
 \usepackage{xcolor}
 \usepackage{caption}
-%\usepackage{stackengine}
-%\usepackage{subcaption}
-%\doublespacing
+
 \singlespacing
 
-
+%\usepackage{geometry}
+%\geometry{letterpaper}
 
 \usepackage{graphicx}
 \graphicspath{ {./images}  }
-%\usepackage{amssymb}
-%\usepackage{relsize}
 \usepackage[cmex10]{amsmath}
 \usepackage{mathtools}
-%\usepackage{amsthm}
-%\interdisplaylinepenalty=2500
-%\savesymbol{iint}
-%\usepackage{txfonts}
-%\restoresymbol{TXF}{iint}
 \usepackage{wasysym}
 \usepackage{amsthm}
 \usepackage{mathrsfs}
@@ -38,72 +28,31 @@
 \usepackage{enumerate}	
 \usepackage{enumitem}
 \usepackage{amsmath}
-%\usepackage{xtab}
+
 \usepackage{longtable}
 \usepackage{multirow}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
+
 \usepackage{enumitem}
 \usepackage{mathtools}
-%\usepackage{iithtlc}
-%\usepackage[framemethod=tikz]{mdframed}
+
 \usepackage{listings}
 \usepackage{listings}
-    \usepackage[latin1]{inputenc}                                 %%
-    \usepackage{color}                                            %%
-    \usepackage{array}                                            %%
-    \usepackage{longtable}                                        %%
-    \usepackage{calc}                                             %%
-    \usepackage{multirow}                                         %%
-    \usepackage{hhline}                                           %%
-    \usepackage{ifthen}                                           %%
-  %optionally (for landscape tables embedded in another document): %%
-    \usepackage{lscape}     
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                        
+\usepackage{hhline}                                          
+\usepackage{ifthen}    
+\usepackage{lscape}
 
-
-
-%\usepackage{stmaryrd}
-
-
-%\usepackage{wasysym}
-%\newcounter{MYtempeqncnt}
 \DeclareMathOperator*{\Res}{Res}
-%\renewcommand{\baselinestretch}{4}
-%\setcounter{secnumdepth}{4}
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
-%\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
-
-%\renewcommand\thesectiondis{\arabic{section}}
-%\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
-%\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
-%\renewcommand\thesubsubsubsectiondis{\thesubsubsectiondis.\arabic{subsubsubsection}}
-% correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
-
-%\lstset{
-%language=C,
-%frame=single, 
-%breaklines=true
-%}
-
-%\lstset{
-	%%basicstyle=\small\ttfamily\bfseries,
-	%%numberstyle=\small\ttfamily,
-	%language=Octave,
-	%backgroundcolor=\color{white},
-	%%frame=single,
-	%%keywordstyle=\bfseries,
-	%%breaklines=true,
-	%%showstringspaces=false,
-	%%xleftmargin=-10mm,
-	%%aboveskip=-1mm,
-	%%belowskip=0mm
-%}
-
-%\surroundwithmdframed[width=\columnwidth]{lstlisting}
-\def\inputGnumericTable{}                                 %%
+\def\inputGnumericTable{}                            
 
 \lstset{
 %language=python,
@@ -112,10 +61,13 @@ breaklines=true,
 columns=fullflexible
 }
 
- 
+%\usepackage{amssymb}
+%\usepackage{epstopdf}
+%\title{Brief Article}
+%\author {The Author}
 
 \begin{document}
-%
+%\maketitle
 
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
@@ -125,14 +77,12 @@ columns=fullflexible
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}{Definition}[section]
-%\newtheorem{algorithm}{Algorithm}[section]
-%\newtheorem{cor}{Corollary}
+
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 
 \bibliographystyle{IEEEtran}
-%\bibliographystyle{ieeetr}
 
 \providecommand{\nCr}[2]{\,^{#1}C_{#2}} % nCr
 \providecommand{\nPr}[2]{\,^{#1}P_{#2}} % nPr
@@ -157,82 +107,37 @@ columns=fullflexible
 \providecommand{\mtx}[1]{\mathbf{#1}}
 \providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
-%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
-	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
-%\numberwithin{equation}{subsection}
 \numberwithin{equation}{section}
-%\numberwithin{problem}{subsection}
-%\numberwithin{definition}{subsection}
-%\makeatletter
-%\@addtoreset{figure}{section}
-%\makeatother
 
 \let\StandardTheFigure\thefigure
-%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
-%\renewcommand{\thefigure}{\thesection}
-
-
-%\numberwithin{figure}{subsection}
-
-%\numberwithin{equation}{subsection}
-%\numberwithin{equation}{section}
-%\numberwithin{equation}{problem}
-%\numberwithin{problem}{subsection}
-%\numberwithin{problem}{section}
-%%\numberwithin{definition}{subsection}
-%\makeatletter
-%\@addtoreset{figure}{problem}
-%\makeatother
-%\makeatletter
-%\@addtoreset{table}{problem}
-%\makeatother
-
 \let\StandardTheFigure\thefigure
 \let\StandardTheTable\thetable
-%%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
-%\renewcommand{\thefigure}{\theproblem}
-
-%%\numberwithin{figure}{section}
-
-%%\numberwithin{figure}{subsection}
-
-
 
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
      \def\rightbox#1{\makebox[0in][r]{#1}}
      \def\centbox#1{\makebox[0in]{#1}}
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
-
-
-
-\title{ 
-%	\logo{
-Principal Component Analysis
-%	}
-}
-
-
-
-\author{Nisha Akole, G V V 
+     
+ \title{ Principal Component Analysis}
+ 
+ \author{Nisha Akole, G V V 
 Sharma$^{*}$% <-this % stops a space
 \thanks{*The authors are with the Department
 of Electrical Engineering, Indian Institute of Technology, Hyderabad
 502285 India e-mail:  gadepall@iith.ac.in.}
 }
-
-
-% make the title area
 \maketitle
 
 \tableofcontents
 
 \bigskip
-%
+
 \begin{abstract}
 %\boldmath
 This manual provides a brief description on how to implement Principal Component Analysis from scratch and use it for dimensionality reduction of data.
@@ -241,38 +146,8 @@ This manual provides a brief description on how to implement Principal Component
 \IEEEpeerreviewmaketitle
 
 \section{Objective}
-%\begin{equation}
-%m \rightarrow\boxed	{BPSK}\rightarrow\boxed	{\uparrow T_{sym}}\rightarrow C	
-%\end{equation}
-%
-%  Let bit stream was $m$, $xc$ will be mapped sequence and $C$ will be upsampled by $T_{sym}$
-% Where $T_{sym}$ is the samples per symbol. 
-%\begin{equation}
-%X=P \circledast C
-%\end{equation} where $P$ is the shape of the pulse. And defined as,
-%\begin{equation}
-%    P =
-%    \begin{cases}
-%      1 & 0\leq t\leq 99 \\
-%      0        & otherwise
-%    \end{cases}
-%  \end{equation}
-%\subsection{Receiver}
 Our objective is to implement PCA and reduce dimensionality of data which gives better understanding of data visually.
-%\begin{equation}
-%Y_k(m)= X_k + V_k(m), \quad k = 1,\dots,N, m = 1 ,\dots,M.
-%\end{equation} 
-%where $X_k$ is the transmitted symbol in the $k$th time slot and $V_k(m) \sim \mathcal{N}\brak{0,\sigma^2} $. 
-%The decision variable for the $k$th symbol 
-%is 
-%\cite{time_offset}
-%\begin{align}
-%U_k&=Y_{k-1}\brak{\frac{M}{2}}\sbrak{Y_{k}\brak{M}-Y_{k-1}\brak{M}}
-%\begin{align}
-%U_k=\frac{1}{N}\sum^{N}_{i=1}Y_{k-i}\brak{\frac{M}{2}}\sbrak{Y_{k-i+1}\brak{M}-Y_{k-i}%\brak{M}}
-%\end{align}
-%\end{align}
-%
+
 \section{Load Dataset}
 The dataset used for PCA is available at the following link. Download all the data file in the folder where you want to write code for PCA.
 \begin{lstlisting}
@@ -286,15 +161,14 @@ from sklearn.utils.extmath import randomized_svd
 mat_contents = sio.loadmat('data_all.mat')
 X_data = mat_contents['data_all']
 \end{lstlisting}
+
 \section{About PCA}
 Principal component analysis (PCA) is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables (entitles each of which takes on various numerical values) into a set of values of linearly uncorrelated variables called principal components.
-
-
 There are four main operations in the PCA:\\
-	1) Pre-processing\\
-	2) Co-variance Matrix\\
-	3) Eigen Vectors\\
-	4) Feature Vector and Plot
+		1) Pre-processing\\
+		2) Co-variance Matrix\\
+		3) Eigen Vectors\\
+		4) Feature Vector and Plot
 
 \section{Pre-processing}
 Take the whole dataset ignoring the labels. Feature scaling is an important task in PCA because various scales of feature will affect and we may not get an optimized output. The functions  StandardScaler or MinMaxScaler will standardize the features by making mean $=0$ and variance $=1$. These functions are imported from sklearn.preprocessing. 
@@ -319,7 +193,6 @@ Computing the covariance matrix will help us to understand the relationship betw
 X_cov = np.cov(X_std)
 \end{lstlisting}
 
-%\pagebreak
 \section{Compute Eigenvectors}
 The diagonal values of covariance matrix are the eigenvalues of a covariance matrix where large eigenvalues correspond to large variance. Eigenvector of covariance matrix is the axes along with data has maximum variation. Eigenvalues and eigevectors can be calculated by taking Singular Value Decomposition(SVD) of a covariance matrix. Eigenvalues are arranged in decreasing order in sigma matrix and its corresponding eigenvector is arranged in U which is left eigenvector or eigenvector of np.matmul(X\_cov,X\_cov'), where X\_cov' is transpose of X\_cov.
 \begin{lstlisting}[mathescape=true]
@@ -330,29 +203,44 @@ n\_components will consider first 10 largest eigenvalues. Hence, first 10 eigenv
 \section{Principal Component and plot}
 To visualize the data either we can plot it in 2D or 3D. But sometime first 2 or 3 principal components are not sufficient to retain the maximum information from dataset. In such case, no of principal components can be decided by taking ratio of first K eigenvalues to sum of all the eigenvalues. If the ratio is closer to 0.95 then these K principal components are taken. Link for PCA without function is given below:
 \begin{lstlisting}[mathescape=true]
-https://github.com/NishaAkole/AI-and-ML/blob/master/PCA/PCANFun.py
+https://github.com/NishaAkole/AI-and-ML/blob/master/codes/pca/PCAwithoutFun.py
 \end{lstlisting}
   
 The above whole program can be combined except preprocessing and a single command(i.e using inbuilt function) can do all the  
 \begin{lstlisting}[mathescape=true]
-https://github.com/NishaAkole/PCA/blob/master/PCAFun.py
+https://github.com/NishaAkole/AI-and-ML/blob/master/codes/pca/PCAFun.py
 \end{lstlisting}
 
-%\pagebreak
 \section{Figures}
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=3.0in]{2D_plot.png}
+\includegraphics[width=3in]{figs/PCA_2D.png}
 \end{center}
-\caption{}
+\caption{PCA with Function 2D}
 \label{fig: 2D Plot}
 \end{figure}
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=3.0in]{3D_plot.png}
+\includegraphics[width=3.8in]{figs/PCA_3D.png}
 \end{center}
-\caption{}
+\caption{PCA with Function 3D}
+\label{fig: 3D Plot}
+\end{figure}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=3in]{figs/PCA_2D_woFun.png}
+\end{center}
+\caption{PCA without Function 2D}
+\label{fig: 2D Plot}
+\end{figure}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=3.8in]{figs/PCA_3D_woFun.png}
+\end{center}
+\caption{PCA without Function 3D}
 \label{fig: 3D Plot}
 \end{figure}
 
@@ -360,13 +248,13 @@ Above plots help us to visualize the data. To get more idea on principal compone
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=3.0in]{InfovsPrinc.png}
+\includegraphics[width=3.8in]{figs/Accuracy.png}
 \end{center}
-\caption{}
+\caption{Information vs No of Dimensions }
 \label{fig: }
 \end{figure}  
 
-Clearly,only two or three prin. comp does not contain much info. Hence, PCA is not a good approach for dimensionality reduction for this data.
+Clearly, only two or three prin. comp does not contain much info. Hence, PCA is not a good approach for dimensionality reduction for this data.
 
 \end{document}
 
@@ -382,5 +270,3 @@ API
 Training
 Blog
 About
-
-

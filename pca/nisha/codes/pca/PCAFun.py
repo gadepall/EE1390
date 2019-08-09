@@ -21,39 +21,36 @@ X_data = mat_contents['data_all']
 scaler = StandardScaler(copy=True, with_mean= True, with_std=True)
 X_data = scaler.fit_transform(X_data)
 
-#-----PCA-----#
 #For 95% accuracy how many prin. comp need to be considered
 #pca = PCA(.95)
-#X_pca = pca.fit(X_data)
-#X_pca1 = PCA().fit_transform(X_data1)
+#X_pca = PCA().fit(X_data)
+#X_pca1 = PCA().fit_transform(X_data)
+
 #Plotting the Cumulative Summation of the Explained Variance
 #plt.figure()
-#plt.plot(np.cumsum(X_comp.explained_variance_ratio_))
+#plt.plot(np.cumsum(X_pca.explained_variance_ratio_))
 #plt.xlabel('Number of Components')
 #plt.ylabel('Variance (%)') #for each component
 #plt.title('Pulsar Dataset Explained Variance')
-#plt.show()
+#plt.savefig('../figs/Accuracy.png')
+#plt.savefig('../figs/Accuracy.eps')
 
 #For 2 Principal Components
-pca = PCA(n_components=2)
+pca = PCA(n_components=3)
 X_comp = pca.fit_transform(X_data)
 
-##-----2D Plot-----#
+#-----2D Plot-----#
 fig = plt.figure()
 ax = fig.add_subplot(111)
 plt.scatter(X_comp[:, 0], X_comp[:, 1],marker='o')
 plt.xlabel('Principal Component 1')
 plt.ylabel('Principal Component 2') 
 plt.title('PCA 2D Plot')
-#plt.show()
 plt.savefig('../figs/PCA_2D.png')
 plt.savefig('../figs/PCA_2D.eps')
 plt.close()
-#For 3 Principal Components
-pca = PCA(n_components=3)
-X_comp = pca.fit_transform(X_data) 
-#      
-##-----3D Plot-----# c is for color
+
+#3D Plot For 3 Principal Components #     c is for color
 fig = plt.figure()
 ax = fig.add_subplot(111,projection='3d')
 ax.scatter3D(X_comp[:, 0], X_comp[:, 1],X_comp[:,2], marker='o')
@@ -61,7 +58,6 @@ ax.set_xlabel('Prin. Comp 1')
 ax.set_ylabel('Prin. Comp 2')
 ax.set_zlabel('Prin. Comp 3')
 ax.set_title('PCA 3D Plot')
-
 plt.savefig('../figs/PCA_3D.png')
 plt.savefig('../figs/PCA_3D.eps')
 plt.close()

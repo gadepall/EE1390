@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.31)  31 JUL 2019 12:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.31)  2 AUG 2019 07:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -505,6 +505,12 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 
 LaTeX Warning: Label `fig: 3D Plot' multiply defined.
 
+
+LaTeX Warning: Label `fig: 3D Plot' multiply defined.
+
+
+LaTeX Warning: Label `fig: 3D Plot' multiply defined.
+
 )
 \openout1 = `SVM.aux'.
 
@@ -714,7 +720,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
 Underfull \hbox (badness 1466) in paragraph at lines 188--189
 []\OT1/txr/m/n/12 Regularization Pa-ram-e-ter(C): It is used to
- []2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+
+ []
+
+
+Underfull \hbox (badness 3746) in paragraph at lines 191--192
 []\OT1/txr/m/n/12 Gamma: A lower value of gamma will
  []
 
@@ -723,47 +737,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
-[1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-
-]
 Underfull \hbox (badness 2809) in paragraph at lines 210--211
 []\OT1/txr/m/n/12 The SVM hyper-parameters are cost and
  []
 
+<figs/LinSVM_2D.png, id=13, 433.62pt x 289.08pt>
+File: figs/LinSVM_2D.png Graphic file (type png)
+<use figs/LinSVM_2D.png>
+Package pdftex.def Info: figs/LinSVM_2D.png  used on input line 216.
+(pdftex.def)             Requested size: 252.94499pt x 168.63252pt.
 
-LaTeX Warning: File `figs/LinSVM_2D.png' not found on input line 216.
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 216--217
+ [] 
+ []
+
+<figs/LinSVM_3D.png, id=15, 433.62pt x 289.08pt>
+File: figs/LinSVM_3D.png Graphic file (type png)
+<use figs/LinSVM_3D.png>
+Package pdftex.def Info: figs/LinSVM_3D.png  used on input line 224.
+(pdftex.def)             Requested size: 281.85255pt x 187.90858pt.
+
+Overfull \hbox (29.85255pt too wide) in paragraph at lines 224--225
+ [] 
+ []
+
+<figs/HyperPlane_Lin.png, id=16, 433.62pt x 289.08pt>
+File: figs/HyperPlane_Lin.png Graphic file (type png)
+<use figs/HyperPlane_Lin.png>
+Package pdftex.def Info: figs/HyperPlane_Lin.png  used on input line 232.
+(pdftex.def)             Requested size: 274.6262pt x 183.09177pt.
+
+Overfull \hbox (22.6262pt too wide) in paragraph at lines 232--233
+ [] 
+ []
 
 
-./SVM.tex:216: Package pdftex.def Error: File `figs/LinSVM_2D.png' not found: u
-sing draft setting.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.216 ...degraphics[width=3in]{figs/LinSVM_2D.png}
-                                                  
-? 
-./SVM.tex:216: Emergency stop.
- ...                                              
-                                                  
-l.216 ...degraphics[width=3in]{figs/LinSVM_2D.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<figs/NLinSVM_2D.png, id=17, 433.62pt x 289.08pt>
+File: figs/NLinSVM_2D.png Graphic file (type png)
+<use figs/NLinSVM_2D.png>
+Package pdftex.def Info: figs/NLinSVM_2D.png  used on input line 240.
+(pdftex.def)             Requested size: 274.6262pt x 183.09177pt.
 
- 
+Overfull \hbox (22.6262pt too wide) in paragraph at lines 240--241
+ [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figs/HyperPlane_NLin.png, id=18, 433.62pt x 289.08pt>
+File: figs/HyperPlane_NLin.png Graphic file (type png)
+<use figs/HyperPlane_NLin.png>
+Package pdftex.def Info: figs/HyperPlane_NLin.png  used on input line 248.
+(pdftex.def)             Requested size: 274.6262pt x 183.09177pt.
+
+Overfull \hbox (22.6262pt too wide) in paragraph at lines 248--249
+ [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2 <./figs/LinSVM_2D.png> <./figs/LinSVM_3D.png>]
+
+LaTeX Warning: Text page 3 contains only floats.
+
+[3
+
+ <./figs/HyperPlane_Lin.png> <./figs/NLinSVM_2D.png> <./figs/HyperPlane_NLin.pn
+g>] (./SVM.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8721 strings out of 492616
- 129684 string characters out of 6129481
- 214265 words of memory out of 5000000
- 12455 multiletter control sequences out of 15000+600000
- 73186 words of font info for 168 fonts, out of 8000000 for 9000
- 1144 hyphenation exceptions out of 8191
- 41i,6n,38p,396b,1064s stack positions out of 5000i,500n,10000p,200000b,80000s
-./SVM.tex:216:  ==> Fatal error occurred, no output PDF file produced!
-
+ 8750 strings out of 492616
+ 130136 string characters out of 6129481
+ 214320 words of memory out of 5000000
+ 12478 multiletter control sequences out of 15000+600000
  74536 words of font info for 170 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  41i,6n,39p,396b,1014s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -775,10 +829,10 @@ st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/
 times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on SVM.pdf (2 pages, 140049 bytes).
+Output written on SVM.pdf (3 pages, 192881 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
