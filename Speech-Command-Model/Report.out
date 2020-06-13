@@ -1,0 +1,11 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Create Data}{}% 2
+\BOOKMARK [1][-]{section.3}{Loading Data}{}% 3
+\BOOKMARK [1][-]{section.4}{Split dataset}{}% 4
+\BOOKMARK [1][-]{section.5}{Augment data}{}% 5
+\BOOKMARK [1][-]{section.6}{Feature Extraction}{}% 6
+\BOOKMARK [1][-]{section.7}{Building Model}{}% 7
+\BOOKMARK [2][-]{subsection.7.1}{Concept}{section.7}% 8
+\BOOKMARK [2][-]{subsection.7.2}{Hyper parameters}{section.7}% 9
+\BOOKMARK [2][-]{subsection.7.3}{Notations}{section.7}% 10
+\BOOKMARK [2][-]{subsection.7.4}{Math}{section.7}% 11
